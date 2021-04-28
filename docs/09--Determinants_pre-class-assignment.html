@@ -1,0 +1,1034 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09 Pre-Class Assignment: Determinants &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="09 In-Class Assignment: Determinants" href="09-Determinats_in-class-assignment.html" />
+    <link rel="prev" title="08 In-Class Assignment: The Kinematics of Robotics" href="08-Robotics_in-class-assignment.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Cover.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Class_Prep_Checklist.html">
+   Matrix Algebra class preparation checklist
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-CMSE314_introduction_in-class-assignment.html">
+   01 In-Class Assignment: Welcome to Matrix Algebra with computational applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02--Vectors_pre-class-assignment.html">
+   02 Pre-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Vectors_in-class-assignment.html">
+   02 In-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03--Linear_Equations_pre-class-assignment.html">
+   03 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Linear_Equations_in-class-assignment.html">
+   03 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04--Gauss_Jordan_pre-class-assignment.html">
+   04 Pre-Class Assignment: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Gauss_Jordan_in-class-assignment.html">
+   04 In-Class Assignment: Linear Algebra and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05--Gauss_Jordan2_pre-class-assignment.html">
+   05 Pre-Class Assignment: Gauss-Jordan Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Gauss_Jordan2_in-class-assignment.html">
+   05 In-Class Assignment: Gauss-Jordan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Mechanics_in-class-assignment.html">
+   06 In-Class Assignment: Matrix Multiply
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07--Transformations_pre-class-assignment.html">
+   07 Pre-Class Assignment: Transformation Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transformations_in-class-assignment.html">
+   07 In-Class Assignment: Transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08--Robotics_pre-class-assignment.html">
+   08 Pre-Class Assignment: Robotics and Reference Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Robotics_in-class-assignment.html">
+   08 In-Class Assignment: The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   09 Pre-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-Determinats_in-class-assignment.html">
+   09 In-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html">
+   10 Pre-Class Assignment: Eigenvectors and Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Eigenproblems_in-class-assignment.html">
+   10 In-Class Assignment: Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11--Vector_Spaces_pre-class-assignment.html">
+   11 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-Vector_Spaces_in-class-assignment.html">
+   11 In-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12--Change_Basis_pre-class-assignment.html">
+   12 Pre-Class Assignment: Matrix Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Changing_vector_space_in-class-assignment.html">
+   12 In-Class Assignment: Matrix Representation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13--Projections_pre-class-assignment.html">
+   13 Pre-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Projections_in-class-assignment.html">
+   13 In-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14--Fundamental_Spaces_pre-class-assignment.html">
+   14 Pre-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Fundamental_Spaces_in-class-assignment.html">
+   14 In-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15--Diagonalization_pre-class-assignment.html">
+   15 Pre-Class Assignment: Diagonalization and Powers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Diagonalization_in-class-assignment.html">
+   15 In-Class Assignment: Diagonalization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16--Linear_Dynamical_Systems_pre-class-assignment.html">
+   16 Pre-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-Linear_Dynamical_Systems_in-class-assignment.html">
+   16 In-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17--Decompositions_pre-class-assignment.html">
+   17 Pre-Class Assignment: Decompositions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-Decompositions_in-class-assignment.html">
+   17 In-Class Assignment: Decompositions and Gaussian Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18--Inner_Product_pre-class-assignment.html">
+   18 Pre-Class Assignment: Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-Inner_Product_in-class-assignment.html">
+   18 In-Class Assignment: Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19--LSF_pre-class-assignment.html">
+   19 Pre-Class Assignment: Least Squares Fit (Regression)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-LSF_in-class-assignment.html">
+   19 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-LSF_Practice_in-class-assignment.html">
+   20 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21--Review_pre-class-assignment.html">
+   21 Pre-Class Assignment: Solve Linear Systems of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-Review_in-class-assignment.html">
+   21 In-Class Assignment: Solve Linear Systems of Equations using QR Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html">
+   Supplemental Materials: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Jupyter_Getting_Started_Guide.html">
+   Jupyter Getting Started Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Python_Packages.html">
+   Python Linear Algebra Packages
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/09--Determinants_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/09--Determinants_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-this-topic-recommended-in-bold">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-for-today-s-pre-class-assignment">
+   Goals for today’s pre-class assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-determinants">
+   1. Introduction to Determinants
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-determinants">
+   2. Properties of Determinants
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#row-operations">
+     Row Operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#singular-matrices">
+     Singular Matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determinants-and-matrix-operations">
+     Determinants and Matrix Operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#triangular-matrices">
+     Triangular matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-properties-of-determinants">
+     Using Properties of determinants:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-interpretation-of-determinants">
+   3. One interpretation of determinants
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cramer-s-rule">
+   4. Cramer’s Rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   5. Assignment wrap-up
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pre-class-assignment-determinants">
+<h1>09 Pre-Class Assignment: Determinants<a class="headerlink" href="#pre-class-assignment-determinants" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="readings-for-this-topic-recommended-in-bold">
+<h2>Readings for this topic (Recommended in bold)<a class="headerlink" href="#readings-for-this-topic-recommended-in-bold" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 4.I-II pg 317-337</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf"><strong><em>Beezer Chapter D pg 340-366</em></strong></a></p></li>
+</ul>
+</div>
+<div class="section" id="goals-for-today-s-pre-class-assignment">
+<h2>Goals for today’s pre-class assignment<a class="headerlink" href="#goals-for-today-s-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Introduction_to_Determinants">Introduction to Determinants</a></p></li>
+<li><p><a class="reference external" href="#Properties_of_Determinants">Properties of Determinants</a></p></li>
+<li><p><a class="reference external" href="#One_Interpretation_of_determinants">One interpretation of determinants</a></p></li>
+<li><p><a class="reference external" href="#CramersRule">Cramer’s Rule</a></p></li>
+<li><p><a class="reference external" href="#Assignment_wrap-up">Assignment wrap-up</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="Introduction_to_Determinants"></a></p>
+</div>
+<div class="section" id="introduction-to-determinants">
+<h2>1. Introduction to Determinants<a class="headerlink" href="#introduction-to-determinants" title="Permalink to this headline">¶</a></h2>
+<p>For a detailed overview of determinants I would recommend reviewing <strong><em>Chapter D pg 340-366</em></strong> of the Beezer text.</p>
+<p>The determinant is a function that takes a (<span class="math notranslate nohighlight">\(n \times n\)</span>) square matrix as an input and produces a scalar as an output. Determinants have been studied quite extensively and have many interesting properties.  However, determinants are “computationally expensive” as the size of your matrix (<span class="math notranslate nohighlight">\(n\)</span>) gets bigger.  This limitation makes them impractical for many real world problems.</p>
+<p>The determinant of a <span class="math notranslate nohighlight">\( 2 \times 2\)</span> matrix can be calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+det \left(
+\left[
+\begin{matrix}
+    a_{11} &amp; a_{12}  \\
+    a_{21} &amp; a_{22}
+\end{matrix}
+\right] 
+\right)
+= a_{11}a_{22} - a_{12}a_{21}
+\end{split}\]</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Calculate the determinant of the following matrix by hand:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    3 &amp; -2  \\
+    1 &amp; 2
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here</p>
+<p>Calculating the determinant of a larger matrix is a “recursive” problem which involves combining the determinants of smaller and smaller sub-matrices until you have a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix which is then calculated using the above formula.  Here is some Pseudocode to calculate a determinant.  To simplify the example the code assumes there is a matrix function <code class="docutils literal notranslate"><span class="pre">deleterow</span></code> which will remove the <span class="math notranslate nohighlight">\(x\)</span>th row from a matrix  (always the first row in this example) and <code class="docutils literal notranslate"><span class="pre">deletecol</span></code> will remove the <span class="math notranslate nohighlight">\(x\)</span>th column from a matrix. When used together (as shown below) they will take an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix and turn it into a <span class="math notranslate nohighlight">\( (n-1) \times (n-1)\)</span> matrix.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> determinant<span class="o">(</span>A, n<span class="o">)</span>
+   <span class="nv">det</span> <span class="o">=</span> <span class="m">0</span>
+   <span class="k">if</span> <span class="o">(</span><span class="nv">n</span> <span class="o">==</span> <span class="m">1</span><span class="o">)</span>
+      <span class="nv">det</span> <span class="o">=</span> matrix<span class="o">[</span><span class="m">1</span>,1<span class="o">]</span>
+   <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="nv">n</span> <span class="o">==</span> <span class="m">2</span><span class="o">)</span>
+      <span class="nv">det</span> <span class="o">=</span> matrix<span class="o">[</span><span class="m">1</span>,1<span class="o">]</span> * matrix<span class="o">[</span><span class="m">2</span>,2<span class="o">]</span> - matrix<span class="o">[</span><span class="m">1</span>,2<span class="o">]</span> * matrix<span class="o">[</span><span class="m">2</span>,1<span class="o">]</span>
+   <span class="k">else</span> 
+      <span class="k">for</span> x from <span class="m">1</span> to n
+          <span class="nv">submatrix</span> <span class="o">=</span> deleterow<span class="o">(</span>matrix, <span class="m">1</span><span class="o">)</span>
+          <span class="nv">submatrix</span> <span class="o">=</span> deletecol<span class="o">(</span>submatrix, x<span class="o">)</span>
+          <span class="nv">det</span> <span class="o">=</span> det + <span class="o">(</span>x+1<span class="o">)</span>**<span class="o">(</span>-1<span class="o">)</span> * matrix<span class="o">[</span><span class="m">1</span>,x<span class="o">]</span> * determinant<span class="o">(</span>submatrix, n-1<span class="o">)</span>
+      next x
+   endif
+   
+   <span class="k">return</span> det
+</pre></div>
+</div>
+<p>Notice that the combination of the determinants of the submatrixes is not a simple sum.  The combination is adding the submatrices corresponding to the odd columns (1,3,5, etc) and subtracting the submatrices corresponding to the even columns (2,4,6, etc.). This may become clearer if we look at a simple <span class="math notranslate nohighlight">\(3 \times 3\)</span> example (Let <span class="math notranslate nohighlight">\(|A|\)</span> be a simplified syntax for writing the determinant of <span class="math notranslate nohighlight">\(A\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \left[
+\begin{matrix}
+    a_{11} &amp; a_{12} &amp; a_{13} \\
+    a_{21} &amp; a_{22} &amp; a_{23} \\
+    a_{31} &amp; a_{32} &amp; a_{33} 
+\end{matrix}
+\right] \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+|A|=
+a_{11} \left|
+\begin{matrix}
+    \square &amp; \square  &amp; \square  \\
+    \square  &amp; a_{22} &amp; a_{23} \\
+    \square  &amp; a_{32} &amp; a_{33} 
+\end{matrix}
+\right|
+-
+a_{12}\left|
+\begin{matrix}
+    \square &amp; \square  &amp; \square  \\
+    a_{21} &amp; \square &amp; a_{23} \\
+    a_{31} &amp; \square &amp; a_{33} 
+\end{matrix}
+\right|
++
+a_{13} \left|
+\begin{matrix}
+    \square &amp; \square  &amp; \square  \\
+    a_{21} &amp; a_{22} &amp; \square \\
+    a_{31} &amp; a_{32} &amp; \square
+\end{matrix}
+\right|
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+|A|
+=
+a_{11}\left|
+\begin{matrix}
+    a_{22} &amp; a_{23}  \\
+    a_{32} &amp; a_{33}
+\end{matrix}
+\right|
+-
+a_{12}\left|
+\begin{matrix}
+    a_{21} &amp; a_{23}  \\
+    a_{31} &amp; a_{33}
+\end{matrix}
+\right|
++
+a_{13}
+\left|
+\begin{matrix}
+    a_{21} &amp; a_{22}  \\
+    a_{31} &amp; a_{32}
+\end{matrix}
+\right|
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+|A| = 
+a_{11}(a_{22}a_{33} - a_{23}a_{32})
+-
+a_{12}(a_{21}a_{33} - a_{23}a_{31})
++
+a_{13}(a_{21}a_{32} - a_{22}a_{31})
+\]</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Calculate the determinant of the following matrix by hand:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; 2 &amp; -3  \\
+    5 &amp; 0 &amp; 6  \\
+    7 &amp; 1 &amp; -4
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Use the <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> library to calculate the determinant of the following matrix and stor the value in a variable called <code class="docutils literal notranslate"><span class="pre">det</span></code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{matrix}
+    2 &amp; 0 &amp; 1 &amp; -5  \\
+    8 &amp; -1 &amp; 2 &amp; 1  \\
+    4 &amp; -3 &amp; -5 &amp; 0 \\
+    1 &amp; 4 &amp; 8 &amp; 2
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">det</span><span class="p">,</span><span class="s1">&#39;49afb719e0cd46f74578ebf335290f81&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">b2a2502e4bdf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">det</span><span class="p">,</span><span class="s1">&#39;49afb719e0cd46f74578ebf335290f81&#39;</span><span class="p">);</span>
+
+<span class="ne">NameError</span>: name &#39;det&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Properties_of_Determinants"></a></p>
+</div>
+<div class="section" id="properties-of-determinants">
+<h2>2. Properties of Determinants<a class="headerlink" href="#properties-of-determinants" title="Permalink to this headline">¶</a></h2>
+<p>The following are some helpful properties when working with determinants.  These properties are often used in proofs and can sometimes be utilized to make faster calculations.</p>
+<div class="section" id="row-operations">
+<h3>Row Operations<a class="headerlink" href="#row-operations" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix and <span class="math notranslate nohighlight">\(c\)</span> be a nonzero scalar. Let <span class="math notranslate nohighlight">\(|A|\)</span> be a simplified syntax for writing the determinant of <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<ol class="simple">
+<li><p>If a matrix <span class="math notranslate nohighlight">\(B\)</span> is obtained from <span class="math notranslate nohighlight">\(A\)</span> by multiplying a row (column) by <span class="math notranslate nohighlight">\(c\)</span> then <span class="math notranslate nohighlight">\(|B| = c|A|\)</span>.</p></li>
+<li><p>If a matrix <span class="math notranslate nohighlight">\(B\)</span> is obtained from <span class="math notranslate nohighlight">\(A\)</span> by interchanging two rows (columns) then <span class="math notranslate nohighlight">\(|B| = -|A|\)</span>.</p></li>
+<li><p>if a matrix <span class="math notranslate nohighlight">\(B\)</span> is obtained from <span class="math notranslate nohighlight">\(A\)</span> by adding a multiple of one row (column) to another row (column), then <span class="math notranslate nohighlight">\(|B| = |A|\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="singular-matrices">
+<h3>Singular Matrices<a class="headerlink" href="#singular-matrices" title="Permalink to this headline">¶</a></h3>
+<p><strong>Definition:</strong> A square matrix <span class="math notranslate nohighlight">\(A\)</span> is said to be <strong>singular</strong> if <span class="math notranslate nohighlight">\(|A| = 0\)</span>. <span class="math notranslate nohighlight">\(A\)</span> is <strong>nonsingular</strong> if <span class="math notranslate nohighlight">\(|A| \neq 0\)</span></p>
+<p>Now, Let <span class="math notranslate nohighlight">\(A\)</span> be an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix. <span class="math notranslate nohighlight">\(A\)</span> is singular if any of these is true:</p>
+<ol class="simple">
+<li><p>all the elements of a row (column) are zero.</p></li>
+<li><p>two rows (columns) are equal.</p></li>
+<li><p>two rows (columns) are proportional. i.e. one row (column) is the same as another row (column) multiplied by <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+</ol>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> The following matrix is singular because of certain column or row properties. Give the reason:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; 5 &amp; 5  \\
+    0 &amp; -2 &amp; -2  \\
+    3 &amp; 1 &amp; 1
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> The following matrix is singular because of certain column or row properties. Give the reason:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; 0 &amp; 4  \\
+    0 &amp; 1 &amp; 9  \\
+    0 &amp; 0 &amp; 0
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here.</p>
+</div>
+<div class="section" id="determinants-and-matrix-operations">
+<h3>Determinants and Matrix Operations<a class="headerlink" href="#determinants-and-matrix-operations" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <span class="math notranslate nohighlight">\(n\times n\)</span> matrices and <span class="math notranslate nohighlight">\(c\)</span> be a nonzero scalar.</p>
+<ol class="simple">
+<li><p>Determinant of a scalar multiple: <span class="math notranslate nohighlight">\(|cA| = c^n|A|\)</span></p></li>
+<li><p>Determinant of a product: <span class="math notranslate nohighlight">\(|AB| = |A||B|\)</span></p></li>
+<li><p>Determinant of a transpose” <span class="math notranslate nohighlight">\(|A^t| = |A|\)</span></p></li>
+<li><p>Determinant of an inverse: <span class="math notranslate nohighlight">\(|A^{-1}| = \frac{1}{|A|}\)</span> (Assuming <span class="math notranslate nohighlight">\(A^{-1}\)</span> exists)</p></li>
+</ol>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  If <span class="math notranslate nohighlight">\(A\)</span> is a <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix with <span class="math notranslate nohighlight">\(|A| = 3\)</span>, use the properties of determinants to compute the following determinant:</p>
+<div class="math notranslate nohighlight">
+\[|2A|\]</div>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  If <span class="math notranslate nohighlight">\(A\)</span> is a <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix with <span class="math notranslate nohighlight">\(|A| = 3\)</span>, use the properties of determinants to compute the following determinant:
+$<span class="math notranslate nohighlight">\(|A^2|\)</span>$</p>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices and <span class="math notranslate nohighlight">\(|A| = -3, |B|=2\)</span>, compute the following determinant:</p>
+<div class="math notranslate nohighlight">
+\[|AB|\]</div>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices and <span class="math notranslate nohighlight">\(|A| = -3, |B|=2\)</span>, compute the following determinant:</p>
+<div class="math notranslate nohighlight">
+\[|2AB^{-1}|\]</div>
+<p>Put your answer here</p>
+</div>
+<div class="section" id="triangular-matrices">
+<h3>Triangular matrices<a class="headerlink" href="#triangular-matrices" title="Permalink to this headline">¶</a></h3>
+<p><strong>Definition:</strong> An <strong>upper triangular matrix</strong> has nonzero elements lie on or above the main diagonal and zero elements below the main diagonal. For example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} A = 
+\left[
+\begin{matrix}
+    2 &amp; -1 &amp; 9 &amp; 4  \\
+    0 &amp; 3 &amp; 0 &amp; 6 \\
+    0 &amp; 0 &amp; -5 &amp; 3 \\
+    0 &amp; 0 &amp; 0 &amp; 1
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>The determinant of an <em>upper triangle matrix</em> <span class="math notranslate nohighlight">\(A\)</span> is the product of the diagonal elements of the matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Also, since the Determinant is the same for a matrix and it’s transpose (i.e.  $|A^t| = |A|, see definition above) the determinant of a <em>lower triangle matrix</em> is also the product of the diagonal elements.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>   What is the determinant of matrix <span class="math notranslate nohighlight">\(A\)</span>?</p>
+<p>Put your answer here</p>
+</div>
+<div class="section" id="using-properties-of-determinants">
+<h3>Using Properties of determinants:<a class="headerlink" href="#using-properties-of-determinants" title="Permalink to this headline">¶</a></h3>
+<p>Here is a great video showing how you can use the properties of determinants:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;aKX5_DucNq8&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION (A challenging one):</font></strong>   Using the pattern established in the video can you calculate the determinate of the following matrix?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; a &amp; a^2 &amp; a^3 \\
+    1 &amp; b &amp; b^2 &amp; b^3 \\
+    1 &amp; c &amp; c^2 &amp; c^3 \\
+    1 &amp; d &amp; d^2 &amp; d^3 
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here</p>
+<hr class="docutils" />
+<p><a name="One_Interpretation_of_determinants"></a></p>
+</div>
+</div>
+<div class="section" id="one-interpretation-of-determinants">
+<h2>3. One interpretation of determinants<a class="headerlink" href="#one-interpretation-of-determinants" title="Permalink to this headline">¶</a></h2>
+<p>The following is an application of determinants. Watch this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;Ip3X9LOh2dk&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For fun, we will recreate some of the video’s visualizations in Python.
+It was a little tricky to get the aspect ratios correct but here is some code I managed to get it work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d.art3d</span> <span class="kn">import</span> <span class="n">Poly3DCollection</span><span class="p">,</span> <span class="n">Line3DCollection</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">npimport</span> <span class="n">sympy</span> <span class="k">as</span> <span class="n">sym</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lets define somme points that form a Unit Cube</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here is some code to build cube from https://stackoverflow.com/questions/44881885/python-draw-3d-cube</span>
+
+<span class="k">def</span> <span class="nf">plot3dcube</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">:</span>
+        <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="c1"># plot vertices</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">Z</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Z</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">Z</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># list of sides&#39; polygons of figure</span>
+    <span class="n">verts</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">3</span><span class="p">]],</span>
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">7</span><span class="p">]],</span> 
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">4</span><span class="p">]],</span> 
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">6</span><span class="p">]],</span> 
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">5</span><span class="p">]],</span>
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> 
+     <span class="p">[</span><span class="n">Z</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">Z</span><span class="p">[</span><span class="mi">6</span><span class="p">]]]</span>
+
+    <span class="c1">#alpha transparency was&#39;t working found fix here: </span>
+    <span class="c1"># https://stackoverflow.com/questions/23403293/3d-surface-not-transparent-inspite-of-setting-alpha</span>
+    <span class="c1"># plot sides</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_collection3d</span><span class="p">(</span><span class="n">Poly3DCollection</span><span class="p">(</span><span class="n">verts</span><span class="p">,</span> 
+     <span class="n">facecolors</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.25</span><span class="p">),</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">))</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+    
+    <span class="c1">## Weird trick to get the axpect ratio to work.</span>
+    <span class="c1">## From https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to</span>
+    <span class="n">mx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">mn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">max_range</span> <span class="o">=</span> <span class="n">mx</span><span class="o">-</span><span class="n">mn</span>
+
+    <span class="c1"># Create cubic bounding box to simulate equal aspect ratio</span>
+    <span class="n">Xb</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">max_range</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">max_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">Yb</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">max_range</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">max_range</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">Zb</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">max_range</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">max_range</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="c1"># Comment or uncomment following both lines to test the fake bounding box:</span>
+    <span class="k">for</span> <span class="n">xb</span><span class="p">,</span> <span class="n">yb</span><span class="p">,</span> <span class="n">zb</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Xb</span><span class="p">,</span> <span class="n">Yb</span><span class="p">,</span> <span class="n">Zb</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">xb</span><span class="p">],</span> <span class="p">[</span><span class="n">yb</span><span class="p">],</span> <span class="p">[</span><span class="n">zb</span><span class="p">],</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot3dcube</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color='red'>QUESTION:</font></strong> The following the <span class="math notranslate nohighlight">\(3\times 3\)</span> was shown in the video (around 6’50’’). Apply this matrix to the unit cube and use the <code class="docutils literal notranslate"><span class="pre">plot3dcube</span></code> to show the resulting transformed points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">,</span>  <span class="mf">0.5</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">0.5</span> <span class="p">,</span><span class="mi">1</span> <span class="p">,</span><span class="mf">1.5</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">,</span>  <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#Put the answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color='red'>QUESTION:</font></strong> The determinant represents how the area changes when applying a <span class="math notranslate nohighlight">\(2 \times 2\)</span> transform.  What does the determinant represent for a <span class="math notranslate nohighlight">\(3 \times 3\)</span> transform?</p>
+<p>Put your answer here</p>
+<hr class="docutils" />
+<p><a name="CramersRule"></a></p>
+</div>
+<div class="section" id="cramer-s-rule">
+<h2>4. Cramer’s Rule<a class="headerlink" href="#cramer-s-rule" title="Permalink to this headline">¶</a></h2>
+<p>✅ <strong><font color='red'>DO THIS:</font></strong> Watch the following video and come to class ready to discuss Cramer’s Rule:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;BW6897HIOMA&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Assignment_wrap-up"></a></p>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>5. Assignment wrap-up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credit for the assignment!</strong></p>
+<p><a class="reference external" href="https://cmse.msu.edu/cmse314-pc-survey">Direct Link to Google Form</a></p>
+<p>If you have trouble with the embedded form, please make sure you log on with your MSU google account at <a class="reference external" href="https://googleapps.msu.edu">googleapps.msu.edu</a> and then click on the direct link above.</p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> What does the determinant represent for a <span class="math notranslate nohighlight">\(3 \times 3\)</span> transform?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Summarize what you did in this assignment.</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What questions do you have, if any, about any of the topics discussed in this assignment after working through the jupyter notebook?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  How well do you feel this assignment helped you to achieve a better understanding of the above mentioned topic(s)?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What was the <strong>most</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What was the <strong>least</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What kind of additional questions or support, if any, do you feel you need to have a better understanding of the content in this assignment?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Do you have any further questions or comments about this material, or anything else that’s going on in class?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Approximately how long did this pre-class assignment take?</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe </span>
+<span class="sd">	src=&quot;https://cmse.msu.edu/cmse314-pc-survey&quot; </span>
+<span class="sd">	width=&quot;100%&quot; </span>
+<span class="sd">	height=&quot;1000px&quot; </span>
+<span class="sd">	frameborder=&quot;0&quot; </span>
+<span class="sd">	marginheight=&quot;0&quot; </span>
+<span class="sd">	marginwidth=&quot;0&quot;&gt;</span>
+<span class="sd">	Loading...</span>
+<span class="sd">&lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="08-Robotics_in-class-assignment.html" title="previous page">08 In-Class Assignment: The Kinematics of Robotics</a>
+    <a class='right-next' id="next-link" href="09-Determinats_in-class-assignment.html" title="next page">09 In-Class Assignment: Determinants</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1203 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 Pre-Class Assignment: Vectors &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="02 In-Class Assignment: Vectors" href="02-Vectors_in-class-assignment.html" />
+    <link rel="prev" title="01 In-Class Assignment: Welcome to Matrix Algebra with computational applications" href="01-CMSE314_introduction_in-class-assignment.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Cover.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Class_Prep_Checklist.html">
+   Matrix Algebra class preparation checklist
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-CMSE314_introduction_in-class-assignment.html">
+   01 In-Class Assignment: Welcome to Matrix Algebra with computational applications
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   02 Pre-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Vectors_in-class-assignment.html">
+   02 In-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03--Linear_Equations_pre-class-assignment.html">
+   03 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Linear_Equations_in-class-assignment.html">
+   03 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04--Gauss_Jordan_pre-class-assignment.html">
+   04 Pre-Class Assignment: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Gauss_Jordan_in-class-assignment.html">
+   04 In-Class Assignment: Linear Algebra and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05--Gauss_Jordan2_pre-class-assignment.html">
+   05 Pre-Class Assignment: Gauss-Jordan Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Gauss_Jordan2_in-class-assignment.html">
+   05 In-Class Assignment: Gauss-Jordan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Mechanics_in-class-assignment.html">
+   06 In-Class Assignment: Matrix Multiply
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07--Transformations_pre-class-assignment.html">
+   07 Pre-Class Assignment: Transformation Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transformations_in-class-assignment.html">
+   07 In-Class Assignment: Transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08--Robotics_pre-class-assignment.html">
+   08 Pre-Class Assignment: Robotics and Reference Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Robotics_in-class-assignment.html">
+   08 In-Class Assignment: The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09--Determinants_pre-class-assignment.html">
+   09 Pre-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-Determinats_in-class-assignment.html">
+   09 In-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html">
+   10 Pre-Class Assignment: Eigenvectors and Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Eigenproblems_in-class-assignment.html">
+   10 In-Class Assignment: Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11--Vector_Spaces_pre-class-assignment.html">
+   11 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-Vector_Spaces_in-class-assignment.html">
+   11 In-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12--Change_Basis_pre-class-assignment.html">
+   12 Pre-Class Assignment: Matrix Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Changing_vector_space_in-class-assignment.html">
+   12 In-Class Assignment: Matrix Representation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13--Projections_pre-class-assignment.html">
+   13 Pre-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Projections_in-class-assignment.html">
+   13 In-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14--Fundamental_Spaces_pre-class-assignment.html">
+   14 Pre-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Fundamental_Spaces_in-class-assignment.html">
+   14 In-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15--Diagonalization_pre-class-assignment.html">
+   15 Pre-Class Assignment: Diagonalization and Powers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Diagonalization_in-class-assignment.html">
+   15 In-Class Assignment: Diagonalization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16--Linear_Dynamical_Systems_pre-class-assignment.html">
+   16 Pre-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-Linear_Dynamical_Systems_in-class-assignment.html">
+   16 In-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17--Decompositions_pre-class-assignment.html">
+   17 Pre-Class Assignment: Decompositions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-Decompositions_in-class-assignment.html">
+   17 In-Class Assignment: Decompositions and Gaussian Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18--Inner_Product_pre-class-assignment.html">
+   18 Pre-Class Assignment: Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-Inner_Product_in-class-assignment.html">
+   18 In-Class Assignment: Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19--LSF_pre-class-assignment.html">
+   19 Pre-Class Assignment: Least Squares Fit (Regression)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-LSF_in-class-assignment.html">
+   19 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-LSF_Practice_in-class-assignment.html">
+   20 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21--Review_pre-class-assignment.html">
+   21 Pre-Class Assignment: Solve Linear Systems of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-Review_in-class-assignment.html">
+   21 In-Class Assignment: Solve Linear Systems of Equations using QR Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html">
+   Supplemental Materials: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Jupyter_Getting_Started_Guide.html">
+   Jupyter Getting Started Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Python_Packages.html">
+   Python Linear Algebra Packages
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02--Vectors_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02--Vectors_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-this-topic-recommended-in-bold">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-overview">
+   Assignment Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-the-course-textbooks">
+   1. Introducing the Course Textbooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#today-s-reading">
+   2. Today’s Reading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalars-vector-and-tensors">
+   3. Scalars, Vector and Tensors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-introducing-vectors-in-python">
+     1.a: Introducing Vectors in Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-vector-size">
+     1.b: Vector size
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-special-vectors">
+     1.c: Special Vectors
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#standard-unit-vectors">
+       Standard Unit Vectors
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zero-vectors">
+       Zero Vectors
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-examples">
+     1.d: Examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#location-and-displacement">
+       Location and displacement
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#color">
+       Color
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-vector-addition">
+     1.e: Vector Addition
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#python-vector-addition">
+       Python Vector Addition
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-scalar-vector-multiplication">
+     1.f: Scalar-Vector multiplication
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scalar-vector-multiplication-in-python">
+       Scalar-Vector Multiplication in Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   4. Assignment wrap-up
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pre-class-assignment-vectors">
+<h1>02 Pre-Class Assignment: Vectors<a class="headerlink" href="#pre-class-assignment-vectors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="readings-for-this-topic-recommended-in-bold">
+<h2>Readings for this topic (Recommended in bold)<a class="headerlink" href="#readings-for-this-topic-recommended-in-bold" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 1.II.1 pg 35-42</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer Chapter V pg 74-88</a></p></li>
+<li><p><a class="reference external" href="http://vmls-book.stanford.edu/vmls.pdf"><strong><em>Boyd Sections 1.1-1.3 pg 1-19</em></strong></a></p></li>
+</ul>
+</div>
+<div class="section" id="assignment-overview">
+<h2>Assignment Overview<a class="headerlink" href="#assignment-overview" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Textbooks">Introducing the Course Textbooks</a></p></li>
+<li><p><a class="reference external" href="#Reading">Todays Reading</a></p></li>
+<li><p><a class="reference external" href="#Scalars_Vector_and_Tensors">Scalars, Vector and Tensors</a></p></li>
+<li><p><a class="reference external" href="#Assignment_wrap-up">Assignment wrap-up</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="Textbooks"></a></p>
+</div>
+<div class="section" id="introducing-the-course-textbooks">
+<h2>1. Introducing the Course Textbooks<a class="headerlink" href="#introducing-the-course-textbooks" title="Permalink to this headline">¶</a></h2>
+<p>Student self guided learning through assigned readings are required for students to be successful.  The course strives to use Open Educational Resources (OER) to help reduce financial burden on the students.  To this end we have selected the following textbooks for reading assignments and supplemental examples:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://vmls-book.stanford.edu/">Introduction to Applied Linear Algebra</a> by Boyd and Vandenberghe</p></li>
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/">Linear Algebra</a> by Jim Heffron</p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/">A First Course in Linear Algebra</a> by Robert A. Beezer</p></li>
+</ul>
+<p><strong><em>DO NOT WORRY</em></strong> You will not be expected to read all three textbooks in this course!  In fact, we try to keep the reading at a reasonable level and focus on problem solving.  However, most students benefit from seeing material in multiple ways (Reading, Lecture, Practice, etc).  Different students (and instructors) also prefer different writing styles and may learn better with different text (which is why we provide more than one).</p>
+<p>Students are encouraged to review and become familiar with the style and layout of each text to act as a common reference for the course.  If you get stuck on a topic try looking it up and reviewing it in one of the other texts.  If you are still stuck you can search the Internet.  Do not be afraid to also ask your instructors questions and come to office hours. That is why we are here!!!</p>
+<p>✅ <strong><span style="color:red">Do This:</span></strong> Download a copy of each textbooks onto your preferred reading device and review the <strong><em>Table of Contents</em></strong> in each text.</p>
+<p>As you can see each textbook approaches Linear algebra in a slightly different way. This variety reflects the different philosophies of teaching and different ways of individual learning. One way to evaluate the focus of a particular textbook is to look at it’s very first chapter.  For Example:</p>
+<ul class="simple">
+<li><p>The <strong><em>Beezer</em></strong> and <strong><em>Heffron</em></strong> texts start out with “Systems of linear Equations” and “Linear Systems.” These topics are basically the same idea with the focus of defining linear systems as just sets of “linear combinations”.  Clearly this is a core concept and a good place to start.</p></li>
+<li><p>The <strong><em>Boyd and Vandenberghe</em></strong> text choose to start with “Vectors”.  In linear algebra the “vector” is a mathematical tool for which all of the mechanics of the math is built.  Again, not a bad place to start.</p></li>
+</ul>
+<p>In the first few assignments this course we will be looking at both concepts.  You will want to learn and be able to identify linear systems and how to represent them as vectors.</p>
+<p>✅ <strong><span style="color:red">Question:</span></strong> Find three additional topics (Besides Linear Systems and Vectors) that seem to be common between the three textbooks. You can probably assume that these topics will be important to our course as well.</p>
+<p>Put your answer to the above question here.</p>
+<hr class="docutils" />
+<p><a name="Reading"></a></p>
+</div>
+<div class="section" id="today-s-reading">
+<h2>2. Today’s Reading<a class="headerlink" href="#today-s-reading" title="Permalink to this headline">¶</a></h2>
+<p>Quite a bit of this pre-class assignment about vectors is motivated from Chapter 1 of the <a class="reference external" href="http://vmls-book.stanford.edu/">Stephen Boyd and Lieven Vandenberghe Applied Linear algebra book</a>.  This material may be review for some students and may be new for others. It is expected that students review the chapter to help them understand the material better.</p>
+<p>✅ <strong><span style="color:red">Do This:</span></strong>  Review <strong><em>Sections 1.1, 1.2 and 1.3 in Boyd and Vandenberghe</em></strong> and become familiar with the contents and the basic terminology.  If you find this material is difficult make sure you take advantage of the survey at the end of this assignment to ask your instructor questions about things that are confusing.</p>
+<p><strong><em>HINT</em></strong> Many computers and smart phones have a “read to me feature”. Some students find it helpful to download the pdf of the textbook and have the computer read to them out loud while they follow along.</p>
+<hr class="docutils" />
+<p><a name="Scalars_Vector_and_Tensors"></a></p>
+</div>
+<div class="section" id="scalars-vector-and-tensors">
+<h2>3. Scalars, Vector and Tensors<a class="headerlink" href="#scalars-vector-and-tensors" title="Permalink to this headline">¶</a></h2>
+<p>The two primary mathematical entities that are of interest in linear algebra are the vector and the matrix. They are examples of a more general entity known as a tensor. The following video gives a basic introduction of scalars, vectors, and tensors. It is fine if you can not understand all of this video. We will learn most of it in this course.</p>
+<p><em><strong>NOTE:</strong></em> The terms vectors and tensors can get fairly confusing. For the purpose of this class, we will not use the term <em><strong>Tensor</strong></em> all that much.  Instead we will treat everything as <strong><em>vectors</em></strong> (more on this later).</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ml4NSzCQobk">Direct Link to YouTube Video</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;ml4NSzCQobk&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/ml4NSzCQobk?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p>Think of a <strong><em>scalar</em></strong> as a single number or variable that is an example of a 0th-order tensor. The following are all scalars:</p>
+<div class="math notranslate nohighlight">
+\[ 1, \frac{1}{2}, 3.1416\]</div>
+<p>Defining a <strong><em>scalar</em></strong> in Python is easy. For example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>A <strong><em>vector</em></strong>, on the other hand, is an <em>ordered</em> list of values which we typically represent with lower case letters. Vectors are ordered arrays of single numbers and are an example of 1st-order tensor. The following are all vectors:</p>
+<p><strong><em>Row Vector:</em></strong>
+$<span class="math notranslate nohighlight">\(v = [ v_1, v_2, \dots, v_n ]\)</span><span class="math notranslate nohighlight">\(
+here \)</span>v_1, v_2, \dots, v_n$ are single numbers.</p>
+<div class="math notranslate nohighlight">
+\[f = [1, 2, 3, 5, 8]\]</div>
+<p>Here <span class="math notranslate nohighlight">\(f\)</span> in the above example is a vector of numbers, and it is the common way we think of vectors.</p>
+<p>Note, it is often more common to write vecors vertically. These are often called column vectors:</p>
+<p><strong><em>Column Vector:</em></strong>
+$<span class="math notranslate nohighlight">\(
+v=
+\left[
+\begin{matrix}
+    v_1 \\ 
+    v_2 \\
+    \vdots \\
+    v_m
+ \end{matrix}
+\right]
+\)</span><span class="math notranslate nohighlight">\(
+here \)</span>v_1, v_2, \dots, v_n$ are single numbers.</p>
+<div class="section" id="a-introducing-vectors-in-python">
+<h3>1.a: Introducing Vectors in Python<a class="headerlink" href="#a-introducing-vectors-in-python" title="Permalink to this headline">¶</a></h3>
+<p>In Python, there are multiple ways to store a vector.  Knowing how your vector is stored is very important (especially for debugging).  Probably the easiest way to store a vector is using a list, which are created using standard square brackets as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 5, 8]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another common way to store a vector is to use a tuple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 4, 8, 16)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can access a particular scalar in your Python object using its index. Remember that Python index starts counting at zero. For example, to get the fourth element in <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> vectors, we would use the following syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+16
+</pre></div>
+</div>
+</div>
+</div>
+<p>Later in this course, we may discuss which data format is better (and introduce new ones). At this point let’s not worry about it too much. You can always figure out a variable’s data type using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, I am not sure if you will need this but always remember, it is easy to convert from a tuple to a list and vice versa (this is called “casting”):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Convert tuple to list</span>
+<span class="n">b_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">b_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 8, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Convert list to tuple</span>
+<span class="n">f_list</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">f_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 5, 8)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="b-vector-size">
+<h3>1.b: Vector size<a class="headerlink" href="#b-vector-size" title="Permalink to this headline">¶</a></h3>
+<p>A vector can be used to represent quantities or values in an application. The size (also called dimension or length) of the vector is the number of elements it contains.  The size of the vector determines how many quantities are in the vector.  We often refer to the size of a vector using the variable <code class="docutils literal notranslate"><span class="pre">n</span></code>.  So an <code class="docutils literal notranslate"><span class="pre">n-vector</span></code> has <code class="docutils literal notranslate"><span class="pre">n</span></code> values.  A <code class="docutils literal notranslate"><span class="pre">3-vector</span></code> only has 3 values.</p>
+<p>The length (<code class="docutils literal notranslate"><span class="pre">len</span></code>) function returns the size of a vector in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="c-special-vectors">
+<h3>1.c: Special Vectors<a class="headerlink" href="#c-special-vectors" title="Permalink to this headline">¶</a></h3>
+<p>The following are special vectors with special names.</p>
+<div class="section" id="standard-unit-vectors">
+<h4>Standard Unit Vectors<a class="headerlink" href="#standard-unit-vectors" title="Permalink to this headline">¶</a></h4>
+<p>Vectors with a single 1 and the rest of the values are zero have a special name called “Standard Unit Vectors”. The number of different standard unit vectors there are is equal to the size of the vector. For example, a 3-vector has the following standard unit vectors:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+e_1 = 
+\left[
+\begin{matrix}
+    1 \\ 
+    0 \\
+    0
+ \end{matrix}
+\right]
+,e_2 = 
+\left[
+\begin{matrix}
+    0 \\ 
+    1 \\
+    0
+ \end{matrix}
+\right],
+e_3 = 
+\left[
+\begin{matrix}
+    0 \\ 
+    0 \\
+    1
+ \end{matrix}
+\right]
+\end{split}\]</div>
+</div>
+<div class="section" id="zero-vectors">
+<h4>Zero Vectors<a class="headerlink" href="#zero-vectors" title="Permalink to this headline">¶</a></h4>
+<p>Vectors with all values of zero also have a special name called “Zero Vectors”. Typically we just use a zero to represent the zero vector. For example:
+$<span class="math notranslate nohighlight">\(
+0 = 
+\left[
+\begin{matrix}
+    0 \\ 
+    0 \\
+    0
+ \end{matrix}
+\right]
+\)</span>$</p>
+</div>
+</div>
+<div class="section" id="d-examples">
+<h3>1.d: Examples<a class="headerlink" href="#d-examples" title="Permalink to this headline">¶</a></h3>
+<p>Vectors are used to represent all types of data that has structures.  Here are some simple examples from the <a class="reference external" href="http://vmls-book.stanford.edu/">Boyd and Vandenberghe textbook</a>:</p>
+<div class="section" id="location-and-displacement">
+<h4>Location and displacement<a class="headerlink" href="#location-and-displacement" title="Permalink to this headline">¶</a></h4>
+<p>A 2-vector can be used to represent a position or location in a space.  The first value is the distance in one direction (from the origin) and the second value is the distance in a different direction.  Probably most students are famiar with the 2D Cartesian coordinate system where a location can be defined by two values in the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> directions.  Here is a simple scatter plot in python which show the concept:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;*k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;*k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">p3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;*k&#39;</span><span class="p">)</span>
+
+<span class="c1">## Add some labels (offset slightly)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;$p_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;$p_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">p3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="n">p3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;$p_3$&#39;</span><span class="p">)</span>
+
+<span class="c1">## Fix the axis so you can see the points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 4.0, 0.0, 4.0)
+</pre></div>
+</div>
+<img alt="_images/02--Vectors_pre-class-assignment_29_1.png" src="_images/02--Vectors_pre-class-assignment_29_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="color">
+<h4>Color<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h4>
+<p>A 3-vector can represent a color, with its entries giving the Red, Green, and Blue (RGB) intensity values (often between 0 and 1). The vector (0,0,0) represents black, the vector (0, 1, 0) represents a bright pure green color, and the vector (1, 0.5, 0.5) represents a shade of pink.</p>
+<p>The Python <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library uses this type of vector to define colors.  For example, the following code plots a point at the origin of size 10000 (the size of the circle, and the value does not have exact meaning here) and color c = (0,1,0).  You can change the values for <code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">s</span></code> to see the difference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10000</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02--Vectors_pre-class-assignment_31_0.png" src="_images/02--Vectors_pre-class-assignment_31_0.png" />
+</div>
+</div>
+<p>Just for fun, here is a little interactive demo that lets you play with different color vectors.</p>
+<blockquote>
+<div><p><strong><em>NOTE</em></strong> this demo uses the <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> Python library which works by default in Jupyter notebook (which is installed on the MSU <a class="reference external" href="http://jupyterhub.egr.msu.edu">jupyterhub</a>)) but <strong><em>NOT</em></strong> in the newer jupyter lab interface which some students may have installed on their local computers.  To get these types of examples working in jupyter lab requires the installation of the ipywidgets plug-in.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">fixed</span>
+
+<span class="k">def</span> <span class="nf">showcolor</span><span class="p">(</span><span class="n">red</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span><span class="p">):</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="n">red</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20000</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+    <span class="k">return</span> <span class="n">color</span>
+
+<span class="n">color</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span><span class="n">showcolor</span><span class="p">,</span> <span class="n">red</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">green</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">blue</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "4c716aa6e9e74f4abb8ffab977526050"}
+</script></div>
+</div>
+</div>
+</div>
+<div class="section" id="e-vector-addition">
+<h3>1.e: Vector Addition<a class="headerlink" href="#e-vector-addition" title="Permalink to this headline">¶</a></h3>
+<p>Two vectors of the same size can be added together by adding the corresponding elements, to form another vector of the same size, called the sum of the vectors. For example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1  \\ 
+    20   
+ \end{matrix}
+ \right]
+ +
+\left[
+\begin{matrix}
+    22 \\ 
+    -3 
+ \end{matrix}
+ \right]
+  =
+\left[
+\begin{matrix}
+    23 \\ 
+    17 
+ \end{matrix}
+\right]
+\end{split}\]</div>
+<div class="section" id="python-vector-addition">
+<h4>Python Vector Addition<a class="headerlink" href="#python-vector-addition" title="Permalink to this headline">¶</a></h4>
+<p>Here is where things get tricky in Python.  If you try to add a list or tuple, Python does not do the vector addition as we defined above. In the following examples, notice that the two lists concatenate instead of adding by element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## THIS IS WRONG</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 20, 22, -3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## THIS IS ALSO WRONG</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">22</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 20, 22, -3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To do proper vector math you need either use a special function (we will learn these) or loop over the list.  Here is a very simplistic example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">22</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[23, 17]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For fun, we can define this operation as a function in case we want to use it later:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vecadd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function to add two equal size vectors.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Error - vector lengths do not match&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Lets test it</span>
+
+<span class="n">vecadd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[23, 17]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="f-scalar-vector-multiplication">
+<h3>1.f: Scalar-Vector multiplication<a class="headerlink" href="#f-scalar-vector-multiplication" title="Permalink to this headline">¶</a></h3>
+<p>You can also multiply a scalar by a vector, which is done by multiplying every element of the vector by the scalar.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+3
+\left[
+\begin{matrix}
+    3 \\ 
+    -7 \\
+    10
+ \end{matrix}
+ \right]
+  =
+\left[
+\begin{matrix}
+    9 \\ 
+    -21 \\
+    30
+ \end{matrix}
+\right]
+\end{split}\]</div>
+<div class="section" id="scalar-vector-multiplication-in-python">
+<h4>Scalar-Vector Multiplication in Python<a class="headerlink" href="#scalar-vector-multiplication-in-python" title="Permalink to this headline">¶</a></h4>
+<p>Again, this can be tricky in Python because Python lists do not do what we want.  Consider the following example that just concatenates three copies of the vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##THIS IS WRONG## </span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">z</span><span class="o">*</span><span class="n">a</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, -7, 10, 3, -7, 10, 3, -7, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, in order to do proper vector math in Python you need either use a special function (we will learn these) or loop over the list.</p>
+<p>✅ <strong><span style="color:red">Do This:</span></strong>  See if you can make a simple function with a loop to multiply a scalar by a vector. Name your function <code class="docutils literal notranslate"><span class="pre">sv_multiply</span></code> and test it using the cells below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#put your sv_multiply function here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Test your function here</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">sv_multiply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="mi">3</span><span class="n">c1d0362d478</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">sv_multiply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sv_multiply&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us use the following code to test your functon further.  Note that this uses the <code class="docutils literal notranslate"><span class="pre">anchsercheck</span></code> function provided by your instructors. Please review <span class="xref myst">01–Python_Packages</span> for instructions on installing and using <code class="docutils literal notranslate"><span class="pre">answercheck</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">sv_multiply</span><span class="p">(</span><span class="mi">10</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]),</span><span class="s1">&#39;414a6fea724cafda66ab5971f542adf2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">sv_multiply</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span><span class="s1">&#39;f349ef7cafae77c7c23d6924ec1fd36e&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Assignment_wrap-up"></a></p>
+</div>
+</div>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>4. Assignment wrap-up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credits for the assignment!</strong></p>
+<p><a class="reference external" href="https://cmse.msu.edu/cmse314-pc-survey">Direct Link to Survey Form</a></p>
+<p>If you have trouble with the embedded form, please make sure you log on with your MSU account.</p>
+<p>✅ <strong><span style="color:red">Assignment-Specific QUESTION:</span></strong> Are you able to get the sv_multiply function working in part 1 of this assignment?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><span style="color:red">QUESTION:</span></strong> Summarize what you did in this assignment.</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><span style="color:red">QUESTION:</span></strong>  What questions do you have, if any, about any of the topics discussed in this assignment after working through the jupyter notebook?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><span style="color:red">QUESTION:</span></strong>   How well do you feel this assignment helped you to achieve a better understanding of the above mentioned topic(s)?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><span style="color:red">QUESTION:</span></strong>  What was the <strong>most</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><span style="color:red">QUESTION:</span></strong>  What was the <strong>least</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><span style="color:red">QUESTION:</span></strong>   What kind of additional questions or support, if any, do you feel you need to have a better understanding of the content in this assignment?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><span style="color:red">QUESTION:</span></strong>  Do you have any further questions or comments about this material, or anything else that’s going on in class?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><span style="color:red">QUESTION:</span></strong>  Approximately how long did this pre-class assignment take?</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe </span>
+<span class="sd">	src=&quot;https://cmse.msu.edu/cmse314-pc-survey&quot; </span>
+<span class="sd">	width=&quot;100%&quot; </span>
+<span class="sd">	height=&quot;1000px&quot; </span>
+<span class="sd">	frameborder=&quot;0&quot; </span>
+<span class="sd">	marginheight=&quot;0&quot; </span>
+<span class="sd">	marginwidth=&quot;0&quot;&gt;</span>
+<span class="sd">	Loading...</span>
+<span class="sd">&lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01-CMSE314_introduction_in-class-assignment.html" title="previous page">01 In-Class Assignment: Welcome to Matrix Algebra with computational applications</a>
+    <a class='right-next' id="next-link" href="02-Vectors_in-class-assignment.html" title="next page">02 In-Class Assignment: Vectors</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

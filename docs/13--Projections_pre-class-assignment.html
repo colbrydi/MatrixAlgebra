@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13 Pre-Class Assignment: Projections &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="13 In-Class Assignment: Projections" href="13-Projections_in-class-assignment.html" />
+    <link rel="prev" title="12 In-Class Assignment: Matrix Representation" href="12-Changing_vector_space_in-class-assignment.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Cover.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Class_Prep_Checklist.html">
+   Matrix Algebra class preparation checklist
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-CMSE314_introduction_in-class-assignment.html">
+   01 In-Class Assignment: Welcome to Matrix Algebra with computational applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02--Vectors_pre-class-assignment.html">
+   02 Pre-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Vectors_in-class-assignment.html">
+   02 In-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03--Linear_Equations_pre-class-assignment.html">
+   03 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Linear_Equations_in-class-assignment.html">
+   03 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04--Gauss_Jordan_pre-class-assignment.html">
+   04 Pre-Class Assignment: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Gauss_Jordan_in-class-assignment.html">
+   04 In-Class Assignment: Linear Algebra and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05--Gauss_Jordan2_pre-class-assignment.html">
+   05 Pre-Class Assignment: Gauss-Jordan Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Gauss_Jordan2_in-class-assignment.html">
+   05 In-Class Assignment: Gauss-Jordan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Mechanics_in-class-assignment.html">
+   06 In-Class Assignment: Matrix Multiply
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07--Transformations_pre-class-assignment.html">
+   07 Pre-Class Assignment: Transformation Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transformations_in-class-assignment.html">
+   07 In-Class Assignment: Transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08--Robotics_pre-class-assignment.html">
+   08 Pre-Class Assignment: Robotics and Reference Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Robotics_in-class-assignment.html">
+   08 In-Class Assignment: The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09--Determinants_pre-class-assignment.html">
+   09 Pre-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-Determinats_in-class-assignment.html">
+   09 In-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html">
+   10 Pre-Class Assignment: Eigenvectors and Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Eigenproblems_in-class-assignment.html">
+   10 In-Class Assignment: Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11--Vector_Spaces_pre-class-assignment.html">
+   11 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-Vector_Spaces_in-class-assignment.html">
+   11 In-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12--Change_Basis_pre-class-assignment.html">
+   12 Pre-Class Assignment: Matrix Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Changing_vector_space_in-class-assignment.html">
+   12 In-Class Assignment: Matrix Representation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   13 Pre-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Projections_in-class-assignment.html">
+   13 In-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14--Fundamental_Spaces_pre-class-assignment.html">
+   14 Pre-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Fundamental_Spaces_in-class-assignment.html">
+   14 In-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15--Diagonalization_pre-class-assignment.html">
+   15 Pre-Class Assignment: Diagonalization and Powers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Diagonalization_in-class-assignment.html">
+   15 In-Class Assignment: Diagonalization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16--Linear_Dynamical_Systems_pre-class-assignment.html">
+   16 Pre-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-Linear_Dynamical_Systems_in-class-assignment.html">
+   16 In-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17--Decompositions_pre-class-assignment.html">
+   17 Pre-Class Assignment: Decompositions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-Decompositions_in-class-assignment.html">
+   17 In-Class Assignment: Decompositions and Gaussian Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18--Inner_Product_pre-class-assignment.html">
+   18 Pre-Class Assignment: Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-Inner_Product_in-class-assignment.html">
+   18 In-Class Assignment: Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19--LSF_pre-class-assignment.html">
+   19 Pre-Class Assignment: Least Squares Fit (Regression)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-LSF_in-class-assignment.html">
+   19 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-LSF_Practice_in-class-assignment.html">
+   20 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21--Review_pre-class-assignment.html">
+   21 Pre-Class Assignment: Solve Linear Systems of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-Review_in-class-assignment.html">
+   21 In-Class Assignment: Solve Linear Systems of Equations using QR Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html">
+   Supplemental Materials: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Jupyter_Getting_Started_Guide.html">
+   Jupyter Getting Started Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Python_Packages.html">
+   Python Linear Algebra Packages
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/13--Projections_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/13--Projections_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-this-topic-recommended-in-bold">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-for-today-s-pre-class-assignment">
+   Goals for today’s pre-class assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#orthogonal-and-orthonormal">
+   1. Orthogonal and Orthonormal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-review">
+   2. Code Review
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gram-schmidt">
+   3. Gram-Schmidt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   4. Assignment wrap-up
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pre-class-assignment-projections">
+<h1>13 Pre-Class Assignment: Projections<a class="headerlink" href="#pre-class-assignment-projections" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="readings-for-this-topic-recommended-in-bold">
+<h2>Readings for this topic (Recommended in bold)<a class="headerlink" href="#readings-for-this-topic-recommended-in-bold" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Section VI pg 267-275</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer Subsections OV-GSP pg 154-161</a></p></li>
+<li><p><a class="reference external" href="http://vmls-book.stanford.edu/vmls.pdf"><strong><em>Boyd Section 5.3-5.4 pg 95-102</em></strong></a></p></li>
+</ul>
+</div>
+<div class="section" id="goals-for-today-s-pre-class-assignment">
+<h2>Goals for today’s pre-class assignment<a class="headerlink" href="#goals-for-today-s-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Orthogonal_and_Orthonormal">Orthogonal and Orthonormal</a></p></li>
+<li><p><a class="reference external" href="#Code_Review">Code Review</a></p></li>
+<li><p><a class="reference external" href="#Gram-Schmidt">Gram-Schmidt</a></p></li>
+<li><p><a class="reference external" href="#Assignment_Wrap-up">Assignment Wrap-up</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="Orthogonal_and_Orthonormal"></a></p>
+</div>
+<div class="section" id="orthogonal-and-orthonormal">
+<h2>1. Orthogonal and Orthonormal<a class="headerlink" href="#orthogonal-and-orthonormal" title="Permalink to this headline">¶</a></h2>
+<p><strong>Definition:</strong> A set of vectors is said to be <strong>orthogonal</strong> if every pair of vectors in the set is orthogonal (the dot product is 0).
+The set is <strong>orthonormal</strong> if it is orthogonal and each vector is a unit vector (norm equals 1).</p>
+<p><strong>Result:</strong> An orthogonal set of nonzero vectors is linearly independent.</p>
+<p><strong>Definition:</strong> A basis that is an orthogonal set is called an orthogonal basis.
+A basis that is an orthonormal set is called an orthonormal basis.</p>
+<p><strong>Result:</strong> Let <span class="math notranslate nohighlight">\(\{u_1,\dots,u_n\}\)</span> be an orthonormal basis for a vector space <span class="math notranslate nohighlight">\(V\)</span>.
+Then for any vector <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(V\)</span>, we have
+$<span class="math notranslate nohighlight">\(v=(v\cdot u_1)u_1+(v\cdot u_2)u_2 +\dots + (v\cdot u_n)u_n\)</span>$</p>
+<p><strong>Definition:</strong> A <em>square</em> matrix is <strong>orthogonal</strong> is <span class="math notranslate nohighlight">\(A^{-1}=A^\top\)</span>.</p>
+<p><strong>Result:</strong> Let <span class="math notranslate nohighlight">\(A\)</span> be a square matrix. The following three statements are equivalent.</p>
+<p>(a) <span class="math notranslate nohighlight">\(A\)</span> is orthogonal.</p>
+<p>(b) The column vectors of <span class="math notranslate nohighlight">\(A\)</span> form an orthonormal set.</p>
+<p>(c) The row vectors of <span class="math notranslate nohighlight">\(A\)</span> form an orthonormal set.</p>
+<p>(d) <span class="math notranslate nohighlight">\(A^{-1}\)</span> is orthogonal.</p>
+<p>(e) <span class="math notranslate nohighlight">\(A^\top\)</span> is orthogonal.</p>
+<p><strong>Result:</strong> If <span class="math notranslate nohighlight">\(A\)</span> is an orthogonal matrix, then we have <span class="math notranslate nohighlight">\(|A|=\pm 1\)</span>.</p>
+<p>Consider the following vectors <span class="math notranslate nohighlight">\(u_1, u_2\)</span>, and <span class="math notranslate nohighlight">\(u_3\)</span> that form a basis for <span class="math notranslate nohighlight">\(R^3\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ u_1 = (1,0,0)\]</div>
+<div class="math notranslate nohighlight">
+\[ u_2 = (0, \frac{1}{\sqrt(2)}, \frac{1}{\sqrt(2)})\]</div>
+<div class="math notranslate nohighlight">
+\[ u_3 = (0, \frac{1}{\sqrt(2)}, -\frac{1}{\sqrt(2)})\]</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong>  Show that the vectors <span class="math notranslate nohighlight">\(u_1\)</span>, <span class="math notranslate nohighlight">\(u_2\)</span>, and <span class="math notranslate nohighlight">\(u_3\)</span> are linearly independent (<strong>HINT:</strong> see the pre-class for 0219-Change_Basis):</p>
+<p>Put your answer to the above here</p>
+<p>✅ <strong><font color=red>QUESTION 1:</font></strong> How do you show that <span class="math notranslate nohighlight">\(u_1\)</span>, <span class="math notranslate nohighlight">\(u_2\)</span>, and <span class="math notranslate nohighlight">\(u_3\)</span> are orthogonal?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION 2:</font></strong> How do you show that <span class="math notranslate nohighlight">\(u_1\)</span>, <span class="math notranslate nohighlight">\(u_2\)</span>, and <span class="math notranslate nohighlight">\(u_3\)</span> are normal vectors?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>DO THIS:</font></strong>  Express the vector <span class="math notranslate nohighlight">\(v = (7,5,-1)\)</span> as a linear combination of the <span class="math notranslate nohighlight">\(u_1\)</span>, <span class="math notranslate nohighlight">\(u_2\)</span>, and <span class="math notranslate nohighlight">\(u_3\)</span> basis vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Code_Review"></a></p>
+</div>
+<div class="section" id="code-review">
+<h2>2. Code Review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h2>
+<p>In the next in-class assignment, we are going to avoid some of the more advanced libraries ((i.e. no <code class="docutils literal notranslate"><span class="pre">numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">scipy</span></code> or <code class="docutils literal notranslate"><span class="pre">sympy</span></code>) to try to get a better understanding about what is going on in the math.
+The following code implements some common linear algebra functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Standard Python Libraries only</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the dot product between vectors u and v&#39;&#39;&#39;</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)):</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">temp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Write a quick test to compare the output of the above <code class="docutils literal notranslate"><span class="pre">dot</span></code> function with the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dot function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your test code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the matrix multiplication between m1 and m2 represented as list-of-list.&#39;&#39;&#39;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="n">d</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR - inner dimentions not equal&quot;</span><span class="p">)</span>
+    
+    <span class="c1">#make zero matrix</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="c1">#    print(result)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+                <span class="c1">#print(i,j,k)</span>
+                <span class="c1">#print(&#39;result&#39;, result[i][j])</span>
+                <span class="c1">#print(&#39;m1&#39;, m1[i][k])</span>
+                <span class="c1">#print(&#39;m2&#39;, m2[k][j])</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">m1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">m2</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Write a quick test to compare the output of the above <code class="docutils literal notranslate"><span class="pre">multiply</span></code> function with the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> multiply function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your test code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What is the big-O complexity of the above <code class="docutils literal notranslate"><span class="pre">multiply</span></code> function?</p>
+<p>Put your answer to the above question here.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Line 11 in the provided <code class="docutils literal notranslate"><span class="pre">multiply</span></code> code initializes a matrix of the size of the output matrix as a list of lists with zeros. What is the big-O complexity of line 11?</p>
+<p>Put your answer to the above question here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the norm of vector u&#39;&#39;&#39;</span>
+    <span class="n">nm</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)):</span>
+        <span class="n">nm</span> <span class="o">+=</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">nm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Write a quick test to compare the outputs of the above <code class="docutils literal notranslate"><span class="pre">norm</span></code> function with the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> norm function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your test code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calculate the transpose of matrix A represented as list of lists&#39;&#39;&#39;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">AT</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>    
+        <span class="n">temp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">AT</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">AT</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong> Write a quick test to compare the output of the above <code class="docutils literal notranslate"><span class="pre">transpose</span></code> function with the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> transpose function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your test code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What is the big-O complexity of the above <code class="docutils literal notranslate"><span class="pre">transpose</span></code> function?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Explain any differences in results between the provided functions and their <code class="docutils literal notranslate"><span class="pre">numpy</span></code> counterparts.</p>
+<p>Put your answer to the above question here</p>
+<hr class="docutils" />
+<p><a name="Gram-Schmidt"></a></p>
+</div>
+<div class="section" id="gram-schmidt">
+<h2>3. Gram-Schmidt<a class="headerlink" href="#gram-schmidt" title="Permalink to this headline">¶</a></h2>
+<p>Watch this video for the indroduction of Gram-Schmidt, which we will implement in class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;rHonltF77zI&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/rHonltF77zI?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<p><a name="Assignment_Wrap-up"></a></p>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>4. Assignment wrap-up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credit for the assignment!</strong></p>
+<p><a class="reference external" href="https://cmse.msu.edu/cmse314-pc-survey">Direct Link to Google Form</a></p>
+<p>If you have trouble with the embedded form, please make sure you log on with your MSU google account at <a class="reference external" href="https://googleapps.msu.edu">googleapps.msu.edu</a> and then click on the direct link above.</p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> How do you show that <span class="math notranslate nohighlight">\(u_1\)</span>, <span class="math notranslate nohighlight">\(u_2\)</span>, and <span class="math notranslate nohighlight">\(u_3\)</span> are orthogonal?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Summarize what you did in this assignment.</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What questions do you have, if any, about any of the topics discussed in this assignment after working through the jupyter notebook?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  How well do you feel this assignment helped you to achieve a better understanding of the above mentioned topic(s)?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What was the <strong>most</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What was the <strong>least</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What kind of additional questions or support, if any, do you feel you need to have a better understanding of the content in this assignment?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Do you have any further questions or comments about this material, or anything else that’s going on in class?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Approximately how long did this pre-class assignment take?</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe </span>
+<span class="sd">	src=&quot;https://cmse.msu.edu/cmse314-pc-survey&quot; </span>
+<span class="sd">	width=&quot;100%&quot; </span>
+<span class="sd">	height=&quot;1000px&quot; </span>
+<span class="sd">	frameborder=&quot;0&quot; </span>
+<span class="sd">	marginheight=&quot;0&quot; </span>
+<span class="sd">	marginwidth=&quot;0&quot;&gt;</span>
+<span class="sd">	Loading...</span>
+<span class="sd">&lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe 
+	src="https://cmse.msu.edu/cmse314-pc-survey" 
+	width="100%" 
+	height="1000px" 
+	frameborder="0" 
+	marginheight="0" 
+	marginwidth="0">
+	Loading...
+</iframe>
+</div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="12-Changing_vector_space_in-class-assignment.html" title="previous page">12 In-Class Assignment: Matrix Representation</a>
+    <a class='right-next' id="next-link" href="13-Projections_in-class-assignment.html" title="next page">13 In-Class Assignment: Projections</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

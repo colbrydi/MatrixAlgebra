@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 Pre-Class Assignment: Gauss-Jordan Elimination &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="05 In-Class Assignment: Gauss-Jordan" href="05-Gauss_Jordan2_in-class-assignment.html" />
+    <link rel="prev" title="04 In-Class Assignment: Linear Algebra and Python" href="04-Gauss_Jordan_in-class-assignment.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Cover.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Class_Prep_Checklist.html">
+   Matrix Algebra class preparation checklist
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-CMSE314_introduction_in-class-assignment.html">
+   01 In-Class Assignment: Welcome to Matrix Algebra with computational applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02--Vectors_pre-class-assignment.html">
+   02 Pre-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Vectors_in-class-assignment.html">
+   02 In-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03--Linear_Equations_pre-class-assignment.html">
+   03 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Linear_Equations_in-class-assignment.html">
+   03 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04--Gauss_Jordan_pre-class-assignment.html">
+   04 Pre-Class Assignment: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Gauss_Jordan_in-class-assignment.html">
+   04 In-Class Assignment: Linear Algebra and Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   05 Pre-Class Assignment: Gauss-Jordan Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Gauss_Jordan2_in-class-assignment.html">
+   05 In-Class Assignment: Gauss-Jordan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Mechanics_in-class-assignment.html">
+   06 In-Class Assignment: Matrix Multiply
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07--Transformations_pre-class-assignment.html">
+   07 Pre-Class Assignment: Transformation Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transformations_in-class-assignment.html">
+   07 In-Class Assignment: Transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08--Robotics_pre-class-assignment.html">
+   08 Pre-Class Assignment: Robotics and Reference Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Robotics_in-class-assignment.html">
+   08 In-Class Assignment: The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09--Determinants_pre-class-assignment.html">
+   09 Pre-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-Determinats_in-class-assignment.html">
+   09 In-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html">
+   10 Pre-Class Assignment: Eigenvectors and Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Eigenproblems_in-class-assignment.html">
+   10 In-Class Assignment: Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11--Vector_Spaces_pre-class-assignment.html">
+   11 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-Vector_Spaces_in-class-assignment.html">
+   11 In-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12--Change_Basis_pre-class-assignment.html">
+   12 Pre-Class Assignment: Matrix Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Changing_vector_space_in-class-assignment.html">
+   12 In-Class Assignment: Matrix Representation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13--Projections_pre-class-assignment.html">
+   13 Pre-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Projections_in-class-assignment.html">
+   13 In-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14--Fundamental_Spaces_pre-class-assignment.html">
+   14 Pre-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Fundamental_Spaces_in-class-assignment.html">
+   14 In-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15--Diagonalization_pre-class-assignment.html">
+   15 Pre-Class Assignment: Diagonalization and Powers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Diagonalization_in-class-assignment.html">
+   15 In-Class Assignment: Diagonalization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16--Linear_Dynamical_Systems_pre-class-assignment.html">
+   16 Pre-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-Linear_Dynamical_Systems_in-class-assignment.html">
+   16 In-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17--Decompositions_pre-class-assignment.html">
+   17 Pre-Class Assignment: Decompositions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-Decompositions_in-class-assignment.html">
+   17 In-Class Assignment: Decompositions and Gaussian Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18--Inner_Product_pre-class-assignment.html">
+   18 Pre-Class Assignment: Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-Inner_Product_in-class-assignment.html">
+   18 In-Class Assignment: Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19--LSF_pre-class-assignment.html">
+   19 Pre-Class Assignment: Least Squares Fit (Regression)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-LSF_in-class-assignment.html">
+   19 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-LSF_Practice_in-class-assignment.html">
+   20 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21--Review_pre-class-assignment.html">
+   21 Pre-Class Assignment: Solve Linear Systems of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-Review_in-class-assignment.html">
+   21 In-Class Assignment: Solve Linear Systems of Equations using QR Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html">
+   Supplemental Materials: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Jupyter_Getting_Started_Guide.html">
+   Jupyter Getting Started Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Python_Packages.html">
+   Python Linear Algebra Packages
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/05--Gauss_Jordan2_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/05--Gauss_Jordan2_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recommended-further-readings-for-this-pre-class-assignment">
+   Recommended further readings for this pre-class assignment.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-for-today-s-pre-class-assignment">
+   Goals for today’s pre-class assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sympy-rref-function">
+   1. Sympy RREF function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-vector-length-normalization-distance-and-dot">
+   2. Calculating Vector Length, Normalization, Distance and Dot
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vector">
+     Vector:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#length">
+     Length:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normalization">
+     Normalization:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance">
+     Distance:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dot-product">
+     Dot Product:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-spaces-in-r-n">
+   3. Vector spaces in
+   <span class="math notranslate nohighlight">
+    \(R^n\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   4. Assignment wrap up
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#congratulations-we-re-done">
+     Congratulations, we’re done!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#course-resources">
+     Course Resources:
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pre-class-assignment-gauss-jordan-elimination">
+<h1>05 Pre-Class Assignment: Gauss-Jordan Elimination<a class="headerlink" href="#pre-class-assignment-gauss-jordan-elimination" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="recommended-further-readings-for-this-pre-class-assignment">
+<h2>Recommended further readings for this pre-class assignment.<a class="headerlink" href="#recommended-further-readings-for-this-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong><em><a class="reference external" href="http://vmls-book.stanford.edu/vmls.pdf">Boyd - Section 1.4-1.5 pg 19-24</a></em></strong></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer - Subsection IP pg 149-152</a></p></li>
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron - Chapter 1.II.2 pg 43-47</a></p></li>
+</ul>
+</div>
+<div class="section" id="goals-for-today-s-pre-class-assignment">
+<h2>Goals for today’s pre-class assignment<a class="headerlink" href="#goals-for-today-s-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Sympy-RREF-function">Sympy RREF function</a></p></li>
+<li><p><a class="reference external" href="#Calculating-Vector-Length,-Normalization,-Distance-and-Dot">Calculating Vector Length, Normalization, Distance and Dot</a></p></li>
+<li><p><a class="reference external" href="#Vector-spaces-in-Rn">Vector spaces in <span class="math notranslate nohighlight">\(R_n\)</span></a></p></li>
+<li><p><a class="reference external" href="#Assignment-wrap-up">Assignment wrap up</a></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Load Useful Python Libraries </span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name=Sympy-RREF-function></a></p>
+</div>
+<div class="section" id="sympy-rref-function">
+<h2>1. Sympy RREF function<a class="headerlink" href="#sympy-rref-function" title="Permalink to this headline">¶</a></h2>
+<p>In class we talked about the Python <code class="docutils literal notranslate"><span class="pre">sympy</span></code> library which has a “reduced row echelon form” (rref) function that runs a much more efficient version of the Gauss-Jordan function.  To use the <code class="docutils literal notranslate"><span class="pre">rref</span></code> function you must first convert your matrix into a <code class="docutils literal notranslate"><span class="pre">sympy.Matrix</span></code> and then run the function. For example, lets do this for the following  matrix <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">30</span> <span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">60</span> <span class="p">],</span>  <span class="p">[</span><span class="mf">20.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">650</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05--Gauss_Jordan2_pre-class-assignment_6_0.png" src="_images/05--Gauss_Jordan2_pre-class-assignment_6_0.png" />
+</div>
+</div>
+<p>This function outputs two values (a matrix and a tuple).  For the purposes of this class we only care about the matrix.  I generally use the following syntax when using <code class="docutils literal notranslate"><span class="pre">rref()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05--Gauss_Jordan2_pre-class-assignment_8_0.png" src="_images/05--Gauss_Jordan2_pre-class-assignment_8_0.png" />
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>: Although we do not use it often in this course, what does the second output of the <code class="docutils literal notranslate"><span class="pre">rref</span></code> mean (i.e. what does <code class="docutils literal notranslate"><span class="pre">(0,1)</span></code> mean? <strong><em>hint</em></strong>: read the documentation for <code class="docutils literal notranslate"><span class="pre">rref</span></code>.</p>
+<p><strong><em>Put your answer to the above question here</em></strong></p>
+<p>How lets consider the multi-week example from a previous assignment, where:</p>
+<p><strong>Week 1:</strong>
+$<span class="math notranslate nohighlight">\( c + b = 30 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( 20c + 25b = 690 \)</span>$</p>
+<p><strong>Week 2:</strong>
+$<span class="math notranslate nohighlight">\( c + b = 35 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( 20c + 25b = 750 \)</span>$</p>
+<p><strong>Week 3:</strong>
+$<span class="math notranslate nohighlight">\( c + b = 30 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( 20c + 25b = 650 \)</span>$</p>
+<p>✅<strong><font color=red>DO THIS</font></strong>: Write a <span class="math notranslate nohighlight">\(2 \times 5\)</span> augmented matrix representing the 6 equations above.  (you can just copy and paste this from the pre-class if you got it right there), Name your Matrix <span class="math notranslate nohighlight">\(G\)</span> to verify your answer using the <code class="docutils literal notranslate"><span class="pre">checkanswer</span></code> function below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following function will apply the rref function to the matrix <span class="math notranslate nohighlight">\(G\)</span> and store it in a variable called, wait for it,  <code class="docutils literal notranslate"><span class="pre">rref</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rref</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+<span class="n">rref</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">9</span><span class="n">fcd3b8096ea</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rref</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">rref</span>
+
+<span class="ne">NameError</span>: name &#39;G&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>: Given the above,  How many hours did Giselle work as a capenter for the three weeks and how many hours did she work as a blacksmith.  Fill in your answers below to check if you are correct:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Replace the zeros with your answers</span>
+<span class="n">carpenter_week1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">carpenter_week2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">carpenter_week3</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">blacksmith_week1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">blacksmith_week2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">blacksmith_week3</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">hours</span> <span class="o">=</span> <span class="p">[[</span><span class="n">carpenter_week1</span><span class="p">,</span> <span class="n">carpenter_week2</span><span class="p">,</span> <span class="n">carpenter_week3</span><span class="p">],</span>
+         <span class="p">[</span><span class="n">blacksmith_week1</span><span class="p">,</span> <span class="n">blacksmith_week2</span><span class="p">,</span> <span class="n">blacksmith_week3</span><span class="p">]]</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">hours</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span><span class="s1">&#39;b2d4a73cac3c95204f5ed743b507093a&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name=Calculating-Vector-Length,-Normalization,-Distance-and-Dot></a></p>
+</div>
+<div class="section" id="calculating-vector-length-normalization-distance-and-dot">
+<h2>2. Calculating Vector Length, Normalization, Distance and Dot<a class="headerlink" href="#calculating-vector-length-normalization-distance-and-dot" title="Permalink to this headline">¶</a></h2>
+<p>In this section we will cover some of the basic vector math we will use this semester.</p>
+<p>✅<strong><font color=red>DO THIS</font></strong>:  Watch the following summary video about calculation of vector length, Normalizing vectors and the distance between points then answer the questions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;S0BIhbV6reI&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="vector">
+<h3>Vector:<a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[(a_1, a_2, \dots a_n)\]</div>
+<div class="math notranslate nohighlight">
+\[(b_1, b_2, \dots b_n)\]</div>
+</div>
+<div class="section" id="length">
+<h3>Length:<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[length = \sqrt{a_1^2 + a_2^2 + \dots + a_n^2}\]</div>
+</div>
+<div class="section" id="normalization">
+<h3>Normalization:<a class="headerlink" href="#normalization" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{1}{length}(a_1, a_2, \dots a_n)\]</div>
+</div>
+<div class="section" id="distance">
+<h3>Distance:<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[distance = \sqrt{(a_1 - b_1)^2 + (a_2 - b_2)^2 + \dots + (a_n - b_n)^2}\]</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>:   Calculate length of vector (4.5, 2.6, 3.3, 4.1)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="s1">&#39;695da96d4a240e54bd8c61e75ff5a3e2&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>: What is a normalized form of the vector (4.5, 2.6, 3.3, 4.1)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">norm</span><span class="p">,</span><span class="s1">&#39;12c94f16ba11222987ca20006790182d&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>:  What is the distance between (4.5, 2.6, 3.3, 4.1) and (4, 3, 2, 1)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span><span class="s1">&#39;d73defc9a514eb70434190e1757f5bb8&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dot-product">
+<h3>Dot Product:<a class="headerlink" href="#dot-product" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[dot(a,b) = a_1b_1 + a_2b_2 +\dots + a_nb_n\]</div>
+<p>✅<strong><font color=red>DO THIS</font></strong>:  Review <strong><em>Sections 1.4 and 1.5 of the Boyd and Vandenberghe</em></strong> text and answer the questions below.</p>
+<p>✅<strong><font color=red>QUESTION</font></strong>:   What is the dot product between <span class="math notranslate nohighlight">\(u = [ 1, 7, 9, 11]\)</span> and <span class="math notranslate nohighlight">\(v = [ 7, 1, 2, 2]\)</span>  (Store the information in a variable called <code class="docutils literal notranslate"><span class="pre">uv</span></code>)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">uv</span><span class="p">,</span><span class="s1">&#39;48044bf058c2d7d21b311b173a0ca7e5&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>:  What is the norm of vector <span class="math notranslate nohighlight">\(u\)</span> defined above (store this value in a variabled called <code class="docutils literal notranslate"><span class="pre">n</span></code>)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;96078eb552924d7bdb9e67f9ecab88c1&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>:  What is the distance between points <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> defined above. (put your answer in a variable named <code class="docutils literal notranslate"><span class="pre">d</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="s1">&#39;71f49beeb28061bc60eb3d9966497416&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name=Vector-spaces-in-Rn></a></p>
+</div>
+</div>
+<div class="section" id="vector-spaces-in-r-n">
+<h2>3. Vector spaces in <span class="math notranslate nohighlight">\(R^n\)</span><a class="headerlink" href="#vector-spaces-in-r-n" title="Permalink to this headline">¶</a></h2>
+<p>There are two properties that define a vector space these are:</p>
+<ul class="simple">
+<li><p>Closed under addition</p></li>
+<li><p>Closed under scalar multiplication</p></li>
+</ul>
+<p>For now we will consider vector spaces in <span class="math notranslate nohighlight">\(R^n\)</span> which are just vectors of real numbers (ex: [10,20,3.2], [5,8,32], [8,-0.7], etc) where <span class="math notranslate nohighlight">\(n\)</span> is just the length of the vector (ex: 3, 3, and 2 in the earlier example). In the general case a vector does not have to be composed of real numbers but can be almost any type of object as long as it maintains the two above properties, we will get into this concept later in the semester. In the case of real number the above concepts can be described as follows:</p>
+<ul class="simple">
+<li><p>Closed under addition means that if we add any two real vectors vectors (i.e. <span class="math notranslate nohighlight">\(u,v \in R^n\)</span>) then the result is also in <span class="math notranslate nohighlight">\(R^n\)</span>). This is easy to understand if you think about adding any two real vectors there is no way to get a result that is not also a real vector. A way to say this mathematically is as follows:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{if } u,v \in R^n\]</div>
+<div class="math notranslate nohighlight">
+\[\text{then } u+v \in R^n\]</div>
+<ul class="simple">
+<li><p>Closed under scalar multiplication means that if we have any scalar number (<span class="math notranslate nohighlight">\(s \in R\)</span>) and we multiply it by a real vector (<span class="math notranslate nohighlight">\(v \in R^n\)</span>) then the result is also a vector in <span class="math notranslate nohighlight">\(R^n\)</span>.  Since multiplying a real number by a real number results in a real number this one is also true. Or we can say it as follows:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{if } s \in R \text{ and } v \in R^n\]</div>
+<div class="math notranslate nohighlight">
+\[\text{then } sv \in R^n\]</div>
+<p>The following are some properties of vector addition and multiplication for vectors <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(u + v = v + u\)</span> Commutative property</p></li>
+<li><p><span class="math notranslate nohighlight">\(u + (v + w) = (u + v) + w\)</span> Associative property</p></li>
+<li><p><span class="math notranslate nohighlight">\(u+0 = 0 + u = u\)</span> Property of zero vector</p></li>
+<li><p><span class="math notranslate nohighlight">\(u + (-u) = 0\)</span> Property of the negative vector</p></li>
+<li><p><span class="math notranslate nohighlight">\(c(u+v) = cu + cv\)</span> Distributive properties</p></li>
+<li><p><span class="math notranslate nohighlight">\((c+d)u = cu+du\)</span> Distributive Properties</p></li>
+<li><p><span class="math notranslate nohighlight">\(c(du) = (cd)u\)</span> Distributed Properties</p></li>
+<li><p><span class="math notranslate nohighlight">\(1u = u\)</span> Scalar multiplication by 1</p></li>
+</ol>
+<p>✅<strong><font color=red>QUESTION</font></strong>: Compute the following linear combinations for <span class="math notranslate nohighlight">\(u = (1,2), v = (4,-1)\)</span>, and <span class="math notranslate nohighlight">\(w = (-3,5)\)</span>.</p>
+<p><strong><font color=red>(a)</font></strong> <span class="math notranslate nohighlight">\(a = u+w\)</span></p>
+<p>Put your answer here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;af464d466ae982f2cd4461af494e86d6&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color=red>(b)</font></strong> <span class="math notranslate nohighlight">\(a = 2u+v\)</span></p>
+<p>Put your answer here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;393468eff8c6ba5d27b7d0aa1b18f929&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong><font color=red>(c)</font></strong> <span class="math notranslate nohighlight">\(a = u+3w\)</span></p>
+<p>Put your answer here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;d5e5ca43a86501bcde09b1cbc0ba49b5&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name=Assignment-wrap-up></a></p>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>4. Assignment wrap up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credit for the assignment!</strong></p>
+<p><a class="reference external" href="https://cmse.msu.edu/cmse314-pc-survey">Direct Link to Google Form</a></p>
+<p>If you have trouble with the embedded form, please make sure you log on with your MSU google account at <a class="reference external" href="https://googleapps.msu.edu">googleapps.msu.edu</a> and then click on the direct link above.</p>
+<p>✅ <font color=red><strong>Assignment-Specific QUESTION:</strong></font> What is the distance between (4.5, 2.6, 3.3, 4.1) and (4, 3, 2, 1)?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <font color=red><strong>QUESTION:</strong></font>  Summarize what you did in this assignment.</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <font color=red><strong>QUESTION:</strong></font>  What questions do you have, if any, about any of the topics discussed in this assignment after working through the jupyter notebook?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <font color=red><strong>QUESTION:</strong></font>  How well do you feel this assignment helped you to achieve a better understanding of the above mentioned topic(s)?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <font color=red><strong>QUESTION:</strong></font> What was the <strong>most</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <font color=red><strong>QUESTION:</strong></font> What was the <strong>least</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <font color=red><strong>QUESTION:</strong></font>  What kind of additional questions or support, if any, do you feel you need to have a better understanding of the content in this assignment?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <font color=red><strong>QUESTION:</strong></font>  Do you have any further questions or comments about this material, or anything else that’s going on in class?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <font color=red><strong>QUESTION:</strong></font> Approximately how long did this pre-class assignment take?</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe </span>
+<span class="sd">	src=&quot;https://cmse.msu.edu/cmse314-pc-survey&quot; </span>
+<span class="sd">	width=&quot;100%&quot; </span>
+<span class="sd">	height=&quot;1000px&quot; </span>
+<span class="sd">	frameborder=&quot;0&quot; </span>
+<span class="sd">	marginheight=&quot;0&quot; </span>
+<span class="sd">	marginwidth=&quot;0&quot;&gt;</span>
+<span class="sd">	Loading...</span>
+<span class="sd">&lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="congratulations-we-re-done">
+<h3>Congratulations, we’re done!<a class="headerlink" href="#congratulations-we-re-done" title="Permalink to this headline">¶</a></h3>
+<p>###EndPreClass###</p>
+</div>
+<div class="section" id="course-resources">
+<h3>Course Resources:<a class="headerlink" href="#course-resources" title="Permalink to this headline">¶</a></h3>
+<p>Written by Dr. Dirk Colbry, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="04-Gauss_Jordan_in-class-assignment.html" title="previous page">04 In-Class Assignment: Linear Algebra and Python</a>
+    <a class='right-next' id="next-link" href="05-Gauss_Jordan2_in-class-assignment.html" title="next page">05 In-Class Assignment: Gauss-Jordan</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

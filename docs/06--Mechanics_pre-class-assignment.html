@@ -1,0 +1,1067 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Readings for this topic (Recommended in bold) &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="06 In-Class Assignment: Matrix Multiply" href="06-Mechanics_in-class-assignment.html" />
+    <link rel="prev" title="05 In-Class Assignment: Gauss-Jordan" href="05-Gauss_Jordan2_in-class-assignment.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Cover.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Class_Prep_Checklist.html">
+   Matrix Algebra class preparation checklist
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-CMSE314_introduction_in-class-assignment.html">
+   01 In-Class Assignment: Welcome to Matrix Algebra with computational applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02--Vectors_pre-class-assignment.html">
+   02 Pre-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Vectors_in-class-assignment.html">
+   02 In-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03--Linear_Equations_pre-class-assignment.html">
+   03 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Linear_Equations_in-class-assignment.html">
+   03 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04--Gauss_Jordan_pre-class-assignment.html">
+   04 Pre-Class Assignment: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Gauss_Jordan_in-class-assignment.html">
+   04 In-Class Assignment: Linear Algebra and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05--Gauss_Jordan2_pre-class-assignment.html">
+   05 Pre-Class Assignment: Gauss-Jordan Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Gauss_Jordan2_in-class-assignment.html">
+   05 In-Class Assignment: Gauss-Jordan
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Mechanics_in-class-assignment.html">
+   06 In-Class Assignment: Matrix Multiply
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07--Transformations_pre-class-assignment.html">
+   07 Pre-Class Assignment: Transformation Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transformations_in-class-assignment.html">
+   07 In-Class Assignment: Transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08--Robotics_pre-class-assignment.html">
+   08 Pre-Class Assignment: Robotics and Reference Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Robotics_in-class-assignment.html">
+   08 In-Class Assignment: The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09--Determinants_pre-class-assignment.html">
+   09 Pre-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-Determinats_in-class-assignment.html">
+   09 In-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html">
+   10 Pre-Class Assignment: Eigenvectors and Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Eigenproblems_in-class-assignment.html">
+   10 In-Class Assignment: Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11--Vector_Spaces_pre-class-assignment.html">
+   11 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-Vector_Spaces_in-class-assignment.html">
+   11 In-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12--Change_Basis_pre-class-assignment.html">
+   12 Pre-Class Assignment: Matrix Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Changing_vector_space_in-class-assignment.html">
+   12 In-Class Assignment: Matrix Representation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13--Projections_pre-class-assignment.html">
+   13 Pre-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Projections_in-class-assignment.html">
+   13 In-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14--Fundamental_Spaces_pre-class-assignment.html">
+   14 Pre-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Fundamental_Spaces_in-class-assignment.html">
+   14 In-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15--Diagonalization_pre-class-assignment.html">
+   15 Pre-Class Assignment: Diagonalization and Powers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Diagonalization_in-class-assignment.html">
+   15 In-Class Assignment: Diagonalization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16--Linear_Dynamical_Systems_pre-class-assignment.html">
+   16 Pre-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-Linear_Dynamical_Systems_in-class-assignment.html">
+   16 In-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17--Decompositions_pre-class-assignment.html">
+   17 Pre-Class Assignment: Decompositions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-Decompositions_in-class-assignment.html">
+   17 In-Class Assignment: Decompositions and Gaussian Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18--Inner_Product_pre-class-assignment.html">
+   18 Pre-Class Assignment: Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-Inner_Product_in-class-assignment.html">
+   18 In-Class Assignment: Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19--LSF_pre-class-assignment.html">
+   19 Pre-Class Assignment: Least Squares Fit (Regression)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-LSF_in-class-assignment.html">
+   19 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-LSF_Practice_in-class-assignment.html">
+   20 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21--Review_pre-class-assignment.html">
+   21 Pre-Class Assignment: Solve Linear Systems of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-Review_in-class-assignment.html">
+   21 In-Class Assignment: Solve Linear Systems of Equations using QR Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html">
+   Supplemental Materials: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Jupyter_Getting_Started_Guide.html">
+   Jupyter Getting Started Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Python_Packages.html">
+   Python Linear Algebra Packages
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/06--Mechanics_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/06--Mechanics_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goals-for-today-s-pre-class-assignment">
+     Goals for today’s pre-class assignment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dot-product-review">
+     1. Dot Product Review
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-multiply">
+     2. Matrix Multiply
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identity-matrix">
+     3. Identity Matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elementary-matrices">
+     4. Elementary Matrices
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-many-systems-at-the-same-time">
+     5. Solving Many Systems (at the same time)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-wrap-up">
+     6. Assignment wrap up
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="readings-for-this-topic-recommended-in-bold">
+<h1>Readings for this topic (Recommended in bold)<a class="headerlink" href="#readings-for-this-topic-recommended-in-bold" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 3.IV pg 224-240</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer Chapter M pg 162-206 &amp;  EM 340-345</a></p></li>
+<li><p><a class="reference external" href="http://vmls-book.stanford.edu/vmls.pdf"><strong><em>Boyd Section 6.2,-3, 10.1  pg 113-118, 177-183</em></strong></a></p></li>
+</ul>
+</div>
+<div class="section" id="pre-class-assignment-matrix-mechanics">
+<h1>06 Pre-Class Assignment: Matrix Mechanics<a class="headerlink" href="#pre-class-assignment-matrix-mechanics" title="Permalink to this headline">¶</a></h1>
+<p>In this assignment, we will explore the mechanics of vectors and matrices.
+These mechanics will be needed in future assignments.
+Make sure you understand and come to class with any questions.</p>
+<div class="section" id="goals-for-today-s-pre-class-assignment">
+<h2>Goals for today’s pre-class assignment<a class="headerlink" href="#goals-for-today-s-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Dot-Product-Review">Dot Product Review</a></p></li>
+<li><p><a class="reference external" href="#Matrix-Multiply">Matrix Multiply</a></p></li>
+<li><p><a class="reference external" href="#Identity-Matrix">Identity Matrix</a></p></li>
+<li><p><a class="reference external" href="#Elementary-Matrices">Elementary Matrices</a></p></li>
+<li><p><a class="reference external" href="#Solving-Many-Systems-(at-the-same-time)">Solving Many Systems (at the same time)</a></p></li>
+<li><p><a class="reference external" href="#Assignment-wrap-up">Assignment wrap up</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name=Dot-Product-Review></a></p>
+</div>
+<div class="section" id="dot-product-review">
+<h2>1. Dot Product Review<a class="headerlink" href="#dot-product-review" title="Permalink to this headline">¶</a></h2>
+<p>We covered inner products a while ago.  This assignment will extend the idea of inner products to matrix multiplication. As a reminder, <strong><em>Sections 1.4</em></strong> of the <a class="reference external" href="http://vmls-book.stanford.edu/">Stephen Boyd and Lieven Vandenberghe Applied Linear algebra book</a> covers the dot product.  Here is a quick review:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;ZZjWqxKqJwQ&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/ZZjWqxKqJwQ?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p>Given two vectors <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(R^n\)</span> (i.e. they have the same length), the “dot” product operation multiplies all of the corresponding elements  and then adds them together. Ex:</p>
+<div class="math notranslate nohighlight">
+\[u = [u_1, u_2, \dots, u_n]\]</div>
+<div class="math notranslate nohighlight">
+\[v = [v_1, v_2, \dots, v_n]\]</div>
+<div class="math notranslate nohighlight">
+\[u \cdot v = u_1 v_1 + u_2  v_2 + \dots + u_nv_n\]</div>
+<p>or:</p>
+<div class="math notranslate nohighlight">
+\[ u \cdot v = \sum^n_{i=1} u_i v_i\]</div>
+<p>This can easily be written as python code as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)):</span>
+    <span class="n">solution</span> <span class="o">+=</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+<span class="n">solution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">numpy</span></code> the dot product between two vectors can be calculated using the following built in function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>: What is the dot product of any vector and the zero vector?</p>
+<p>Put your answer here</p>
+<p>✅<strong><font color=red>QUESTION</font></strong>: What happens to the <code class="docutils literal notranslate"><span class="pre">numpy.dot</span></code> function if the two input vectors are not the same size?</p>
+<p>Put your answer here</p>
+<hr class="docutils" />
+<p><a name=Matrix-Multiply></a></p>
+</div>
+<div class="section" id="matrix-multiply">
+<h2>2. Matrix Multiply<a class="headerlink" href="#matrix-multiply" title="Permalink to this headline">¶</a></h2>
+<p>Read <strong><em>Section 10.1</em></strong> of the <a class="reference external" href="http://vmls-book.stanford.edu/">Stephen Boyd and Lieven Vandenberghe Applied Linear algebra book</a> which covers Matrix Multiplication.  Here is a quick review:</p>
+<p>Two matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> can be multiplied together if and only if their “inner dimensions” are the same, i.e. <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(n\times d\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is <span class="math notranslate nohighlight">\(d\times m\)</span> (note that the columns of <span class="math notranslate nohighlight">\(A\)</span> and the rows of <span class="math notranslate nohighlight">\(B\)</span> are both <span class="math notranslate nohighlight">\(d\)</span>).
+Multiplication of these two matrices results in a third matrix <span class="math notranslate nohighlight">\(C\)</span> with the dimension of <span class="math notranslate nohighlight">\(n\times m\)</span>.
+Note that <span class="math notranslate nohighlight">\(C\)</span> has the same first dimension as <span class="math notranslate nohighlight">\(A\)</span> and the same second dimension as <span class="math notranslate nohighlight">\(B\)</span>. i.e <span class="math notranslate nohighlight">\(n\times m\)</span>.</p>
+<p><em><strong>The <span class="math notranslate nohighlight">\((i,j)\)</span> element in <span class="math notranslate nohighlight">\(C\)</span> is the dot product of the <span class="math notranslate nohighlight">\(i\)</span>th row of <span class="math notranslate nohighlight">\(A\)</span> and the <span class="math notranslate nohighlight">\(j\)</span>th column of <span class="math notranslate nohighlight">\(B\)</span>.</strong></em></p>
+<p>The <span class="math notranslate nohighlight">\(i\)</span>th row of <span class="math notranslate nohighlight">\(A\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[ [ a_{i1},  a_{i2},  \dots , a_{id} ],\]</div>
+<p>and the <span class="math notranslate nohighlight">\(j\)</span>th column of <span class="math notranslate nohighlight">\(B\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{matrix}
+    b_{1j}\\ 
+    b_{2j}\\
+    \vdots \\
+    b_{dj}
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>So, the dot product of these two vectors is:</p>
+<div class="math notranslate nohighlight">
+\[c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \dots + a_{id}b_{dj}\]</div>
+<p>Consider the simple <span class="math notranslate nohighlight">\(2\times 2\)</span> example below:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    a &amp; b\\ 
+    c &amp; d   
+\end{matrix}
+\right] 
+\left[
+\begin{matrix}
+    w &amp; x\\ 
+    y &amp; z   
+\end{matrix}
+\right] 
+=
+\left[
+\begin{matrix}
+    aw+by &amp; ax+bz\\ 
+    cw + dy &amp; cx + dz   
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Let’s do an example using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and show the results using <code class="docutils literal notranslate"><span class="pre">sympy</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Trick to make matrixes look nice in jupyter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_17_0.png" src="_images/06--Mechanics_pre-class-assignment_17_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_18_0.png" src="_images/06--Mechanics_pre-class-assignment_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_19_0.png" src="_images/06--Mechanics_pre-class-assignment_19_0.png" />
+</div>
+</div>
+<p>✅<strong><font color=red>DO THIS</font></strong>: Given two matrices; <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, show that order matters when doing a matrix multiply. That is, in general, <span class="math notranslate nohighlight">\(AB \neq BA\)</span>.
+Show this with an example using two <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices and <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now consider the following set of linear equations:</p>
+<div class="math notranslate nohighlight">
+\[ 3x_1-3x_2+9x_3 =~24\]</div>
+<div class="math notranslate nohighlight">
+\[ 2x_1-2x_2+7x_3 =~17\]</div>
+<div class="math notranslate nohighlight">
+\[ -x_1+2x_2-4x_3 = -11\]</div>
+<p>We typically write this in the following form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    3 &amp; -3 &amp; 9\\ 
+    2 &amp; -2 &amp; 7 \\
+    -1 &amp; 2 &amp; -4
+\end{matrix}
+\right] 
+\left[
+\begin{matrix}
+    x_1 \\ 
+    x_2 \\
+    x_3
+\end{matrix}
+\right] 
+=
+\left[
+\begin{matrix}
+    24\\ 
+    17 \\
+    -11
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Notice how doing the matrix multiplication results back into the original system of equations. If we rename the three matrices from above to <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(b\)</span> (note <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are lowercase because they are column vectors) then we get the main equation for this class, which is:</p>
+<div class="math notranslate nohighlight">
+\[Ax=b\]</div>
+<p>Note the information about the equation doesn’t change when you change formats.  For example, the equation format, the augmented format and the <span class="math notranslate nohighlight">\(Ax=b\)</span> format contain the same information.   However, we use the different formats for different applications.  Consider the <code class="docutils literal notranslate"><span class="pre">numpy.linalg.solve</span></code> function which assumes the format <span class="math notranslate nohighlight">\(Ax=b\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_24_0.png" src="_images/06--Mechanics_pre-class-assignment_24_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">24</span><span class="p">],</span> <span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_25_0.png" src="_images/06--Mechanics_pre-class-assignment_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Calculate answer to x using numpy</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_26_0.png" src="_images/06--Mechanics_pre-class-assignment_26_0.png" />
+</div>
+</div>
+<p>✅<strong><font color=red>QUESTION</font></strong>: What is the size of the matrix resulting from multiplying a <span class="math notranslate nohighlight">\(10 \times 40\)</span> matrix with a <span class="math notranslate nohighlight">\(40 \times 3\)</span> matrix?</p>
+<p>Put your answer here</p>
+<hr class="docutils" />
+<p><a name=Identity-Matrix></a></p>
+</div>
+<div class="section" id="identity-matrix">
+<h2>3. Identity Matrix<a class="headerlink" href="#identity-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Read sections <strong><em>Sections 6.2 and 6.3</em></strong> of the <a class="reference external" href="http://vmls-book.stanford.edu/">Stephen Boyd and Lieven Vandenberghe Applied Linear algebra book</a> covers more about matrixes.</p>
+<p>An identity matrix is a special square matrix (i.e. <span class="math notranslate nohighlight">\(n=m\)</span>) that has ones in the diagonal and zeros other places. For example the following is a <span class="math notranslate nohighlight">\(3\times 3\)</span> identity matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+I_3 = 
+\left[
+\begin{matrix}
+    1 &amp; 0 &amp; 0\\ 
+    0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>We always denote the identity matrix with a capital <span class="math notranslate nohighlight">\(I\)</span>. Often a subscript is used to denote the value of <span class="math notranslate nohighlight">\(n\)</span>. The notations <span class="math notranslate nohighlight">\(I_{nxn}\)</span> and <span class="math notranslate nohighlight">\(I_n\)</span> are both acceptable.</p>
+<p>An identity matrix is similar to the number 1 for scalar values.  I.e. multiplying a square matrix <span class="math notranslate nohighlight">\(A_{nxn}\)</span> by its corresponding identity matrix <span class="math notranslate nohighlight">\(I_{nxn}\)</span> results in itself <span class="math notranslate nohighlight">\(A_{nxn}\)</span>.</p>
+<p>✅<strong><font color=red>DO THIS</font></strong>: Pick a random <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix and multiply it by the <span class="math notranslate nohighlight">\(3\times 3\)</span> Identity matrix and show you get the same answer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Consider two square matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> of size <span class="math notranslate nohighlight">\(n \times n\)</span>.  <span class="math notranslate nohighlight">\(AB = BA\)</span> is <strong>NOT</strong> true for many <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.  Describe an example where <span class="math notranslate nohighlight">\(AB = BA\)</span> is true? Explain why the equality works for your example.</p>
+<p>Put your answer here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> The following matrix is symmetric. What are the values for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>? (<strong><em>HINT</em></strong> you may want to look online or in the Boyd book for a definition of matrix symmetry)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{matrix}
+    3 &amp; 5 &amp; a\\ 
+    b &amp; 8 &amp; 4 \\
+    -3 &amp; c &amp; 3
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>Put your answer here:</p>
+<p>a =</p>
+<p>b =</p>
+<p>c =</p>
+<hr class="docutils" />
+<p><a name=Elementary-Matrices></a></p>
+</div>
+<div class="section" id="elementary-matrices">
+<h2>4. Elementary Matrices<a class="headerlink" href="#elementary-matrices" title="Permalink to this headline">¶</a></h2>
+<p><strong><em>NOTE</em></strong>: A detailed description of elementary matrices can be found here in the <strong><em>Beezer text Subsection EM 340-345</em></strong> if you find the following confusing.</p>
+<p>There exist a cool set of matrices that can be used to implement Elementary Row Operations. Recall our elementary row operations include:</p>
+<ol class="simple">
+<li><p>Swap two rows</p></li>
+<li><p>Multiply a row by a constant (<span class="math notranslate nohighlight">\(c\)</span>)</p></li>
+<li><p>Multiply a row by a constant (<span class="math notranslate nohighlight">\(c\)</span>) and add it to another row.</p></li>
+</ol>
+<p>You can create these elementary matrices by applying the desired elementary row operations to the identity matrix.</p>
+<p>If you multiply your matrix from the left using the elementary matrix, you will get the desired operation.</p>
+<p>For example, here is the elementary row operation to swap the first and second rows of a <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+E_{12}=
+\left[
+\begin{matrix}
+    0 &amp; 1 &amp; 0\\ 
+    1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_36_0.png" src="_images/06--Mechanics_pre-class-assignment_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">E1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_37_0.png" src="_images/06--Mechanics_pre-class-assignment_37_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A1</span> <span class="o">=</span> <span class="n">E1</span><span class="o">*</span><span class="n">A</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06--Mechanics_pre-class-assignment_38_0.png" src="_images/06--Mechanics_pre-class-assignment_38_0.png" />
+</div>
+</div>
+<p>✅  <strong><font color=red>DO THIS</font></strong>: Give a <span class="math notranslate nohighlight">\(3\times 3\)</span> elementary matrix named <code class="docutils literal notranslate"><span class="pre">E2</span></code> that swaps row 3 with row 1 and apply it to the <span class="math notranslate nohighlight">\(A\)</span> Matrix. Replace the matrix <span class="math notranslate nohighlight">\(A\)</span> with the new matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer here.  </span>
+<span class="c1"># Feel free to swich this cell to markdown if you want to try writing your answer in latex.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">E2</span><span class="p">,</span><span class="s1">&#39;2c2d2e407389eabeb6d90894565c830f&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mf">2e6</span><span class="n">ff2c01205</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">E2</span><span class="p">,</span><span class="s1">&#39;2c2d2e407389eabeb6d90894565c830f&#39;</span><span class="p">);</span>
+
+<span class="ne">NameError</span>: name &#39;E2&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>DO THIS</font></strong>: Give a <span class="math notranslate nohighlight">\(3\times 3\)</span> elementary matrix named <code class="docutils literal notranslate"><span class="pre">E3</span></code> that multiplies the first row by <span class="math notranslate nohighlight">\(c=3\)</span> and adds it to the third row. Apply the elementary matrix to the <span class="math notranslate nohighlight">\(A\)</span> matrix. Replace the matrix <span class="math notranslate nohighlight">\(A\)</span> with the new matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer here.  </span>
+<span class="c1"># Feel free to swich this cell to markdown if you want to try writing your answer in latex.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">E3</span><span class="p">,</span><span class="s1">&#39;55ae1f9eb21df00c59dad623b9471506&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>DO THIS</font></strong>: Give a <span class="math notranslate nohighlight">\(3\times 3\)</span> elementary matrix named <code class="docutils literal notranslate"><span class="pre">E4</span></code> that multiplies the second row by a constant <span class="math notranslate nohighlight">\(c=1/2\)</span> applies this to matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your answer here.  </span>
+<span class="c1"># Feel free to swich this cell to markdown if you want to try writing your answer in latex.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">E4</span><span class="p">,</span><span class="s1">&#39;3a5256840ef907a1b73ebba4471ac26d&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the above are correct then we can combine the three operators on the original matrix <span class="math notranslate nohighlight">\(A\)</span> as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">E4</span><span class="o">*</span><span class="n">E3</span><span class="o">*</span><span class="n">E2</span><span class="o">*</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name=Solving-Many-Systems-(at-the-same-time)></a></p>
+</div>
+<div class="section" id="solving-many-systems-at-the-same-time">
+<h2>5. Solving Many Systems (at the same time)<a class="headerlink" href="#solving-many-systems-at-the-same-time" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;k5fdGS5b4OU&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Consider the Giselle example from above.  Her earnings do not change (i.e. she makes <span class="math notranslate nohighlight">\(\$20\)</span> per hour as a carpenter and <span class="math notranslate nohighlight">\(\$25\)</span> per hour as a blacksmith). However, now she has worked two more weeks. In the second week, she worked for a total of 35 hours and earned <span class="math notranslate nohighlight">\(\$750\)</span>. In the third week, she worked for a total of 30 hours and earned <span class="math notranslate nohighlight">\(\$650\)</span>. How much did she work as a carpenter and blacksmith for each of those weeks? In other words:</p>
+<p><strong>Week 1:</strong>
+$<span class="math notranslate nohighlight">\( c + b = 30 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( 20c + 25b = 690 \)</span>$</p>
+<p><strong>Week 2:</strong>
+$<span class="math notranslate nohighlight">\( c + b = 35 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( 20c + 25b = 750 \)</span>$</p>
+<p><strong>Week 3:</strong>
+$<span class="math notranslate nohighlight">\( c + b = 30 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( 20c + 25b = 650 \)</span>$</p>
+<p>✅<strong><font color=red>DO THIS</font></strong>: Write a <span class="math notranslate nohighlight">\(2 \times 5\)</span> augmented matrix representing the 6 equations above.  Name your Matrix <span class="math notranslate nohighlight">\(G\)</span> to verify your answer using the <code class="docutils literal notranslate"><span class="pre">checkanswer</span></code> function below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above quation here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="s1">&#39;a1e01de142199370be70131849fbf108&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name=Assignment-wrap-up></a></p>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>6. Assignment wrap up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credit for the assignment!</strong></p>
+<p><a class="reference external" href="https://cmse.msu.edu/cmse314-pc-survey">Direct Link to Google Form</a></p>
+<p>If you have trouble with the embedded form, please make sure you log on with your MSU google account at <a class="reference external" href="https://googleapps.msu.edu">googleapps.msu.edu</a> and then click on the direct link above.</p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong> In the symmetric matrix shown above, what are the values for  a ,  b , and  c ?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Summarize what you did in this assignment.</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What questions do you have, if any, about any of the topics discussed in this assignment after working through the jupyter notebook?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  How well do you feel this assignment helped you to achieve a better understanding of the above mentioned topic(s)?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What was the <strong>most</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What was the <strong>least</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What kind of additional questions or support, if any, do you feel you need to have a better understanding of the content in this assignment?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Do you have any further questions or comments about this material, or anything else that’s going on in class?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Approximately how long did this pre-class assignment take?</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe </span>
+<span class="sd">	src=&quot;https://cmse.msu.edu/cmse314-pc-survey&quot; </span>
+<span class="sd">	width=&quot;100%&quot; </span>
+<span class="sd">	height=&quot;1000px&quot; </span>
+<span class="sd">	frameborder=&quot;0&quot; </span>
+<span class="sd">	marginheight=&quot;0&quot; </span>
+<span class="sd">	marginwidth=&quot;0&quot;&gt;</span>
+<span class="sd">	Loading...</span>
+<span class="sd">&lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="05-Gauss_Jordan2_in-class-assignment.html" title="previous page">05 In-Class Assignment: Gauss-Jordan</a>
+    <a class='right-next' id="next-link" href="06-Mechanics_in-class-assignment.html" title="next page">06 In-Class Assignment: Matrix Multiply</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1134 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 Pre-Class Assignment: Linear Equations &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="03 In-Class Assignment: Solving Linear Systems of equations" href="03-Linear_Equations_in-class-assignment.html" />
+    <link rel="prev" title="02 In-Class Assignment: Vectors" href="02-Vectors_in-class-assignment.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Cover.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Class_Prep_Checklist.html">
+   Matrix Algebra class preparation checklist
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-CMSE314_introduction_in-class-assignment.html">
+   01 In-Class Assignment: Welcome to Matrix Algebra with computational applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02--Vectors_pre-class-assignment.html">
+   02 Pre-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Vectors_in-class-assignment.html">
+   02 In-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   03 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Linear_Equations_in-class-assignment.html">
+   03 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04--Gauss_Jordan_pre-class-assignment.html">
+   04 Pre-Class Assignment: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Gauss_Jordan_in-class-assignment.html">
+   04 In-Class Assignment: Linear Algebra and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05--Gauss_Jordan2_pre-class-assignment.html">
+   05 Pre-Class Assignment: Gauss-Jordan Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Gauss_Jordan2_in-class-assignment.html">
+   05 In-Class Assignment: Gauss-Jordan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Mechanics_in-class-assignment.html">
+   06 In-Class Assignment: Matrix Multiply
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07--Transformations_pre-class-assignment.html">
+   07 Pre-Class Assignment: Transformation Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transformations_in-class-assignment.html">
+   07 In-Class Assignment: Transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08--Robotics_pre-class-assignment.html">
+   08 Pre-Class Assignment: Robotics and Reference Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Robotics_in-class-assignment.html">
+   08 In-Class Assignment: The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09--Determinants_pre-class-assignment.html">
+   09 Pre-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-Determinats_in-class-assignment.html">
+   09 In-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html">
+   10 Pre-Class Assignment: Eigenvectors and Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Eigenproblems_in-class-assignment.html">
+   10 In-Class Assignment: Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11--Vector_Spaces_pre-class-assignment.html">
+   11 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-Vector_Spaces_in-class-assignment.html">
+   11 In-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12--Change_Basis_pre-class-assignment.html">
+   12 Pre-Class Assignment: Matrix Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Changing_vector_space_in-class-assignment.html">
+   12 In-Class Assignment: Matrix Representation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13--Projections_pre-class-assignment.html">
+   13 Pre-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Projections_in-class-assignment.html">
+   13 In-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14--Fundamental_Spaces_pre-class-assignment.html">
+   14 Pre-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Fundamental_Spaces_in-class-assignment.html">
+   14 In-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15--Diagonalization_pre-class-assignment.html">
+   15 Pre-Class Assignment: Diagonalization and Powers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Diagonalization_in-class-assignment.html">
+   15 In-Class Assignment: Diagonalization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16--Linear_Dynamical_Systems_pre-class-assignment.html">
+   16 Pre-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-Linear_Dynamical_Systems_in-class-assignment.html">
+   16 In-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17--Decompositions_pre-class-assignment.html">
+   17 Pre-Class Assignment: Decompositions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-Decompositions_in-class-assignment.html">
+   17 In-Class Assignment: Decompositions and Gaussian Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18--Inner_Product_pre-class-assignment.html">
+   18 Pre-Class Assignment: Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-Inner_Product_in-class-assignment.html">
+   18 In-Class Assignment: Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19--LSF_pre-class-assignment.html">
+   19 Pre-Class Assignment: Least Squares Fit (Regression)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-LSF_in-class-assignment.html">
+   19 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-LSF_Practice_in-class-assignment.html">
+   20 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21--Review_pre-class-assignment.html">
+   21 Pre-Class Assignment: Solve Linear Systems of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-Review_in-class-assignment.html">
+   21 In-Class Assignment: Solve Linear Systems of Equations using QR Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html">
+   Supplemental Materials: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Jupyter_Getting_Started_Guide.html">
+   Jupyter Getting Started Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Python_Packages.html">
+   Python Linear Algebra Packages
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03--Linear_Equations_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/03--Linear_Equations_pre-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-for-this-topic-recommended-in-bold">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-overview">
+   Assignment Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-of-linear-equations">
+   1. System of Linear Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-the-problem">
+   2.  Visualizing the problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#row-picture">
+     Row Picture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#column-picture">
+     Column Picture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multidimentional-spaces">
+   4. Multidimentional Spaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-notation">
+   5.  Matrix Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-wrap-up">
+   6. Assignment wrap-up
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pre-class-assignment-linear-equations">
+<h1>03 Pre-Class Assignment: Linear Equations<a class="headerlink" href="#pre-class-assignment-linear-equations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="readings-for-this-topic-recommended-in-bold">
+<h2>Readings for this topic (Recommended in bold)<a class="headerlink" href="#readings-for-this-topic-recommended-in-bold" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://joshua.smcvt.edu/linearalgebra/book.pdf">Heffron Chapter 1.I, pg 1-2</a></p></li>
+<li><p><a class="reference external" href="http://linear.ups.edu/download/fcla-3.50-tablet.pdf">Beezer Chapter SLE pg 1-7</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="assignment-overview">
+<h2>Assignment Overview<a class="headerlink" href="#assignment-overview" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#System_of_Linear_Equations">System of Linear Equations</a></p></li>
+<li><p><a class="reference external" href="#Visualizing_the_problem">Visualizing the problem</a></p></li>
+<li><p><a class="reference external" href="#Multidimentional_Spaces">Multidimentional Spaces</a></p></li>
+<li><p><a class="reference external" href="#Matrix_Notation">Matrixes Notation</a></p></li>
+<li><p><a class="reference external" href="#Assignment_wrap-up">Assignment wrap-up</a></p></li>
+</ol>
+<hr class="docutils" />
+<p><a name="System_of_Linear_Equations"></a></p>
+</div>
+<div class="section" id="system-of-linear-equations">
+<h2>1. System of Linear Equations<a class="headerlink" href="#system-of-linear-equations" title="Permalink to this headline">¶</a></h2>
+<p>In this course we will spend a lot of time working with systems of linear equations.  A linear equation is in the form:</p>
+<div class="math notranslate nohighlight">
+\[a_1x_1 + a_2x_2 + a_3x_3 + \ldots + a_nx_n = b\]</div>
+<p>Where <span class="math notranslate nohighlight">\(a_1, a_2, a_3, \ldots a_n\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are known constants and <span class="math notranslate nohighlight">\(x_1, x_2, x_3, \ldots x_n\)</span> are unknown values.  Typically we have systems of equations with different values of <span class="math notranslate nohighlight">\(a\)</span>s and <span class="math notranslate nohighlight">\(b\)</span>s but the unknowns are the same.  For example.  Consider the example of linear equations in the following video.</p>
+<p>✅ <strong><font color=red>TODO:</font></strong>  Watch the video and follow along in the notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;CH68cc7sH4A&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/CH68cc7sH4A?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<blockquote>
+<div><p>Giselle works as a carpenter and as a blacksmith. She earns 20 dollars per hour as a carpenter and 25 dollars
+per hour as a blacksmith. Last week, Giselle worked both jobs for a total of 30 hours, and earned a total of 690 dollars. How long did Giselle work as a carpenter last week, and how long did she work as a blacksmith?</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://brainly.com/question/2202719">Brainly.com</a></p></li>
+</ul>
+</div></blockquote>
+<p>This problems gives us two equations and two unknowns:</p>
+<div class="math notranslate nohighlight">
+\[ c + b = 30 \]</div>
+<div class="math notranslate nohighlight">
+\[ 20c + 25b = 690 \]</div>
+<p>How would we solve this in linear algebra?</p>
+<div class="math notranslate nohighlight">
+\[ c + b = 30\]</div>
+<div class="math notranslate nohighlight">
+\[ 20c + 25b = 690\]</div>
+<p>First, we can multiply the first equation by -20 and add to the second equation.  This is often called a “linear combination” of the two equations. The operation does not change the answer:</p>
+<div class="math notranslate nohighlight">
+\[ -20c - 20b = -600\]</div>
+<div class="math notranslate nohighlight">
+\[ 20c + 25b = 690\]</div>
+<div class="math notranslate nohighlight">
+\[----\]</div>
+<div class="math notranslate nohighlight">
+\[ 0c + 5b = 90\]</div>
+<p>This is our new system of equations:
+$<span class="math notranslate nohighlight">\( c + b = 30\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( 0c + 5b = 90\)</span>$</p>
+<p>Now we can easily divide the second equation by 5 and get the value for <span class="math notranslate nohighlight">\(b\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[b = 90/5 = 18\]</div>
+<p>If we substitute 18 for <span class="math notranslate nohighlight">\(b\)</span> into the first equation we get:
+$<span class="math notranslate nohighlight">\( c + 18 = 30\)</span>$</p>
+<p>And solving for <span class="math notranslate nohighlight">\(c\)</span> gives us <span class="math notranslate nohighlight">\(c = 30-18=12\)</span>.  Let’s check to see if this works by substituting <span class="math notranslate nohighlight">\(b=18\)</span> and <span class="math notranslate nohighlight">\(c=12\)</span> into our original equations:</p>
+<div class="math notranslate nohighlight">
+\[ 12 + 18 = 30\]</div>
+<div class="math notranslate nohighlight">
+\[ 20(12) + 25(18) = 690\]</div>
+<p>Let’s check the answer using Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span><span class="o">*</span><span class="n">c</span> <span class="o">+</span> <span class="mi">25</span><span class="o">*</span><span class="n">b</span> <span class="o">==</span> <span class="mi">690</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  The above video described three (3) elementary operators that can be applied to a system of linear equations and not change their answer.  What are these three operators?</p>
+<p><strong><em>Erase the contents of this cell and put your answer to the above question here</em></strong></p>
+<hr class="docutils" />
+<p><a name="Visualizing_the_problem"></a></p>
+</div>
+<div class="section" id="visualizing-the-problem">
+<h2>2.  Visualizing the problem<a class="headerlink" href="#visualizing-the-problem" title="Permalink to this headline">¶</a></h2>
+<p>We can visualize the solution to a system of linear equations in a graph. If we make <span class="math notranslate nohighlight">\(b\)</span> the “<span class="math notranslate nohighlight">\(y\)</span>”-axis and <span class="math notranslate nohighlight">\(c\)</span> the “<span class="math notranslate nohighlight">\(x\)</span>”-axis. For each equation, we calculate the <span class="math notranslate nohighlight">\(b\)</span> value for each <span class="math notranslate nohighlight">\(c\)</span>, and two equations give us two lines.</p>
+<p><strong>Note:</strong> This is sometimes called the “Row Picture.” I will ask you why it has this name in class so think about it.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  The above video described three (3) elementary operators that can be applied to a system of linear equations and not change their answer.  What are these three operators?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;BSxWO6FGib0&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/BSxWO6FGib0?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.40816327,  0.81632653,  1.2244898 ,  1.63265306,
+        2.04081633,  2.44897959,  2.85714286,  3.26530612,  3.67346939,
+        4.08163265,  4.48979592,  4.89795918,  5.30612245,  5.71428571,
+        6.12244898,  6.53061224,  6.93877551,  7.34693878,  7.75510204,
+        8.16326531,  8.57142857,  8.97959184,  9.3877551 ,  9.79591837,
+       10.20408163, 10.6122449 , 11.02040816, 11.42857143, 11.83673469,
+       12.24489796, 12.65306122, 13.06122449, 13.46938776, 13.87755102,
+       14.28571429, 14.69387755, 15.10204082, 15.51020408, 15.91836735,
+       16.32653061, 16.73469388, 17.14285714, 17.55102041, 17.95918367,
+       18.36734694, 18.7755102 , 19.18367347, 19.59183673, 20.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="mi">30</span><span class="o">-</span><span class="n">c</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">690</span><span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="row-picture">
+<h3>Row Picture<a class="headerlink" href="#row-picture" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">b1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">b2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;c (hours worked as carpenter)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;b (hours worked as blacksmith)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">18</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03--Linear_Equations_pre-class-assignment_19_0.png" src="_images/03--Linear_Equations_pre-class-assignment_19_0.png" />
+</div>
+</div>
+<p>Now, consider the next set of equations which do not have a solution</p>
+<div class="math notranslate nohighlight">
+\[-2x+y=3\]</div>
+<div class="math notranslate nohighlight">
+\[-4x+2y=2\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span>  <span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03--Linear_Equations_pre-class-assignment_21_0.png" src="_images/03--Linear_Equations_pre-class-assignment_21_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;Z9gkovHDpIQ&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/Z9gkovHDpIQ?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p>Consider the next set of equations which have infinite many solutions</p>
+<div class="math notranslate nohighlight">
+\[4x-2y=6\]</div>
+<div class="math notranslate nohighlight">
+\[6x-3y=9\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span>  <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc3e101fb80&gt;]
+</pre></div>
+</div>
+<img alt="_images/03--Linear_Equations_pre-class-assignment_24_1.png" src="_images/03--Linear_Equations_pre-class-assignment_24_1.png" />
+</div>
+</div>
+<p>✅ <strong><font color=red>DO THIS:</font></strong>  Plot the following equations from -100 to 100</p>
+<div class="math notranslate nohighlight">
+\[ 18x+21y = 226\]</div>
+<div class="math notranslate nohighlight">
+\[ 72x-3y = 644\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your python code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Using the graph, what is a visual estimation of the solution to these two equations?  Hint, you may want to change the <span class="math notranslate nohighlight">\(x\)</span> range to “zoom” in on the intersection.</p>
+<p><strong><em>Put your answer to the above question here.</em></strong></p>
+</div>
+<div class="section" id="column-picture">
+<h3>Column Picture<a class="headerlink" href="#column-picture" title="Permalink to this headline">¶</a></h3>
+<p>I think a good programmer is a lazy person. Let’s avoid writing all of the letters in the above euqation by changing it into a column vector format as follows.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+c
+\left[
+\begin{matrix}
+    1 \\ 20  
+ \end{matrix}
+\right]
++
+b
+\left[
+\begin{matrix}
+    1 \\ 5  
+ \end{matrix}
+\right]
+=
+\left[
+\begin{matrix}
+ 30 \\ 330
+\end{matrix}
+\right]
+\end{split}\]</div>
+<p>Notice that this still represents the same system of equations. We just write the constants as column vectors and we only have to write the unknowns once (Since they are the same for all equations).</p>
+<p>Let’s plot this “column picture”, which shows how the above equation is a “linear combination” of the two column vectors.</p>
+<p>One way to think about this is we can only move in straight lines in two directions. The first direction is (1,20) and the second is (1,5).  The solution to the problem is how far in each direction we need to move to arrive at our final destination of (30,330).</p>
+<p>The first column is a vector in the (1,20) direction. The variable <span class="math notranslate nohighlight">\(c\)</span> is how far in the (1,20) direction we want to go.  Then <span class="math notranslate nohighlight">\(b\)</span> is how far in the (1,5) direction we want to go to arrive at the point (30,330).</p>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> function <code class="docutils literal notranslate"><span class="pre">arrow</span></code> to plot the vectors.  The arrow function takes a starting point <span class="math notranslate nohighlight">\([x,y]\)</span> and a direction <span class="math notranslate nohighlight">\([dx,dy]\)</span> as inputs and draws an arrow from the starting point in the direction specified.</p>
+<p>First thing to do is plot the first column as a vector. From the origin (0,0) to <span class="math notranslate nohighlight">\(c\left[
+\begin{matrix}
+    1 \\ 20  
+ \end{matrix}
+\right]\)</span></p>
+<p><strong>or</strong> <span class="math notranslate nohighlight">\(x = c\)</span> and <span class="math notranslate nohighlight">\(y = 20c\)</span> with <span class="math notranslate nohighlight">\(c=12\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="c1">#hack to inicialize bounds of plot (need this to get the arrows to work?)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">330</span><span class="p">)</span>
+
+<span class="c1"># Plot the first arrow </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.patches.FancyArrow at 0x7fc3e1156e50&gt;
+</pre></div>
+</div>
+<img alt="_images/03--Linear_Equations_pre-class-assignment_34_1.png" src="_images/03--Linear_Equations_pre-class-assignment_34_1.png" />
+</div>
+</div>
+<p>Next thing to do is plot the second column as a vector by adding it to the first. This <code class="docutils literal notranslate"><span class="pre">arrow</span></code> will start at the end of the previous vector and “add” the second column vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">18</span>
+
+<span class="c1">#hack to inicialize bounds of plot (need this to get the arrows to work?)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">330</span><span class="p">)</span>
+
+<span class="c1"># Plot the first arrow</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1">#Plot the second arrow starting at the end of the first</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="n">b</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.patches.FancyArrow at 0x7fc3e1189dc0&gt;
+</pre></div>
+</div>
+<img alt="_images/03--Linear_Equations_pre-class-assignment_36_1.png" src="_images/03--Linear_Equations_pre-class-assignment_36_1.png" />
+</div>
+</div>
+<p>The takeaway to this figure is that these two column vectors, when added together, end up at the point that represents the right hand side of the above equation (i.e. (30, 330)).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#hack to inicialize bounds of plot (need this to get the arrows to work?)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">330</span><span class="p">)</span>
+
+<span class="c1"># Plot the first arrow</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1">#Plot the second arrow starting at the end of the first</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="n">b</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="c1">#Plot a righthand column vector as a point.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">330</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03--Linear_Equations_pre-class-assignment_38_0.png" src="_images/03--Linear_Equations_pre-class-assignment_38_0.png" />
+</div>
+</div>
+<p>We say that the two column vectors “<strong>span</strong>” the <span class="math notranslate nohighlight">\(xy\)</span>-plane.  This means that any point on the x,y plane can be represented as a linear combination of the two vectors.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Give an example of two column vectors that do <strong>NOT</strong> span the <span class="math notranslate nohighlight">\(xy-\)</span>plane:</p>
+<p><strong><em>Put your answer to the above question here.</em></strong></p>
+<hr class="docutils" />
+<p><a name="Multidimentional_Spaces"></a></p>
+</div>
+</div>
+<div class="section" id="multidimentional-spaces">
+<h2>4. Multidimentional Spaces<a class="headerlink" href="#multidimentional-spaces" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;A3fHytkJ010&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">320</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="320"
+    src="https://www.youtube.com/embed/A3fHytkJ010?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Describe in words, what the solution space would look like for three equations with three unknowns and no solutions.</p>
+<p><strong><em>Erase the contents of this cell and put your answer to the above question here.</em></strong></p>
+<hr class="docutils" />
+<p><a name="Matrix_Notation"></a></p>
+</div>
+<div class="section" id="matrix-notation">
+<h2>5.  Matrix Notation<a class="headerlink" href="#matrix-notation" title="Permalink to this headline">¶</a></h2>
+<p>Review <strong><em>Sections 6.1 - 6.3</em></strong> of the <a class="reference external" href="http://vmls-book.stanford.edu/">Stephen Boyd and Lieven Vandenberghe Applied Linear algebra book</a> which introduces the concept of Matrices.  Some things to take away include:</p>
+<ul class="simple">
+<li><p>Basic Matrix composition</p></li>
+<li><p>Transpose Addition and norms</p></li>
+<li><p>Zero and Identy matrix</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;uC46qAjdE9w&quot;</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/uC46qAjdE9w?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p>A matrix is a rectangular array of numbers typically written between rectangular brackets such as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} A = 
+\left[
+\begin{matrix}
+    0 &amp; -1 \\ 
+    3 &amp; 4 \\
+    0 &amp; 2
+ \end{matrix}
+\right]^{ 3\times 2}
+\end{split}\]</div>
+<p>The <span class="math notranslate nohighlight">\(3 \times 2\)</span> subscript is not always included but is handy notation to remember the size of a matrix.  The size of a matrix is always written <span class="math notranslate nohighlight">\(m \times n\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is the number of rows and <span class="math notranslate nohighlight">\(n\)</span> is the number of columns.  So in the above case Matrix <span class="math notranslate nohighlight">\(A\)</span> is a <span class="math notranslate nohighlight">\(3 \times 2\)</span>  (read “three by two”) matrix.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What is the size of the following matrix?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} B = 
+\left[
+\begin{matrix}
+    0 &amp; -1 &amp; 0\\ 
+    3 &amp; 4 &amp; 2\\
+ \end{matrix}
+\right]
+\end{split}\]</div>
+<p><strong><em>Erase the contents of this cell and put your answer to the above question here</em></strong></p>
+<p>Each element in a matrix can be referenced by it’s index location.  Similar to the size of a matrix the location of an element is described by two numbers, it’s row followed by it’s column.  Counting for the rows start at the top and the columns start on the left.  For example, in Matrix <span class="math notranslate nohighlight">\(B\)</span> element <span class="math notranslate nohighlight">\(b_{1,2}\)</span> is the number in row 1 column 2 which is -1.</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What is the value of element (2,1) in matrix <span class="math notranslate nohighlight">\(B\)</span>?</p>
+<p><strong><em>Erase the contents of this cell and put your answer to the above question here</em></strong></p>
+<p>A linear system of equations can be written in matrix format.  For example, the equations in the original example can be written as the following “Augmented matrix”</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\left[
+\begin{matrix}
+    1 &amp; 1 \\ 
+    20 &amp; 25
+  \end{matrix}
+\, \middle\vert \,
+\begin{matrix}
+ 30 \\ 
+ 690
+\end{matrix}
+\right] 
+\end{split}\]</div>
+<p>And the example which included silversmith can be written as follows:
+$<span class="math notranslate nohighlight">\( 
+\left[
+\begin{matrix}
+    1 &amp; 1 &amp; 1 \\ 
+    50 &amp; 20 &amp; 25 \\
+    110 &amp; 0 &amp; 20
+  \end{matrix}
+\, \middle\vert \,
+\begin{matrix}
+ 30 \\ 
+ 690 \\
+ 300
+\end{matrix}
+\right] 
+\)</span>$
+The above equations are represented as “augmented matrices” with the equal side represented as a vertical line.</p>
+<p>The general matrix format for a system of linear equations can be written as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+X = 
+\left[
+\begin{matrix}
+    x_{11}       &amp; x_{12} &amp; x_{13} &amp; \dots  \\
+    x_{21}       &amp; x_{22} &amp; x_{23} &amp; \dots \\
+    \ldots       &amp; \ldots &amp; \ldots &amp; \ddots \\
+    x_{m1}       &amp; x_{m2} &amp; x_{m3} &amp; \dots 
+ \end{matrix}
+\, \middle\vert \,
+\begin{matrix}
+x_{1n} \\ x_{2n} \\ \ldots \\ x_{mn}
+\end{matrix}
+\right] ^{mxn}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{ij}\)</span> is a scalar element in the matrx.</p>
+<p>Now consider the following system of linear equations:</p>
+<div class="math notranslate nohighlight">
+\[x_1 = 2.14159\]</div>
+<div class="math notranslate nohighlight">
+\[x_2 = 4\]</div>
+<div class="math notranslate nohighlight">
+\[x_3 = -7.2\]</div>
+<div class="math notranslate nohighlight">
+\[x_4 = 69\]</div>
+<div class="math notranslate nohighlight">
+\[x_5 = 84\]</div>
+<div class="math notranslate nohighlight">
+\[x_6 = 240\]</div>
+<p>Lets rewrite this equation as an augmented matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+X = 
+\left[
+\begin{matrix}
+    1 &amp; 0 &amp; 0 &amp; 0  &amp; 0 &amp; 0  \\
+    0 &amp; 1 &amp; 0 &amp; 0  &amp; 0 &amp; 0  \\
+    0 &amp; 0 &amp; 1 &amp; 0  &amp; 0 &amp; 0  \\
+    0 &amp; 0 &amp; 0 &amp; 1  &amp; 0 &amp; 0  \\
+    0 &amp; 0 &amp; 0 &amp; 0  &amp; 1 &amp; 0  \\
+    0 &amp; 0 &amp; 0 &amp; 0  &amp; 0 &amp; 1  
+ \end{matrix}
+\, \middle\vert \,
+\begin{matrix}
+2.14159 \\ 4 \\ -7.2 \\ 69 \\ 84 \\ 240
+\end{matrix}
+\right] ^{6x7}
+\end{split}\]</div>
+<p>Notice the submatrix on the left hand side is just the <span class="math notranslate nohighlight">\(I_6\)</span> identity matrix and the right hand side are the solutions.</p>
+<hr class="docutils" />
+<p><a name="Assignment_wrap-up"></a></p>
+</div>
+<div class="section" id="assignment-wrap-up">
+<h2>6. Assignment wrap-up<a class="headerlink" href="#assignment-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Please fill out the form that appears when you run the code below.  <strong>You must completely fill this out in order to receive credits for the assignment!</strong></p>
+<p><a class="reference external" href="https://cmse.msu.edu/cmse314-pc-survey">Direct Link to Google Form</a></p>
+<p>If you have trouble with the embedded form, please make sure you log on with your MSU google account at <a class="reference external" href="https://googleapps.msu.edu">googleapps.msu.edu</a> and then click on the direct link above.</p>
+<p>✅ <strong><font color=red>Assignment-Specific QUESTION:</font></strong>  What are the three elementary operators that can be applied to systems of linear equations that do not change their answer.</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Summarize what you did in this assignment.</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What questions do you have, if any, about any of the topics discussed in this assignment after working through the jupyter notebook?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  How well do you feel this assignment helped you to achieve a better understanding of the above mentioned topic(s)?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What was the <strong>most</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> What was the <strong>least</strong> challenging part of this assignment for you?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  What kind of additional questions or support, if any, do you feel you need to have a better understanding of the content in this assignment?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong>  Do you have any further questions or comments about this material, or anything else that’s going on in class?</p>
+<p>Put your answer to the above question here</p>
+<p>✅ <strong><font color=red>QUESTION:</font></strong> Approximately how long did this pre-class assignment take?</p>
+<p>Put your answer to the above question here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;iframe </span>
+<span class="sd">	src=&quot;https://cmse.msu.edu/cmse314-pc-survey&quot; </span>
+<span class="sd">	width=&quot;100%&quot; </span>
+<span class="sd">	height=&quot;500px&quot; </span>
+<span class="sd">	frameborder=&quot;0&quot; </span>
+<span class="sd">	marginheight=&quot;0&quot; </span>
+<span class="sd">	marginwidth=&quot;0&quot;&gt;</span>
+<span class="sd">	Loading...</span>
+<span class="sd">&lt;/iframe&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe 
+	src="https://cmse.msu.edu/cmse314-pc-survey" 
+	width="100%" 
+	height="500px" 
+	frameborder="0" 
+	marginheight="0" 
+	marginwidth="0">
+	Loading...
+</iframe>
+</div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="02-Vectors_in-class-assignment.html" title="previous page">02 In-Class Assignment: Vectors</a>
+    <a class='right-next' id="next-link" href="03-Linear_Equations_in-class-assignment.html" title="next page">03 In-Class Assignment: Solving Linear Systems of equations</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

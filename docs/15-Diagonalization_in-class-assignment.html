@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15 In-Class Assignment: Diagonalization &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="16 Pre-Class Assignment: Linear Dynamical Systems" href="16--Linear_Dynamical_Systems_pre-class-assignment.html" />
+    <link rel="prev" title="15 Pre-Class Assignment: Diagonalization and Powers" href="15--Diagonalization_pre-class-assignment.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Cover.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Class_Prep_Checklist.html">
+   Matrix Algebra class preparation checklist
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-CMSE314_introduction_in-class-assignment.html">
+   01 In-Class Assignment: Welcome to Matrix Algebra with computational applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02--Vectors_pre-class-assignment.html">
+   02 Pre-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Vectors_in-class-assignment.html">
+   02 In-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03--Linear_Equations_pre-class-assignment.html">
+   03 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Linear_Equations_in-class-assignment.html">
+   03 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04--Gauss_Jordan_pre-class-assignment.html">
+   04 Pre-Class Assignment: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Gauss_Jordan_in-class-assignment.html">
+   04 In-Class Assignment: Linear Algebra and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05--Gauss_Jordan2_pre-class-assignment.html">
+   05 Pre-Class Assignment: Gauss-Jordan Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Gauss_Jordan2_in-class-assignment.html">
+   05 In-Class Assignment: Gauss-Jordan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Mechanics_in-class-assignment.html">
+   06 In-Class Assignment: Matrix Multiply
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07--Transformations_pre-class-assignment.html">
+   07 Pre-Class Assignment: Transformation Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transformations_in-class-assignment.html">
+   07 In-Class Assignment: Transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08--Robotics_pre-class-assignment.html">
+   08 Pre-Class Assignment: Robotics and Reference Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Robotics_in-class-assignment.html">
+   08 In-Class Assignment: The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09--Determinants_pre-class-assignment.html">
+   09 Pre-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-Determinats_in-class-assignment.html">
+   09 In-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html">
+   10 Pre-Class Assignment: Eigenvectors and Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Eigenproblems_in-class-assignment.html">
+   10 In-Class Assignment: Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11--Vector_Spaces_pre-class-assignment.html">
+   11 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-Vector_Spaces_in-class-assignment.html">
+   11 In-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12--Change_Basis_pre-class-assignment.html">
+   12 Pre-Class Assignment: Matrix Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Changing_vector_space_in-class-assignment.html">
+   12 In-Class Assignment: Matrix Representation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13--Projections_pre-class-assignment.html">
+   13 Pre-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Projections_in-class-assignment.html">
+   13 In-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14--Fundamental_Spaces_pre-class-assignment.html">
+   14 Pre-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Fundamental_Spaces_in-class-assignment.html">
+   14 In-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15--Diagonalization_pre-class-assignment.html">
+   15 Pre-Class Assignment: Diagonalization and Powers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   15 In-Class Assignment: Diagonalization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16--Linear_Dynamical_Systems_pre-class-assignment.html">
+   16 Pre-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-Linear_Dynamical_Systems_in-class-assignment.html">
+   16 In-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17--Decompositions_pre-class-assignment.html">
+   17 Pre-Class Assignment: Decompositions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-Decompositions_in-class-assignment.html">
+   17 In-Class Assignment: Decompositions and Gaussian Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18--Inner_Product_pre-class-assignment.html">
+   18 Pre-Class Assignment: Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-Inner_Product_in-class-assignment.html">
+   18 In-Class Assignment: Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19--LSF_pre-class-assignment.html">
+   19 Pre-Class Assignment: Least Squares Fit (Regression)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-LSF_in-class-assignment.html">
+   19 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-LSF_Practice_in-class-assignment.html">
+   20 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21--Review_pre-class-assignment.html">
+   21 Pre-Class Assignment: Solve Linear Systems of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-Review_in-class-assignment.html">
+   21 In-Class Assignment: Solve Linear Systems of Equations using QR Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html">
+   Supplemental Materials: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Jupyter_Getting_Started_Guide.html">
+   Jupyter Getting Started Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Python_Packages.html">
+   Python Linear Algebra Packages
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/15-Diagonalization_in-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/15-Diagonalization_in-class-assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agenda-for-today-s-class-80-minutes">
+   Agenda for today’s class (80 minutes)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quiz-3-review">
+   1. Quiz 3 Review
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-class-assignment-review">
+   2. Pre-class Assignment Review
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonalization">
+   3. Diagonalization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Diagonalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-example">
+     A simple example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-second-example">
+     A second example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-third-example">
+     The third example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dimensions-of-eigenspaces-and-diagonalization">
+     Dimensions of eigenspaces and diagonalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-fourth-example">
+     The fourth example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-power-of-a-matrix">
+   4. The Power of a Matrix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-random-walk">
+     Graph Random Walk
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-walk-on-barbell-graph">
+     Random Walk on Barbell Graph
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#compare-to-complete-graph">
+       Compare to Complete Graph
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="in-class-assignment-diagonalization">
+<h1>15 In-Class Assignment: Diagonalization<a class="headerlink" href="#in-class-assignment-diagonalization" title="Permalink to this headline">¶</a></h1>
+<img alt="Classig equation for diagonalizing a matrix. Will be discussed in class" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/62ab0ef52ecb1e1452efe6acf096923035c75f62" width="50%">
+<p>Image from: <a class="reference external" href="https://en.wikipedia.org/wiki/Diagonalizable_matrix">https://en.wikipedia.org/wiki/Diagonalizable_matrix</a></p>
+<div class="section" id="agenda-for-today-s-class-80-minutes">
+<h2>Agenda for today’s class (80 minutes)<a class="headerlink" href="#agenda-for-today-s-class-80-minutes" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#Quiz_3_Review">(20 minutes) Quiz 3 Review</a></p></li>
+<li><p><a class="reference external" href="#Pre-class_Assignment_Review">(20 minutes) Pre-class Assignment Review</a></p></li>
+<li><p><a class="reference external" href="#Diagonalization">(20 minutes) Diagonalization</a></p></li>
+<li><p><a class="reference external" href="#The_Power_of_a_Matrix">(20 minutes) The Power of a Matrix</a></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="Quiz_3_Review"></a></p>
+</div>
+<div class="section" id="quiz-3-review">
+<h2>1. Quiz 3 Review<a class="headerlink" href="#quiz-3-review" title="Permalink to this headline">¶</a></h2>
+<p>Time is set aside to ask questions about homework.</p>
+<hr class="docutils" />
+<p><a name="Pre-class_Assignment_Review"></a></p>
+</div>
+<div class="section" id="pre-class-assignment-review">
+<h2>2. Pre-class Assignment Review<a class="headerlink" href="#pre-class-assignment-review" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="15--Diagonalization_pre-class-assignment.html"><span class="doc std std-doc">15–Diagonalization_pre-class-assignment.ipynb</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<p><a name="Diagonalization"></a></p>
+</div>
+<div class="section" id="diagonalization">
+<h2>3. Diagonalization<a class="headerlink" href="#diagonalization" title="Permalink to this headline">¶</a></h2>
+<p><strong><em>Reminder</em></strong>: The eigenvalues of triangular (upper and lower) and diagonal matrices are easy:</p>
+<ul class="simple">
+<li><p>The eigenvalues for triangular matrices are the diagonal elements.</p></li>
+<li><p>The eigenvalues for the diagonal matrices are the diagonal elements.</p></li>
+</ul>
+<div class="section" id="id1">
+<h3>Diagonalization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Definition</strong>: A square matrix <span class="math notranslate nohighlight">\(A\)</span> is said to be <em>diagonalizable</em> if there exist a matrix <span class="math notranslate nohighlight">\(C\)</span> such that <span class="math notranslate nohighlight">\(D=C^{-1}AC\)</span> is a diagonal matrix.</p>
+<p><strong>Definition</strong>: <span class="math notranslate nohighlight">\(B\)</span> is a <em>similar matrix</em> of <span class="math notranslate nohighlight">\(A\)</span> if we can find <span class="math notranslate nohighlight">\(C\)</span> such that <span class="math notranslate nohighlight">\(B=C^{-1}AC\)</span>.</p>
+<p>Given an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span>, can we find another <span class="math notranslate nohighlight">\(n \times n\)</span> invertable matrix <span class="math notranslate nohighlight">\(C\)</span> such that when <span class="math notranslate nohighlight">\(D=C^{-1}AC\)</span> is diagonal, i.e., <span class="math notranslate nohighlight">\(A\)</span> is diagonalizable?</p>
+<ul class="simple">
+<li><p>Because <span class="math notranslate nohighlight">\(C\)</span> is inveritble, we have
+$<span class="math notranslate nohighlight">\(C^{-1}AC=D \\ CC^{-1}AC = CD\\ AC = CD \)</span>$</p></li>
+<li><p>Generate <span class="math notranslate nohighlight">\(C\)</span> as the columns of <span class="math notranslate nohighlight">\(n\)</span> linearly independent vectors <span class="math notranslate nohighlight">\((x_1...x_n)\)</span> We can compute <span class="math notranslate nohighlight">\(AC=CD\)</span> as follows:
+$<span class="math notranslate nohighlight">\( A\begin{bmatrix} \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \\ \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \\ { x }_{ 1 } &amp; { x }_{ 2 } &amp; \dots  &amp; { x }_{ n } \\ \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \end{bmatrix}=AC=CD=\begin{bmatrix} \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \\ \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \\ { x }_{ 1 } &amp; { x }_{ 2 } &amp; \dots  &amp; { x }_{ n } \\ \vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots  \end{bmatrix}\begin{bmatrix} { \lambda  }_{ 1 } &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; { \lambda  }_{ 2 } &amp; 0 &amp; 0 \\ \vdots  &amp; \vdots  &amp; { \dots  } &amp; \vdots  \\ 0 &amp; 0 &amp; 0 &amp; { \lambda  }_{ n } \end{bmatrix}\)</span>$</p></li>
+<li><p>Then we check the corresponding columns of the both sides. We have
+$<span class="math notranslate nohighlight">\(Ax_1 = \lambda_1x_1\\\vdots\\Ax_n=\lambda x_n\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> has <span class="math notranslate nohighlight">\(n\)</span> linear independent eigenvectors.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is saied to be <em>similar</em> to the diagonal matrix <span class="math notranslate nohighlight">\(D\)</span>, and the transformation of <span class="math notranslate nohighlight">\(A\)</span> into <span class="math notranslate nohighlight">\(D\)</span> is called a <em>similarity transformation</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="a-simple-example">
+<h3>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h3>
+<p>Consider the following:
+$<span class="math notranslate nohighlight">\( A = \begin{bmatrix}7&amp; -10\\3&amp; -4\end{bmatrix},\quad C = \begin{bmatrix}2&amp; 5\\1&amp; 3\end{bmatrix}\)</span>$</p>
+<p>✅  <strong><font color=red>Do this:</font></strong> Find the similar matrix <span class="math notranslate nohighlight">\(D = C^{-1}AC\)</span> of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="s1">&#39;8313fe0f529090d6a8cdb36248cfdd6c&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">74</span><span class="n">b6f1a180e6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="s1">&#39;8313fe0f529090d6a8cdb36248cfdd6c&#39;</span><span class="p">);</span>
+
+<span class="ne">NameError</span>: name &#39;D&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this:</font></strong> Find the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(A\)</span>. Set variables <code class="docutils literal notranslate"><span class="pre">e1</span></code> and <code class="docutils literal notranslate"><span class="pre">vec1</span></code> to be the smallest eigenvalue and it’s associated eigenvector and <code class="docutils literal notranslate"><span class="pre">e2,</span> <span class="pre">vec2</span></code> to represent the  largest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">e1</span><span class="p">,</span> <span class="s2">&quot;e4c2e8edac362acab7123654b9e73432&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">e2</span><span class="p">,</span> <span class="s2">&quot;d1bd83a33f1a841ab7fda32449746cc4&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">eq_vector</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="s2">&quot;d28f0a721eedb3d5a4c714744883932e&quot;</span><span class="p">,</span> <span class="n">decimal_accuracy</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">eq_vector</span><span class="p">(</span><span class="n">vec2</span><span class="p">,</span> <span class="s2">&quot;09d9df5806bc8ef975074779da1f1023&quot;</span><span class="p">,</span> <span class="n">decimal_accuracy</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Theorem:</strong> Similar matrices have the same eigenvalues.</p>
+<p><strong>Proof:</strong> Assume <span class="math notranslate nohighlight">\(B=C^{-1}AC\)</span> is a similar matrix of <span class="math notranslate nohighlight">\(A\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> is an eigenvalue of <span class="math notranslate nohighlight">\(A\)</span> with corresponding eigenvector <span class="math notranslate nohighlight">\(x\)</span>. That is, $<span class="math notranslate nohighlight">\(Ax=\lambda x\)</span><span class="math notranslate nohighlight">\( 
+Then we have \)</span><span class="math notranslate nohighlight">\(B(C^{-1}x) = C^{-1}AC(C^{-1}x) = C^{-1}Ax = C^{-1}(\lambda x)= \lambda (C^{-1}x).\)</span><span class="math notranslate nohighlight">\(
+That is \)</span>C^{-1}x<span class="math notranslate nohighlight">\( is an eigenvector of \)</span>B<span class="math notranslate nohighlight">\( with eigenvalue \)</span>\lambda$.</p>
+</div>
+<div class="section" id="a-second-example">
+<h3>A second example<a class="headerlink" href="#a-second-example" title="Permalink to this headline">¶</a></h3>
+<p>✅  <strong><font color=red>Do this:</font></strong> Consider
+$<span class="math notranslate nohighlight">\( A = \begin{bmatrix}-4&amp; -6\\3&amp; 5\end{bmatrix}.\)</span><span class="math notranslate nohighlight">\(
+Find a matrix \)</span>C<span class="math notranslate nohighlight">\( such that \)</span>C^{-1}AC$ is diagonal. (Hint, use the function <code class="docutils literal notranslate"><span class="pre">diagonalize</span></code> in <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Check the output type</span>
+<span class="k">assert</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">==</span><span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="s1">&#39;ba963b7fef354b4a7ddd880ca4bac071&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-third-example">
+<h3>The third example<a class="headerlink" href="#the-third-example" title="Permalink to this headline">¶</a></h3>
+<p>✅  <strong><font color=red>Do this:</font></strong> Consider
+$<span class="math notranslate nohighlight">\( A = \begin{bmatrix}5&amp; -3\\3&amp; -1\end{bmatrix}.\)</span><span class="math notranslate nohighlight">\(
+Can we find a matrix \)</span>C<span class="math notranslate nohighlight">\( such that \)</span>C^{-1}AC$ is diagonal?  (Hint: find eigenvalues and eigenvectors using <code class="docutils literal notranslate"><span class="pre">sympy</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dimensions-of-eigenspaces-and-diagonalization">
+<h3>Dimensions of eigenspaces and diagonalization<a class="headerlink" href="#dimensions-of-eigenspaces-and-diagonalization" title="Permalink to this headline">¶</a></h3>
+<p><strong>Definition</strong>: The set of all eigenvectors of a <span class="math notranslate nohighlight">\(n\times n\)</span> matrix corresponding to a eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>, together with the zero vector, is a subspace of <span class="math notranslate nohighlight">\(R^n\)</span>. This subspace spaces is called <em>eigenspace</em>.</p>
+<ul class="simple">
+<li><p>For the third example, we have that the characteristic equation <span class="math notranslate nohighlight">\((\lambda-2)^2=0\)</span>.</p></li>
+<li><p>Eigenvalue <span class="math notranslate nohighlight">\(\lambda=2\)</span> has multiplicity 2, but the eigenspace has dimension 1, since we can not find two lineare independent eigenvector for <span class="math notranslate nohighlight">\(\lambda =2\)</span>.</p></li>
+</ul>
+<blockquote>
+<div><p>The dimension of an eigenspace of a matrix is less than or equal to the multiplicity of the corresponding eigenvalue as a root of the characteristic equation.</p>
+</div></blockquote>
+<blockquote>
+<div><p>A matrix is diagonalizable if and only if the dimension of every eigenspace is equal to the multiplicity of the corresponding eigenvalue as a root of the characteristic equation.</p>
+</div></blockquote>
+</div>
+<div class="section" id="the-fourth-example">
+<h3>The fourth example<a class="headerlink" href="#the-fourth-example" title="Permalink to this headline">¶</a></h3>
+<p>✅  <strong><font color=red>Do this:</font></strong> Consider
+$<span class="math notranslate nohighlight">\( A = \begin{bmatrix}2&amp; -1\\1&amp; 2\end{bmatrix}.\)</span><span class="math notranslate nohighlight">\(
+Can we find a matrix \)</span>C<span class="math notranslate nohighlight">\( such that \)</span>C^{-1}AC$ is diagonal?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a name="The_Power_of_a_Matrix"></a></p>
+</div>
+</div>
+<div class="section" id="the-power-of-a-matrix">
+<h2>4. The Power of a Matrix<a class="headerlink" href="#the-power-of-a-matrix" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>For a diagonalizable matrix <span class="math notranslate nohighlight">\(A\)</span>, we have <span class="math notranslate nohighlight">\(C^{-1}AC=D\)</span>. Then we have
+$<span class="math notranslate nohighlight">\(A = C D C^{-1}\)</span>$</p></li>
+<li><p>We have
+$<span class="math notranslate nohighlight">\(A^2 = C D C^{-1} C D C^{-1} = C D^2 C^{-1}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(A^n = C D C^{-1} \dots C D C^{-1} = C D^n C^{-1}\)</span>$</p></li>
+<li><p>Because the columns of <span class="math notranslate nohighlight">\(C\)</span> are eigenvectors, so we can say that the eigenvectors for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(A^n\)</span> are the same if <span class="math notranslate nohighlight">\(A\)</span> is diagonalizable.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(x\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span> with the corresponding eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>, then <span class="math notranslate nohighlight">\(x\)</span> is also an eigenvector of <span class="math notranslate nohighlight">\(A^n\)</span> with the corresponding eigenvalue <span class="math notranslate nohighlight">\(\lambda^n\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here are some libraries you may need to use</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="graph-random-walk">
+<h3>Graph Random Walk<a class="headerlink" href="#graph-random-walk" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Define the following matrices:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(I\)</span> is the identity matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is the adjacency matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span> is diagonal matrix of degrees (number of edges connected to each node)</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[W=\frac{1}{2}(I + AD^{-1})\]</div>
+<ul class="simple">
+<li><p>The <strong>lazy random walk matrix</strong>, <span class="math notranslate nohighlight">\(W\)</span>, takes a distribution vector of <em>stuff</em>, <span class="math notranslate nohighlight">\(p_{t}\)</span>, and diffuses it to its neighbors:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_{t+1}=Wp_{t}\]</div>
+<ul class="simple">
+<li><p>For some initial distribution of <em>stuff</em>, <span class="math notranslate nohighlight">\(p_{0}\)</span>, we can compute how much of it would be at each node at time, <span class="math notranslate nohighlight">\(t\)</span>, by powering <span class="math notranslate nohighlight">\(W\)</span> as follows:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_{t}=W^{t}p_{0}\]</div>
+<ul class="simple">
+<li><p>Plugging in the above expression yields:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_{t}=\left( \frac{1}{2}(I+AD^{-1}) \right)^t p_{0}\]</div>
+<p><strong><font color=red>DO THIS</font></strong>: Using matrix algebra, show that <span class="math notranslate nohighlight">\(\frac{1}{2}(I + AD^{-1})\)</span> is <strong>similar</strong> to  <span class="math notranslate nohighlight">\(I-\frac{1}{2}N\)</span>, where <span class="math notranslate nohighlight">\(N=D^{-\frac{1}{2}}(D-A)D^{-\frac{1}{2}}\)</span> is the normalized graph Laplacian.</p>
+<p><strong>Your answer goes here</strong> (follow along after attempting)</p>
+</div>
+<div class="section" id="random-walk-on-barbell-graph">
+<h3>Random Walk on Barbell Graph<a class="headerlink" href="#random-walk-on-barbell-graph" title="Permalink to this headline">¶</a></h3>
+<p>To generate the barbell graph, run the following cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">60</span> <span class="c1"># number of nodes</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span> <span class="c1"># initialize graph</span>
+
+<span class="c1">## initialize empty edge lists</span>
+<span class="n">edge_list_complete_1</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="n">edge_list_complete_2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">edge_list_path</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">## generate node lists</span>
+<span class="n">node_list_complete_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">node_list_complete_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span><span class="n">n</span><span class="p">)</span>
+<span class="n">node_list_path</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1">## generate edge sets for barbell graph</span>
+<span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">node_list_complete_1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)):</span>
+        <span class="n">edge_list_complete_1</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+        
+<span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">node_list_complete_2</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">edge_list_complete_2</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">node_list_path</span><span class="p">:</span>
+    <span class="n">edge_list_path</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">,</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># G.remove_edges_from([(3,0),(5,7),(0,7),(3,5)])</span>
+
+<span class="c1">## add edges</span>
+<span class="n">B</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_list_complete_1</span><span class="p">)</span>
+<span class="n">B</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_list_complete_2</span><span class="p">)</span>
+<span class="n">B</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_list_path</span><span class="p">)</span>
+
+
+<span class="c1">## draw graph</span>
+<span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="c1"># positions for all nodes</span>
+
+<span class="c1">### nodes</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">nodelist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">node_list_complete_1</span><span class="p">),</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span>
+                       <span class="n">node_size</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">nodelist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">node_list_path</span><span class="p">),</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span>
+                       <span class="n">node_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">nodelist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">node_list_complete_2</span><span class="p">),</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                       <span class="n">node_size</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+
+<span class="c1">### edges</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">edgelist</span><span class="o">=</span><span class="n">edge_list_complete_1</span><span class="p">,</span>
+                       <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">edgelist</span><span class="o">=</span><span class="n">edge_list_path</span><span class="p">,</span>
+                       <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span>
+                       <span class="n">edgelist</span><span class="o">=</span><span class="n">edge_list_complete_2</span><span class="p">,</span>
+                       <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this</font>:</strong> Generate the lazy random walk matrix, <span class="math notranslate nohighlight">\(W\)</span>, for the above graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Make a vector of the sums.</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">d</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="n">checkanswer</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="s2">&quot;7af4a5b11892da6e1a605c8239b62093&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this</font>:</strong> Compute the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(W\)</span>. Make a diagonal matrix <span class="math notranslate nohighlight">\(J\)</span> with the eigenvalues on the diagonal. Name the matrix of eigenvectors <span class="math notranslate nohighlight">\(V\)</span> (each column is an eigenvector).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we make sure we constructed <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(A\)</span> correctly by double checking that <span class="math notranslate nohighlight">\(W = VJV^{-1}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">V</span><span class="o">*</span><span class="n">J</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  <strong><font color=red>Do this</font>:</strong> Let your <span class="math notranslate nohighlight">\(p_{0}=[1,0,0,\ldots,0]\)</span>. Compute <span class="math notranslate nohighlight">\(p_{t}\)</span> for <span class="math notranslate nohighlight">\(t=1,2,\ldots,100\)</span>, and plot <span class="math notranslate nohighlight">\(||v_{1}-p_{t}||_{1}\)</span> versus <span class="math notranslate nohighlight">\(t\)</span>, where <span class="math notranslate nohighlight">\(v_{1}\)</span> is the eigenvector associated with the largest eigenvalue <span class="math notranslate nohighlight">\(\lambda_{1}=1\)</span> and whose sum equals 1. (<strong>Note</strong>: <span class="math notranslate nohighlight">\(||\cdot||_{1}\)</span> may be computed using <code class="docutils literal notranslate"><span class="pre">np.linalg.norm(v_1-p_t,</span> <span class="pre">1)</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Put your answer to the above question here. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-to-complete-graph">
+<h4>Compare to Complete Graph<a class="headerlink" href="#compare-to-complete-graph" title="Permalink to this headline">¶</a></h4>
+<p>If you complete the above, do the same for a complete graph on the same number of nodes.</p>
+<p>✅  <strong><font color=red>Question</font>:</strong> What do you notice about the graph that is different from that above?</p>
+<p>Put your answer to the above question here.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="15--Diagonalization_pre-class-assignment.html" title="previous page">15 Pre-Class Assignment: Diagonalization and Powers</a>
+    <a class='right-next' id="next-link" href="16--Linear_Dynamical_Systems_pre-class-assignment.html" title="next page">16 Pre-Class Assignment: Linear Dynamical Systems</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jupyter Getting Started Guide &#8212; Matrix Algebra with Computational Applications</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python Linear Algebra Packages" href="0000-Python_Packages.html" />
+    <link rel="prev" title="Supplemental Materials: Python Linear Algebra Packages" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Cover.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Class_Prep_Checklist.html">
+   Matrix Algebra class preparation checklist
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-CMSE314_introduction_in-class-assignment.html">
+   01 In-Class Assignment: Welcome to Matrix Algebra with computational applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02--Vectors_pre-class-assignment.html">
+   02 Pre-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Vectors_in-class-assignment.html">
+   02 In-Class Assignment: Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03--Linear_Equations_pre-class-assignment.html">
+   03 Pre-Class Assignment: Linear Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Linear_Equations_in-class-assignment.html">
+   03 In-Class Assignment: Solving Linear Systems of equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04--Gauss_Jordan_pre-class-assignment.html">
+   04 Pre-Class Assignment: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Gauss_Jordan_in-class-assignment.html">
+   04 In-Class Assignment: Linear Algebra and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05--Gauss_Jordan2_pre-class-assignment.html">
+   05 Pre-Class Assignment: Gauss-Jordan Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Gauss_Jordan2_in-class-assignment.html">
+   05 In-Class Assignment: Gauss-Jordan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
+   Readings for this topic (Recommended in bold)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
+   06 Pre-Class Assignment: Matrix Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Mechanics_in-class-assignment.html">
+   06 In-Class Assignment: Matrix Multiply
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07--Transformations_pre-class-assignment.html">
+   07 Pre-Class Assignment: Transformation Matrix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transformations_in-class-assignment.html">
+   07 In-Class Assignment: Transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08--Robotics_pre-class-assignment.html">
+   08 Pre-Class Assignment: Robotics and Reference Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Robotics_in-class-assignment.html">
+   08 In-Class Assignment: The Kinematics of Robotics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09--Determinants_pre-class-assignment.html">
+   09 Pre-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-Determinats_in-class-assignment.html">
+   09 In-Class Assignment: Determinants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html">
+   10 Pre-Class Assignment: Eigenvectors and Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-Eigenproblems_in-class-assignment.html">
+   10 In-Class Assignment: Eigenproblems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11--Vector_Spaces_pre-class-assignment.html">
+   11 Pre-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-Vector_Spaces_in-class-assignment.html">
+   11 In-Class Assignment: Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12--Change_Basis_pre-class-assignment.html">
+   12 Pre-Class Assignment: Matrix Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-Changing_vector_space_in-class-assignment.html">
+   12 In-Class Assignment: Matrix Representation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13--Projections_pre-class-assignment.html">
+   13 Pre-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-Projections_in-class-assignment.html">
+   13 In-Class Assignment: Projections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14--Fundamental_Spaces_pre-class-assignment.html">
+   14 Pre-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-Fundamental_Spaces_in-class-assignment.html">
+   14 In-Class Assignment: Fundamental Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15--Diagonalization_pre-class-assignment.html">
+   15 Pre-Class Assignment: Diagonalization and Powers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-Diagonalization_in-class-assignment.html">
+   15 In-Class Assignment: Diagonalization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16--Linear_Dynamical_Systems_pre-class-assignment.html">
+   16 Pre-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-Linear_Dynamical_Systems_in-class-assignment.html">
+   16 In-Class Assignment: Linear Dynamical Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17--Decompositions_pre-class-assignment.html">
+   17 Pre-Class Assignment: Decompositions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-Decompositions_in-class-assignment.html">
+   17 In-Class Assignment: Decompositions and Gaussian Elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18--Inner_Product_pre-class-assignment.html">
+   18 Pre-Class Assignment: Inner Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-Inner_Product_in-class-assignment.html">
+   18 In-Class Assignment: Inner Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19--LSF_pre-class-assignment.html">
+   19 Pre-Class Assignment: Least Squares Fit (Regression)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-LSF_in-class-assignment.html">
+   19 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-LSF_Practice_in-class-assignment.html">
+   20 In-Class Assignment: Least Squares Fit (LSF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21--Review_pre-class-assignment.html">
+   21 Pre-Class Assignment: Solve Linear Systems of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-Review_in-class-assignment.html">
+   21 In-Class Assignment: Solve Linear Systems of Equations using QR Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html">
+   Supplemental Materials: Python Linear Algebra Packages
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Jupyter Getting Started Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0000-Python_Packages.html">
+   Python Linear Algebra Packages
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/0000-Jupyter_Getting_Started_Guide.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/0000-Jupyter_Getting_Started_Guide.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-jupyter-working">
+   Getting Jupyter Working
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instructions-for-downloading-anaconda-python-3-x-x">
+     Instructions for downloading Anaconda (Python 3.x.x):
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instructions-for-connecting-to-the-engineering-jupyterhub-server">
+     Instructions for connecting to the engineering JupyterHub server:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instructions-for-getting-jupyter-notebook-files-into-jupyter">
+     Instructions for getting Jupyter notebook files into Jupyter:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-running-python-code-in-jupyter-notebooks">
+   Example running python code in Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-review-of-python-ipython-and-ipython-notebooks">
+   Video review of Python, IPython, and IPython notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-anaconda-python">
+   Installing Anaconda Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-the-engineering-jupyter-account">
+   Introduction to the Engineering Jupyter Account
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-information">
+   More Information
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference internal" href="#"><span class="doc std std-doc">Link to this document’s Jupyter Notebook</span></a></p>
+<div class="section" id="jupyter-getting-started-guide">
+<h1>Jupyter Getting Started Guide<a class="headerlink" href="#jupyter-getting-started-guide" title="Permalink to this headline">¶</a></h1>
+<p>This guide is designed to help students new to Jupyter notebooks get started.</p>
+<img src="https://jupyter.org/assets/main-logo.svg" width="25%" alt="Jupyter software logo">
+<blockquote>
+<div><p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
+From: <a href="https://jupyter.org/">https://jupyter.org/</a></p>
+</div></blockquote>
+<p>Jupyter works best as a communication tool.  Notebooks will be used throughout this class as a way for instructors to communicate with students and for students to communicate with instructors. We will use Jupyter notebooks extensively for pre-class assignments, in-class assignments, homework and Exams.</p>
+<div class="section" id="getting-jupyter-working">
+<h2>Getting Jupyter Working<a class="headerlink" href="#getting-jupyter-working" title="Permalink to this headline">¶</a></h2>
+<p>The first thing you will need to do is to get Jupyter running.  There are two basic methods we will be using Jupyter in class. The first is to install it on your computer using Anaconda Python distribution and the second is to use the Web based <a class="reference external" href="http://jupyterhub.egr.msu.edu">JupyterHub</a> server put together for the class. The following instructions can help you get started.  We recommend learning how to use both methods for class in case there is a problem on one of the systems.</p>
+<div class="section" id="instructions-for-downloading-anaconda-python-3-x-x">
+<h3>Instructions for downloading Anaconda (Python 3.x.x):<a class="headerlink" href="#instructions-for-downloading-anaconda-python-3-x-x" title="Permalink to this headline">¶</a></h3>
+<p>(These instructions are also available via YouTube video: <a class="reference external" href="https://youtu.be/3BiLPXAGINA">https://youtu.be/3BiLPXAGINA</a>)</p>
+<ol class="simple">
+<li><p>Go to the Anaconda Download web page:  <a class="reference external" href="https://www.continuum.io/downloads">https://www.continuum.io/downloads</a></p></li>
+<li><p>Use the “Jump to: Windows | OS X | Linux” to pick your operating system.</p></li>
+<li><p>Download the Python 3.x version (64 bit recommended).</p></li>
+<li><p>Follow the directions at the bottom of the page to install Python on your specific operating system.</p></li>
+<li><p>Open the command line program on your computer</p>
+<ul class="simple">
+<li><p>On windows, type CMD in the run box in the Start menu.</p></li>
+<li><p>On Mac, type “terminal” and hit enter in the Finder window</p></li>
+<li><p>On Linux, open up the console application</p></li>
+</ul>
+</li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> in the command line and hit enter</p></li>
+</ol>
+<p>If everything goes correctly, a browser window should open up with the Jupyter interface running. If things do not work, do not worry; we will help you get started.</p>
+</div>
+<div class="section" id="instructions-for-connecting-to-the-engineering-jupyterhub-server">
+<h3>Instructions for connecting to the engineering JupyterHub server:<a class="headerlink" href="#instructions-for-connecting-to-the-engineering-jupyterhub-server" title="Permalink to this headline">¶</a></h3>
+<p>(These instructions are also available via a YouTube video)</p>
+<p>Every student enrolled in this class will be given an engineering computing account. If this is your first time using your Engineering account you will need to activate the account by going to the following website:</p>
+<p><a class="reference external" href="https://www.egr.msu.edu/decs/myaccount/?page=activate">https://www.egr.msu.edu/decs/myaccount/?page=activate</a></p>
+<p>Enter your MSU NetID. The initial password will be your APID with an &#64; on the end (example: A12345678&#64;) and then they have to set a password that meets the requirements listed on the page. Verify the password. Then agree to the terms and Activate.</p>
+<ul class="simple">
+<li><p>Once your account is activated you can access the classroom Jupyterhub server using the following instructions:</p>
+<ol class="simple">
+<li><p>Open up a web browser and go to the following URL: <a class="reference external" href="https://jupyterhub.egr.msu.edu">https://jupyterhub.egr.msu.edu</a></p></li>
+<li><p>Type your engineering login name. This will be your MSU NetID.</p></li>
+<li><p>Your engineering password.</p></li>
+</ol>
+</li>
+</ul>
+<p>If everything is working properly you will see the main “Files” windows in the Jupyter interface.</p>
+</div>
+<div class="section" id="instructions-for-getting-jupyter-notebook-files-into-jupyter">
+<h3>Instructions for getting Jupyter notebook files into Jupyter:<a class="headerlink" href="#instructions-for-getting-jupyter-notebook-files-into-jupyter" title="Permalink to this headline">¶</a></h3>
+<p>Once you have Jupyter running you will need a notebook file to try out. Jupyter notebooks (also referred to as iPython notebooks) are files that end with the .ipynb extension.  We will give you these files for all of your assignments, you will edit them and turn in the edited files in using the course website.</p>
+<p>You can download the ipynb assignment files from the course website (<a class="reference external" href="http://d2l.msu.edu">http://d2l.msu.edu</a>). Once you have an ipynb file you can load it into Jupyter using the “upload” button on the main “Files” tab in the Jupyter web interface. Hitting this button will cause a file browser window to open. Just navigate to your ipynb file, select it and hit the open button.</p>
+<p>Once you see your filename in the jupyter window you can just click on that name to start using that file.</p>
+<p><strong>✅ DO THIS:</strong> This tutorial was originally written as a Jupyter notebook and saved to a pdf.  If you are reading this in a pdf, go to the course webpage and download the file titled “00-Getting-Started-Guide.ipynb” and run it in Jupyter before continuing on to the next section.</p>
+</div>
+</div>
+<div class="section" id="example-running-python-code-in-jupyter-notebooks">
+<h2>Example running python code in Jupyter Notebooks<a class="headerlink" href="#example-running-python-code-in-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>One of the most unique and defining features of Jupyter notebooks is the ability to run code inside of this notebook.  This ability makes Jupyter Notebooks especially useful in classes that teach or use programming concepts.</p>
+<p>Jupyter notebooks are separated into different types of “cells”.  The two major types of cells are; Markdown cells and code cells.  Markdown cells (such as this one) consist of formated text, images and equations much like your
+favorite word processor.</p>
+<p>The following are two code cells written in the Python programming language.  This simple code is a tool to make it easy to search your jupyter notebooks which can be handy if you are looking for something from a previous class. The example searches for an exact string in your notebook files in the current directory and displays links to the files as output.</p>
+<p>To run the code, first select the code cell with your mouse and then hold down the “Shift” key while hitting the “enter” key.  You will have to hit the enter key twice to run both cells.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Search string</span>
+<span class="n">search_string</span> <span class="o">=</span> <span class="s2">&quot;rocket&quot;</span>
+
+<span class="c1">#Search current directory</span>
+<span class="n">directory</span> <span class="o">=</span><span class="s1">&#39;.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="n">search_string</span> <span class="o">=</span> <span class="n">search_string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">links</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="n">folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+
+<span class="n">files</span> <span class="o">=</span> <span class="n">folder</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.ipynb&#39;</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">search_string</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;a href=&quot;</span><span class="o">+</span><span class="n">fn</span><span class="o">+</span><span class="s2">&quot; target=</span><span class="se">\&quot;</span><span class="s2">_blank</span><span class="se">\&quot;</span><span class="s2"> &gt;&quot;</span><span class="o">+</span><span class="n">fn</span><span class="o">+</span><span class="s2">&quot;&lt;/a&gt;&lt;/br&gt;&quot;</span><span class="p">)</span>
+                <span class="k">break</span>
+<span class="k">if</span> <span class="n">links</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">links</span><span class="p">)))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;string (&#39;</span><span class="o">+</span><span class="n">search_string</span><span class="o">+</span><span class="s1">&#39;) not found.&#39;</span><span class="p">)</span>
+            
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><a href=0000-Jupyter_Getting_Started_Guide.ipynb target="_blank" >0000-Jupyter_Getting_Started_Guide.ipynb</a></br> <a href=18-Inner_Product_in-class-assignment.ipynb target="_blank" >18-Inner_Product_in-class-assignment.ipynb</a></br></div></div>
+</div>
+</div>
+<div class="section" id="video-review-of-python-ipython-and-ipython-notebooks">
+<h2>Video review of Python, IPython, and IPython notebooks<a class="headerlink" href="#video-review-of-python-ipython-and-ipython-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>Much of this course will be taught in a “flipped” style. This means we give you notebooks to review outside of class and we use in-class time to work on meaningful problems.  Many of our pre-class assignments notebooks use videos to help communicate ideas (in lieu of lecture time in class).</p>
+<p>The following two cells will embed the lectures in the notebooks. Run the cells using the “Shift-Enter” key combination described above.  Once the video appears just click on the “Play” triangle.</p>
+<p>These videos explain Python and Jupyter in more detail.</p>
+<ul class="simple">
+<li><p>Direct link to “<strong>Python, iPython, Jupyter</strong>” video: <a class="reference external" href="https://youtu.be/L03BzGmLUUE">https://youtu.be/L03BzGmLUUE</a></p></li>
+<li><p>Alternative Link: <a class="reference external" href="https://mediaspace.msu.edu/media/t/0_wxpceyi6">https://mediaspace.msu.edu/media/t/0_wxpceyi6</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The command below this comment actually displays a specific YouTube video,  </span>
+<span class="c1"># with a given width and height.  You can watch the video in full-screen (much higher</span>
+<span class="c1"># resolution) mode by clicking the little box in the bottom-right corner of the video.</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;L03BzGmLUUE&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/L03BzGmLUUE?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>Direct link to “<strong>Working with Jupyter and ipynb files</strong>” video: <a class="reference external" href="https://youtu.be/5WSQnGmz3IA">https://youtu.be/5WSQnGmz3IA</a>.</p></li>
+<li><p>Alternative Link: <a class="reference external" href="https://mediaspace.msu.edu/media/t/0_hkqjufix">https://mediaspace.msu.edu/media/t/0_hkqjufix</a></p></li>
+</ul>
+<p>Note that the download URL in this video is a little out of date.  See the next video or google “Anaconda Python Download”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Python code to display embeded video in jupyter notebook</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;5WSQnGmz3IA&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/5WSQnGmz3IA?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="installing-anaconda-python">
+<h2>Installing Anaconda Python<a class="headerlink" href="#installing-anaconda-python" title="Permalink to this headline">¶</a></h2>
+<p>The following video will introduce you to install Anaconda Python on your personal computer. For this class, make sure you install the latest version (the version in the video is probably old). Also the websites may have been updated.  Hopefully that will not be confusing.</p>
+<ul class="simple">
+<li><p>Direct link to “<strong>Install Anaconda</strong>” video: <a class="reference external" href="https://youtu.be/3BiLPXAGINA">https://youtu.be/3BiLPXAGINA</a></p></li>
+<li><p>Alternative Link:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Python code to display embeded video in jupyter notebook</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;3BiLPXAGINA&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/3BiLPXAGINA?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="introduction-to-the-engineering-jupyter-account">
+<h2>Introduction to the Engineering Jupyter Account<a class="headerlink" href="#introduction-to-the-engineering-jupyter-account" title="Permalink to this headline">¶</a></h2>
+<p>The following video will introduce you to the Engineering JupyterHub Interface. Please watch this video and answer the questions. Log onto the engineering JupyterHub account using the following link:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://jupyterhub.egr.msu.edu">http://jupyterhub.egr.msu.edu</a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Direct link to “<strong>MSU Engineering Jupyterhub Server</strong>” video: <a class="reference external" href="https://youtu.be/l7mhi4ww6tY">https://youtu.be/l7mhi4ww6tY</a></p></li>
+<li><p>Alternative Link: <a class="reference external" href="https://mediaspace.msu.edu/media/t/0_brafne0e">https://mediaspace.msu.edu/media/t/0_brafne0e</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Python code to display embeded video in jupyter notebook</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;l7mhi4ww6tY&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/l7mhi4ww6tY?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="more-information">
+<h2>More Information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>There are lots of resources on the web for using Python and Jupyter notebooks.  The following are some recommended websites for getting more information.  If these sites do not work consider using your favorite search engine.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://software-carpentry.org/lessons/">https://software-carpentry.org/lessons/</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/">https://docs.python.org/3/tutorial/</a></p></li>
+<li><p><a class="reference external" href="http://pythontutor.com/">http://pythontutor.com/</a></p></li>
+</ul>
+<p>Written by Dirk Colbry, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="0000--Python_Linear_Algebra_Packages_pre-class-assignment.html" title="previous page">Supplemental Materials: Python Linear Algebra Packages</a>
+    <a class='right-next' id="next-link" href="0000-Python_Packages.html" title="next page">Python Linear Algebra Packages</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dirk Colbry<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
