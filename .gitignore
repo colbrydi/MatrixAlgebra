@@ -1,0 +1,14 @@
+# Original file copied From: https://gist.github.com/kjaanson/de713cff4ab7d493563fd9731a232534
+/*.egg-info
+/.spyderproject
+.spyderproject
+.idea/*
+/**/.DS_Store
+/**/__pycache__
+/**/.ipynb_checkpoints
+/.doit.db.bak
+/.doit.db.dat
+/.doit.db.dir
+*.mp4
+*.mpg
+*.html
