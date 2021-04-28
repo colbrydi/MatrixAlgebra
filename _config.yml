@@ -4,7 +4,7 @@
 title: Matrix Algebra with Computational Applications
 author: Dirk Colbry
 logo: Cover.jpg
-copyright: "2020"
+copyright: '2021'
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
