@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -145,11 +147,6 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
-   Readings for this topic (Recommended in bold)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
    06 Pre-Class Assignment: Matrix Mechanics
   </a>
  </li>
@@ -412,23 +409,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#complete-background-survey">
-   2. Complete background survey
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-jupyter-working">
-   3. Get Jupyter Working
+   2. Get Jupyter Working
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review-python-packages">
-   4. Review Python Packages
+   3. Review Python Packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#complete-pre-class-assignment">
-   5. Complete Pre-class Assignment
+   4. Complete Pre-class Assignment
   </a>
  </li>
 </ul>
@@ -449,10 +441,12 @@
 <p>Due to COVID-19 pandemic the first week of the Spring 2021 semester will be used for reading, review and semester preparation.  To this end, it is recommended that all students complete the following tasks before showing up for the first day of class.</p>
 <ol class="simple">
 <li><p><a class="reference external" href="#Welcome_and_Syllabus">Watch Welcome Video and Review Syllabus</a></p></li>
-<li><p><a class="reference external" href="#Complete_background_survey">Complete background survey</a></p></li>
 <li><p><a class="reference external" href="#Get-Jupyter-working">Get Jupyter Working</a></p></li>
 <li><p><a class="reference external" href="#Review-Python-Packages">Review Python Packages</a></p></li>
 <li><p><a class="reference external" href="#Complete-Pre-class-assignment">Complete Pre-class Assignment</a></p></li>
+</ol>
+<ol class="simple">
+<li><p><a class="reference external" href="#Complete_background_survey">Complete background survey</a></p></li>
 </ol>
 <hr class="docutils" />
 <p><a name=Welcome_and_Syllabus></a></p>
@@ -462,53 +456,29 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://youtu.be/pRG9RVOP-3k">Welcome video</a></p></li>
 </ul>
-<ul class="simple">
-<li><p><a class="reference external" href="https://msu-cmse-courses.github.io/mth314-s21-student/Syllabus">Course Syllabus</a></p></li>
-</ul>
-<hr class="docutils" />
-<p><a name=Complete_background_survey></a></p>
-</div>
-<div class="section" id="complete-background-survey">
-<h2>2. Complete background survey<a class="headerlink" href="#complete-background-survey" title="Permalink to this headline">¶</a></h2>
-<p>Students in MTH314 come from a variety of backgrounds.  To help the instructor adjust the curriculum and provide support to all students in this course please fill out the following on-line survey:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofVsFhDFfo_lLkU7qIzY8I4ZUMk1WWjNFWlpIMVg2TFNKV0xXNkpQU0ZCRi4u">MTH314 background survey</a></p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">&lt;iframe </span>
-<span class="sd">	src=&quot;https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofVsFhDFfo_lLkU7qIzY8I4ZUMk1WWjNFWlpIMVg2TFNKV0xXNkpQU0ZCRi4u&amp;embed=true&quot;</span>
-<span class="sd">	height=&quot;500px&quot; </span>
-<span class="sd">	frameborder=&quot;0&quot; </span>
-<span class="sd">	marginheight=&quot;0&quot; </span>
-<span class="sd">	marginwidth=&quot;0&quot;&gt;</span>
-<span class="sd">	Loading...</span>
-<span class="sd">&lt;/iframe&gt;</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;pRG9RVOP-3k&quot;</span><span class="p">,</span><span class="n">width</span> <span class="o">=</span> <span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">cc_load_policy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe 
-	src="https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofVsFhDFfo_lLkU7qIzY8I4ZUMk1WWjNFWlpIMVg2TFNKV0xXNkpQU0ZCRi4u&embed=true"
-	height="500px" 
-	frameborder="0" 
-	marginheight="0" 
-	marginwidth="0">
-	Loading...
-</iframe>
+<iframe
+    width="100%"
+    height="300"
+    src="https://www.youtube.com/embed/pRG9RVOP-3k?cc_load_policy=True"
+    frameborder="0"
+    allowfullscreen
+></iframe>
 </div></div>
 </div>
 <hr class="docutils" />
 <p><a name=Get-Jupyter-working></a></p>
 </div>
 <div class="section" id="get-jupyter-working">
-<h2>3. Get Jupyter Working<a class="headerlink" href="#get-jupyter-working" title="Permalink to this headline">¶</a></h2>
+<h2>2. Get Jupyter Working<a class="headerlink" href="#get-jupyter-working" title="Permalink to this headline">¶</a></h2>
 <p>We will be using Jupyter notebooks for most of our student/instructor communication. Please attend class with the latest version of Anaconda Python installed on your computer (Anaconda includes Jupyter). Instructions for installing and using Anaconda and Jupyter can be found here:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://msu-cmse-courses.github.io/mth314-F20-student/assignments/0000--Jupyter-Getting-Started-Guide.html">0000–Jupyter-Getting-Started-Guide</a></p></li>
@@ -518,7 +488,7 @@
 <p><a name=Review-Python-Packages></a></p>
 </div>
 <div class="section" id="review-python-packages">
-<h2>4. Review Python Packages<a class="headerlink" href="#review-python-packages" title="Permalink to this headline">¶</a></h2>
+<h2>3. Review Python Packages<a class="headerlink" href="#review-python-packages" title="Permalink to this headline">¶</a></h2>
 <p>In this class we will be using programming to teach linear algebra and therefore assume that everyone knows how to use python. the instructors provide the following reference as a review for the most common python libraries we expect you to be able to use for class (numpy, scipy, math, sympy, etc).  please review this tutorial to make sure you are properly prepared for class:</p>
 <ul class="simple">
 <li><p><span class="xref myst">Python Library Review</span></p></li>
@@ -527,12 +497,13 @@
 <p><a name=Complete-Pre-class-assignment></a></p>
 </div>
 <div class="section" id="complete-pre-class-assignment">
-<h2>5. Complete Pre-class Assignment<a class="headerlink" href="#complete-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
+<h2>4. Complete Pre-class Assignment<a class="headerlink" href="#complete-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
 <p>You are expected to come to class ready to complete the in-class assignments.  To prepare for most classes, students are required to complete pre-class assignments (typically two pre-class assignments per week).  These assignments will be in the form of jupyter notebooks and will include reading, videos and programming activities.  The required time for each pre-class will vary but the instructors have tried to make them take approximately 30-minutes.</p>
 <p>Each pre-class assignment ends with an online survey which students are required to complete in order to earn credit for the assignment.  Your first weeks assignments are available on the course git repository or downloadable from the course website.  At a minimum, you must complete the first pre-class assignment by 11:59pm on Tuesday January 19th.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="02--Vectors_pre-class-assignment.html"><span class="doc std std-doc">02–Vectors_pre-class-assignment</span></a></p></li>
 </ul>
+<hr class="docutils" />
 <hr class="docutils" />
 <p>Written by Dr. Dirk Colbry, Michigan State University
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>

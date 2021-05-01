@@ -28,7 +28,7 @@ plt.title('Start Location');
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-9-2bada8ec7696>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-8-2bada8ec7696>[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m#Plot combined transformed points[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      2[0m [0mmp[0m [0;34m=[0m [0mp[0m[0;34m.[0m[0mcopy[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 3[0;31m [0mmp[0m [0;34m=[0m [0mM[0m[0;34m*[0m[0mmp[0m[0;34m[0m[0;34m[0m[0m

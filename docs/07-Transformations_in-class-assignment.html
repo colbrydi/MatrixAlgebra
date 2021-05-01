@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -147,11 +149,6 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
-   Readings for this topic (Recommended in bold)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
    06 Pre-Class Assignment: Matrix Mechanics
   </a>
  </li>
@@ -419,13 +416,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homework-1-review">
-   2. Homework 1 Review
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#affine-transforms">
-   3. Affine Transforms
+   2. Affine Transforms
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -490,7 +482,6 @@
 <h2>Agenda for today’s class (80 minutes)<a class="headerlink" href="#agenda-for-today-s-class-80-minutes" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="#Review_of_Pre-Class_Assignment">(20 minutes) Review of Pre-Class Assignment</a></p></li>
-<li><p><a class="reference external" href="#Homework_1_Review">(20 minutes) Homework 1 Review</a></p></li>
 <li><p><a class="reference external" href="#Affine_Transforms">(20 minutes) Affine Transforms</a></p></li>
 <li><p><a class="reference external" href="#Fractals">(20 minutes) Fractals</a></p></li>
 </ol>
@@ -503,18 +494,10 @@
 <li><p><a class="reference internal" href="07--Transformations_pre-class-assignment.html"><span class="doc std std-doc">07–Transformations_pre-class-assignment</span></a></p></li>
 </ul>
 <hr class="docutils" />
-<p><a name="Homework_1_Review"></a></p>
-</div>
-<div class="section" id="homework-1-review">
-<h2>2. Homework 1 Review<a class="headerlink" href="#homework-1-review" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><span class="xref myst">HW1-Systems_of_linear_equations</span></p></li>
-</ul>
-<hr class="docutils" />
 <p><a name="Affine_Transforms"></a></p>
 </div>
 <div class="section" id="affine-transforms">
-<h2>3. Affine Transforms<a class="headerlink" href="#affine-transforms" title="Permalink to this headline">¶</a></h2>
+<h2>2. Affine Transforms<a class="headerlink" href="#affine-transforms" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we are going to explore different types of transformation matrices.
 The following code is designed to demonstrate the properties of some different transformation matrices.</p>
 <p>✅ <strong><font color=red>DO THIS:</font></strong> Review the following code.</p>
@@ -555,7 +538,7 @@ The following code is designed to demonstrate the properties of some different t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07-Transformations_in-class-assignment_7_0.png" src="_images/07-Transformations_in-class-assignment_7_0.png" />
+<img alt="_images/07-Transformations_in-class-assignment_6_0.png" src="_images/07-Transformations_in-class-assignment_6_0.png" />
 </div>
 </div>
 <div class="section" id="example-scaling-matrix">
@@ -587,8 +570,8 @@ The following code is designed to demonstrate the properties of some different t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07-Transformations_in-class-assignment_9_0.png" src="_images/07-Transformations_in-class-assignment_9_0.png" />
-<img alt="_images/07-Transformations_in-class-assignment_9_1.png" src="_images/07-Transformations_in-class-assignment_9_1.png" />
+<img alt="_images/07-Transformations_in-class-assignment_8_0.png" src="_images/07-Transformations_in-class-assignment_8_0.png" />
+<img alt="_images/07-Transformations_in-class-assignment_8_1.png" src="_images/07-Transformations_in-class-assignment_8_1.png" />
 </div>
 </div>
 </div>
@@ -623,8 +606,8 @@ The following code is designed to demonstrate the properties of some different t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07-Transformations_in-class-assignment_11_0.png" src="_images/07-Transformations_in-class-assignment_11_0.png" />
-<img alt="_images/07-Transformations_in-class-assignment_11_1.png" src="_images/07-Transformations_in-class-assignment_11_1.png" />
+<img alt="_images/07-Transformations_in-class-assignment_10_0.png" src="_images/07-Transformations_in-class-assignment_10_0.png" />
+<img alt="_images/07-Transformations_in-class-assignment_10_1.png" src="_images/07-Transformations_in-class-assignment_10_1.png" />
 </div>
 </div>
 </div>
@@ -656,8 +639,8 @@ The following code is designed to demonstrate the properties of some different t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07-Transformations_in-class-assignment_13_0.png" src="_images/07-Transformations_in-class-assignment_13_0.png" />
-<img alt="_images/07-Transformations_in-class-assignment_13_1.png" src="_images/07-Transformations_in-class-assignment_13_1.png" />
+<img alt="_images/07-Transformations_in-class-assignment_12_0.png" src="_images/07-Transformations_in-class-assignment_12_0.png" />
+<img alt="_images/07-Transformations_in-class-assignment_12_1.png" src="_images/07-Transformations_in-class-assignment_12_1.png" />
 </div>
 </div>
 </div>
@@ -692,42 +675,13 @@ The following code is designed to demonstrate the properties of some different t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07-Transformations_in-class-assignment_15_0.png" src="_images/07-Transformations_in-class-assignment_15_0.png" />
-<img alt="_images/07-Transformations_in-class-assignment_15_1.png" src="_images/07-Transformations_in-class-assignment_15_1.png" />
+<img alt="_images/07-Transformations_in-class-assignment_14_0.png" src="_images/07-Transformations_in-class-assignment_14_0.png" />
+<img alt="_images/07-Transformations_in-class-assignment_14_1.png" src="_images/07-Transformations_in-class-assignment_14_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="example-shear-matrix">
 <h3>Example Shear Matrix<a class="headerlink" href="#example-shear-matrix" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example Shear Matrix</span>
-
-<span class="c1">#Define Matrix</span>
-<span class="n">shx</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">shy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
-<span class="n">SH</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="n">shx</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">shy</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-
-<span class="c1">#Apply matrix</span>
-
-<span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="n">mp</span> <span class="o">=</span> <span class="n">SH</span><span class="o">*</span><span class="n">mp</span>
-
-<span class="c1">#Plot points after transform</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span><span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;scaled&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
-
-<span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">SH</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/07-Transformations_in-class-assignment_17_0.png" src="_images/07-Transformations_in-class-assignment_17_0.png" />
-<img alt="_images/07-Transformations_in-class-assignment_17_1.png" src="_images/07-Transformations_in-class-assignment_17_1.png" />
-</div>
-</div>
 </div>
 <div class="section" id="combine-transforms">
 <h3>Combine Transforms<a class="headerlink" href="#combine-transforms" title="Permalink to this headline">¶</a></h3>
@@ -755,7 +709,7 @@ The following code is designed to demonstrate the properties of some different t
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">2</span><span class="n">bada8ec7696</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">2</span><span class="n">bada8ec7696</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Plot combined transformed points</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">mp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">mp</span> <span class="o">=</span> <span class="n">M</span><span class="o">*</span><span class="n">mp</span>
@@ -1014,6 +968,9 @@ T_1: \left[ \begin{matrix}
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<p>Written by Dr. Dirk Colbry, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
 </div>
 </div>
 

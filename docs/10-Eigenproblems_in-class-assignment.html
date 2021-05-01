@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -147,11 +149,6 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
-   Readings for this topic (Recommended in bold)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
    06 Pre-Class Assignment: Matrix Mechanics
   </a>
  </li>
@@ -414,23 +411,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homework-2-review">
-   1. Homework 2 Review
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pre-class-review">
-   2. Pre Class Review
+   1. Pre Class Review
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction-to-markov-models">
-   3.  Introduction to Markov Models
+   2.  Introduction to Markov Models
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#another-markov-model-example">
-   4. Another Markov Model Example
+   3. Another Markov Model Example
   </a>
  </li>
 </ul>
@@ -452,7 +444,6 @@
 <div class="section" id="agenda-for-today-s-class-80-minutes">
 <h2>Agenda for today’s class (80 minutes)<a class="headerlink" href="#agenda-for-today-s-class-80-minutes" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>(20 minutes) <a class="reference external" href="#Homework-2-Review">Homework 2 Review</a></p></li>
 <li><p>(20 minutes) <a class="reference external" href="#Pre-Class-Review">Pre Class Review</a></p></li>
 <li><p>(20 minutes) <a class="reference external" href="#Introduction-to-Markov-Models">Introduction to Markov Models</a></p></li>
 <li><p>(20 minutes) <a class="reference external" href="#Another-Markov-Model-Example">Another Markov Model Example</a></p></li>
@@ -469,18 +460,10 @@
 </div>
 </div>
 <hr class="docutils" />
-<p><a name=Homework-2-Review></a></p>
-</div>
-<div class="section" id="homework-2-review">
-<h2>1. Homework 2 Review<a class="headerlink" href="#homework-2-review" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><span class="xref myst">HW2-Affine_transform</span></p></li>
-</ul>
-<hr class="docutils" />
 <p><a name=Pre-Class-Review></a></p>
 </div>
 <div class="section" id="pre-class-review">
-<h2>2. Pre Class Review<a class="headerlink" href="#pre-class-review" title="Permalink to this headline">¶</a></h2>
+<h2>1. Pre Class Review<a class="headerlink" href="#pre-class-review" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="10--Eigenproblems_pre-class-assignment.html"><span class="doc std std-doc">10–Eigenproblems_pre-class-assignment.ipynb</span></a></p></li>
 </ul>
@@ -488,7 +471,7 @@
 <p><a name=Introduction-to-Markov-Models></a></p>
 </div>
 <div class="section" id="introduction-to-markov-models">
-<h2>3.  Introduction to Markov Models<a class="headerlink" href="#introduction-to-markov-models" title="Permalink to this headline">¶</a></h2>
+<h2>2.  Introduction to Markov Models<a class="headerlink" href="#introduction-to-markov-models" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>In probability theory, a Markov model is a stochastic model used to model randomly changing systems.
 It is assumed that future states depend only on the current state, not on the events that occurred before it.</p>
@@ -500,8 +483,7 @@ For example, if the Markov process is in state A, then the probability it change
 <p>From: <a class="reference external" href="https://en.wikipedia.org/wiki/Markov_model">Wikipedia</a></p>
 <p>The above state model can be represented by a transition matrix.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{cc}
+\[\begin{split}\begin{array}{cc}
 &amp; \text{Current State}  \\
 P =  &amp;
 \begin{bmatrix}
@@ -509,8 +491,7 @@ P =  &amp;
     p_{A\rightarrow E} &amp; p_{E\rightarrow E} 
 \end{bmatrix}
 \end{array}
-\text{Next state}
-\end{split}\]</div>
+\text{Next state}\end{split}\]</div>
 <p>In other words we can write the above as follows</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -520,7 +501,7 @@ P =  &amp;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/10-Eigenproblems_in-class-assignment_9_0.png" src="_images/10-Eigenproblems_in-class-assignment_9_0.png" />
+<img alt="_images/10-Eigenproblems_in-class-assignment_8_0.png" src="_images/10-Eigenproblems_in-class-assignment_8_0.png" />
 </div>
 </div>
 <p>Notice how the columns in the matrix all add to one. This is because all of the transition probabilities out of a matrix must add to 100 percent.</p>
@@ -652,7 +633,7 @@ P =  &amp;
 <p><a name=Another-Markov-Model-Example></a></p>
 </div>
 <div class="section" id="another-markov-model-example">
-<h2>4. Another Markov Model Example<a class="headerlink" href="#another-markov-model-example" title="Permalink to this headline">¶</a></h2>
+<h2>3. Another Markov Model Example<a class="headerlink" href="#another-markov-model-example" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>A sports broadcaster wishes to predict how many Michigan residents prefer University of Michigan teams and how many prefer Michigan State teams.
 She noticed that, year after year, most people stick with their preferred team; however, about 5% of Michigan fans switch to Michigan State, and about 3% of Michigan State fans switch to Michigan each year.
@@ -711,6 +692,9 @@ However, there is no noticeable difference in the state’s population of 10 mil
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<p>Written by Dr. Dirk Colbry, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
 </div>
 </div>
 

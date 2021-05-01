@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -147,11 +149,6 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
-   Readings for this topic (Recommended in bold)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
    06 Pre-Class Assignment: Matrix Mechanics
   </a>
  </li>
@@ -414,18 +411,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quiz-3-review">
-   1. Quiz 3 Review
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pre-class-assignment-review">
-   2. Pre-class Assignment Review
+   1. Pre-class Assignment Review
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diagonalization">
-   3. Diagonalization
+   2. Diagonalization
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -462,7 +454,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-power-of-a-matrix">
-   4. The Power of a Matrix
+   3. The Power of a Matrix
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -503,7 +495,6 @@
 <div class="section" id="agenda-for-today-s-class-80-minutes">
 <h2>Agenda for today’s class (80 minutes)<a class="headerlink" href="#agenda-for-today-s-class-80-minutes" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p><a class="reference external" href="#Quiz_3_Review">(20 minutes) Quiz 3 Review</a></p></li>
 <li><p><a class="reference external" href="#Pre-class_Assignment_Review">(20 minutes) Pre-class Assignment Review</a></p></li>
 <li><p><a class="reference external" href="#Diagonalization">(20 minutes) Diagonalization</a></p></li>
 <li><p><a class="reference external" href="#The_Power_of_a_Matrix">(20 minutes) The Power of a Matrix</a></p></li>
@@ -520,16 +511,10 @@
 </div>
 </div>
 <hr class="docutils" />
-<p><a name="Quiz_3_Review"></a></p>
-</div>
-<div class="section" id="quiz-3-review">
-<h2>1. Quiz 3 Review<a class="headerlink" href="#quiz-3-review" title="Permalink to this headline">¶</a></h2>
-<p>Time is set aside to ask questions about homework.</p>
-<hr class="docutils" />
 <p><a name="Pre-class_Assignment_Review"></a></p>
 </div>
 <div class="section" id="pre-class-assignment-review">
-<h2>2. Pre-class Assignment Review<a class="headerlink" href="#pre-class-assignment-review" title="Permalink to this headline">¶</a></h2>
+<h2>1. Pre-class Assignment Review<a class="headerlink" href="#pre-class-assignment-review" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="15--Diagonalization_pre-class-assignment.html"><span class="doc std std-doc">15–Diagonalization_pre-class-assignment.ipynb</span></a></p></li>
 </ul>
@@ -537,7 +522,7 @@
 <p><a name="Diagonalization"></a></p>
 </div>
 <div class="section" id="diagonalization">
-<h2>3. Diagonalization<a class="headerlink" href="#diagonalization" title="Permalink to this headline">¶</a></h2>
+<h2>2. Diagonalization<a class="headerlink" href="#diagonalization" title="Permalink to this headline">¶</a></h2>
 <p><strong><em>Reminder</em></strong>: The eigenvalues of triangular (upper and lower) and diagonal matrices are easy:</p>
 <ul class="simple">
 <li><p>The eigenvalues for triangular matrices are the diagonal elements.</p></li>
@@ -710,7 +695,7 @@ Can we find a matrix \)</span>C<span class="math notranslate nohighlight">\( suc
 </div>
 </div>
 <div class="section" id="the-power-of-a-matrix">
-<h2>4. The Power of a Matrix<a class="headerlink" href="#the-power-of-a-matrix" title="Permalink to this headline">¶</a></h2>
+<h2>3. The Power of a Matrix<a class="headerlink" href="#the-power-of-a-matrix" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>For a diagonalizable matrix <span class="math notranslate nohighlight">\(A\)</span>, we have <span class="math notranslate nohighlight">\(C^{-1}AC=D\)</span>. Then we have
 $<span class="math notranslate nohighlight">\(A = C D C^{-1}\)</span>$</p></li>
@@ -897,6 +882,9 @@ $<span class="math notranslate nohighlight">\(A^2 = C D C^{-1} C D C^{-1} = C D^
 <p>If you complete the above, do the same for a complete graph on the same number of nodes.</p>
 <p>✅  <strong><font color=red>Question</font>:</strong> What do you notice about the graph that is different from that above?</p>
 <p>Put your answer to the above question here.</p>
+<hr class="docutils" />
+<p>Written by Dr. Dirk Colbry, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
 </div>
 </div>
 </div>

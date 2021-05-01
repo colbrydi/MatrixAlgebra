@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -147,11 +149,6 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
-   Readings for this topic (Recommended in bold)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
    06 Pre-Class Assignment: Matrix Mechanics
   </a>
  </li>
@@ -424,20 +421,25 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-create-a-course-assignment-folder-in-your-home-directory">
+     ✅ Step 2 - Create a Course Assignment Folder in your home directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#step-3-download-this-jupyter-notebook">
      ✅ Step 3 - Download this jupyter notebook
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-5-create-a-cmse314-assignment-folder-in-your-home-directory">
-     ✅ Step 5 - Create a CMSE314 Assignment Folder in your home directory
+    <a class="reference internal nav-link" href="#step-4-open-this-assignment-in-jupyter">
+     ✅ Step 4 - Open this assignment in Jupyter
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pre-class-survey">
-   2. Pre-class survey
+  <a class="reference internal nav-link" href="#introductions">
+   2. Introductions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -449,13 +451,6 @@
   <a class="reference internal nav-link" href="#syllabus-schedule-and-other-procedures">
    4. Syllabus, Schedule and other Procedures
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#upcomming-assignment-due-date">
-     Upcomming Assignment Due Date:
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-and-review-next-pre-class-assignment">
@@ -501,7 +496,7 @@
 <h2>Agenda for today’s class (80 minutes)<a class="headerlink" href="#agenda-for-today-s-class-80-minutes" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="#Class_Procedures">(10 minutes) Class Procedures</a></p></li>
-<li><p><a class="reference external" href="#Pre-class_survey">(10 minutes) Pre-class Survey</a></p></li>
+<li><p><a class="reference external" href="#Introductions">(10 minutes) Introductions</a></p></li>
 <li><p><a class="reference external" href="#Example">(10 minutes) Example</a></p></li>
 <li><p><a class="reference external" href="#Syllabus_and_Schedule">(25 minutes) Syllabus, Schedule and other Procedures</a></p></li>
 <li><p><a class="reference external" href="#Download_and_review_next_pre-class_assignment">(5 minutes) Download and review next pre-class assignment</a></p></li>
@@ -518,57 +513,30 @@
 <div><p>Feel free to grab one of the laptops in the classroom if you do not have your own.</p>
 </div></blockquote>
 </div>
-<div class="section" id="step-3-download-this-jupyter-notebook">
-<h3>✅ Step 3 - Download this jupyter notebook<a class="headerlink" href="#step-3-download-this-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>Go to the Course <span class="xref myst">website</span>, click on “Download Assignments” and download a copy of this notebook by clicking on the (ipynb) link (ipynb stands for ipython notebook).</p>
-</div></blockquote>
-</div>
-<div class="section" id="step-5-create-a-cmse314-assignment-folder-in-your-home-directory">
-<h3>✅ Step 5 - Create a CMSE314 Assignment Folder in your home directory<a class="headerlink" href="#step-5-create-a-cmse314-assignment-folder-in-your-home-directory" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="step-2-create-a-course-assignment-folder-in-your-home-directory">
+<h3>✅ Step 2 - Create a Course Assignment Folder in your home directory<a class="headerlink" href="#step-2-create-a-course-assignment-folder-in-your-home-directory" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><strong><em>HINT</em></strong> Store all notebooks in the same folder on your computer. They will work better that way.</p>
 </div></blockquote>
+</div>
+<div class="section" id="step-3-download-this-jupyter-notebook">
+<h3>✅ Step 3 - Download this jupyter notebook<a class="headerlink" href="#step-3-download-this-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Download a copy of this notebook (ipynb file which tands for ipython notebook).</p>
+</div></blockquote>
+</div>
+<div class="section" id="step-4-open-this-assignment-in-jupyter">
+<h3>✅ Step 4 - Open this assignment in Jupyter<a class="headerlink" href="#step-4-open-this-assignment-in-jupyter" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Open the downloaded file inside of jupyter either on your laptop or upload the file to an on-line server and open it there.</p>
+</div></blockquote>
 <hr class="docutils" />
-<p><a name="Pre-class_survey"></a></p>
+<p><a name="Introductions"></a></p>
 </div>
 </div>
-<div class="section" id="pre-class-survey">
-<h2>2. Pre-class survey<a class="headerlink" href="#pre-class-survey" title="Permalink to this headline">¶</a></h2>
-<p>Run the following cell to embed the pre-class survey into this notebook:</p>
-<p><a class="reference external" href="https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofVsFhDFfo_lLkU7qIzY8I4ZUMlJQN1BJSzJIQlFRVE5INlNKUjVQTDBFQy4u">Direct Link to the pre-class survey</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">&lt;iframe </span>
-<span class="sd">	src=&quot;https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofVsFhDFfo_lLkU7qIzY8I4ZUMlJQN1BJSzJIQlFRVE5INlNKUjVQTDBFQy4u&quot; </span>
-<span class="sd">	width=&quot;100%&quot; </span>
-<span class="sd">	height=&quot;1000px&quot; </span>
-<span class="sd">	frameborder=&quot;0&quot; </span>
-<span class="sd">	marginheight=&quot;0&quot; </span>
-<span class="sd">	marginwidth=&quot;0&quot;&gt;</span>
-<span class="sd">	Loading...</span>
-<span class="sd">&lt;/iframe&gt;</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe 
-	src="https://forms.office.com/Pages/ResponsePage.aspx?id=MHEXIi9k2UGSEXQjetVofVsFhDFfo_lLkU7qIzY8I4ZUMlJQN1BJSzJIQlFRVE5INlNKUjVQTDBFQy4u" 
-	width="100%" 
-	height="1000px" 
-	frameborder="0" 
-	marginheight="0" 
-	marginwidth="0">
-	Loading...
-</iframe>
-</div></div>
-</div>
+<div class="section" id="introductions">
+<h2>2. Introductions<a class="headerlink" href="#introductions" title="Permalink to this headline">¶</a></h2>
+<p>This course appeals to students from many different backgrounds.  Let us use this time to go around the room and introduce ourselves to each other.</p>
 <hr class="docutils" />
 <p><a name="Example"></a></p>
 </div>
@@ -621,26 +589,21 @@
 </div>
 <div class="section" id="syllabus-schedule-and-other-procedures">
 <h2>4. Syllabus, Schedule and other Procedures<a class="headerlink" href="#syllabus-schedule-and-other-procedures" title="Permalink to this headline">¶</a></h2>
-<p>Note: I will try to include these links at the end of every pre/post class assignment so you can easily navigate.</p>
-<div class="section" id="upcomming-assignment-due-date">
-<h3>Upcomming Assignment Due Date:<a class="headerlink" href="#upcomming-assignment-due-date" title="Permalink to this headline">¶</a></h3>
-<p>Pay attention to the schedule. Every class has a pre-class assignment that should be completed. There is also a major assignment due every week (either a quiz or a homework).</p>
-<ul class="simple">
-<li><p><strong><span style="color:red">Your First Quiz is the scheduled on the second session (04) the week of Monday September 14th.</span></strong> and will cover topics up to that Date (including the 04-pre class assignment).</p></li>
-<li><p><strong><span style="color:red">Your First Homework is due Friday September 25th.</span></strong></p></li>
-</ul>
+<p>Let us now use the time to review the course Syllabus, schedule and other procedures.</p>
 <hr class="docutils" />
 <p><a name="Download_and_review_next_pre-class_assignment"></a></p>
-</div>
 </div>
 <div class="section" id="download-and-review-next-pre-class-assignment">
 <h2>5. Download and review next pre-class assignment<a class="headerlink" href="#download-and-review-next-pre-class-assignment" title="Permalink to this headline">¶</a></h2>
 <p>I will try my best to post each weeks pre-class assignments before the weekend (hopefully on Thursday before class).  Note pre-class assignments are generally due at midnight the day before class.  To get credit for the pre-class assignment you will need to do the readings, answer the questions and submit your answers to the embeded google form.</p>
-<p>Here is next week’s Pre-class assignments.</p>
+<p>Here is next Pre-class assignments.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="02--Vectors_pre-class-assignment.html"><span class="doc std std-doc">02–Vectors_pre-class-assignment.ipynb</span></a></p></li>
 </ul>
-<p><strong>Please note</strong> Please see the course schedule (link on the course <span class="xref myst">website</span>) for a list of assignments and the due dates for your section.</p>
+<hr class="docutils" />
+<p>Written by Dr. Dirk Colbry, Michigan State University</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a></p>
+<p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
 </div>
 </div>
 

@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -147,11 +149,6 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06--Mechanics_pre-class-assignment.html">
-   Readings for this topic (Recommended in bold)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06--Mechanics_pre-class-assignment.html#pre-class-assignment-matrix-mechanics">
    06 Pre-Class Assignment: Matrix Mechanics
   </a>
  </li>
@@ -414,13 +411,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#welcome-and-introductions">
-   1. Welcome and Introductions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-linear-system">
-   2. Example linear System:
+   1. Example linear System:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -519,11 +511,6 @@
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hw1-vectors">
-   5. HW1 Vectors
-  </a>
- </li>
 </ul>
 
         </nav>
@@ -546,25 +533,15 @@
 <div class="section" id="agenda-for-today-s-class-80-minutes">
 <h2>Agenda for today’s class (80 minutes)<a class="headerlink" href="#agenda-for-today-s-class-80-minutes" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p><a class="reference external" href="#Welcome_and_introductions">(20 minutes) Welcome and introductions</a></p></li>
 <li><p><a class="reference external" href="#Example">(20 minutes) Example linear System</a></p></li>
 <li><p><a class="reference external" href="#Pre-class_assignment_review">(20 minutes) Review pre-class assignment</a></p></li>
-<li><p><a class="reference external" href="#Vectors_in_Python">(10 minutes) Vectors in Python</a></p></li>
-<li><p><a class="reference external" href="#Homework_1">(10 minutes) HW1 Vectors</a></p></li>
+<li><p><a class="reference external" href="#Vectors_in_Python">(20 minutes) Vectors in Python</a></p></li>
 </ol>
-<hr class="docutils" />
-<p><a name="Welcome_and_introductions"></a></p>
-</div>
-<div class="section" id="welcome-and-introductions">
-<h2>1. Welcome and Introductions<a class="headerlink" href="#welcome-and-introductions" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="http://cmse.msu.edu/mth314">Course Website</a></p></li>
-</ul>
 <hr class="docutils" />
 <p><a name="Example"></a></p>
 </div>
 <div class="section" id="example-linear-system">
-<h2>2. Example linear System:<a class="headerlink" href="#example-linear-system" title="Permalink to this headline">¶</a></h2>
+<h2>1. Example linear System:<a class="headerlink" href="#example-linear-system" title="Permalink to this headline">¶</a></h2>
 <p>Suppose that we have three objects on a balanced beam. Also suppose we know that one has a mass of 2 kg, and we want to find the two unknown masses. Experimentation with a (assume weightless) meter stick produces these two balances. (diagram not to scale)</p>
 <img src="https://lh6.googleusercontent.com/S-glvU6hZySH682ocl1T_2jNWL7S2MUCQeyDFgEZM8GPZ4xLjEkeD9KKsU5otJF0zfgcQtT-zQ=w740" align="center" width="70%" alt="Image showing two balanced beams, each with three weights. In the top beam is unknown weight A is a distance of 40 to the left of the fulcrum, unknown weight B is a distance of 15 to the left of the fulcrum and a weight of 2 is 50 to the right of the fulcrum. In the bottom beam is the same unknown weights.  Weight A is now a distance of 50 to the right of the fulcrum, weight B is a distance of 25 to the left of the fulcrum and the weight of 2 is a distance of 25 to the right of the fulcrum.">
 <p>For the masses to balance we must have the sum of the moments on the left equal to the sum of the moments on the right, where the moment of an object is its mass times its distance from the balance point.   That gives a system of two  equations:</p>
@@ -1099,15 +1076,9 @@ There are several ways to get more than one consecutive elements.</p>
 </div>
 </div>
 <hr class="docutils" />
-<p><a name="Homework_1"></a></p>
+<p>Written by Dr. Dirk Colbry, Michigan State University
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
 </div>
-</div>
-<div class="section" id="hw1-vectors">
-<h2>5. HW1 Vectors<a class="headerlink" href="#hw1-vectors" title="Permalink to this headline">¶</a></h2>
-<p>In your first Homework you are going to explore a variety of linear systems.  Lets go over the homework together in class to make sure we all know what is going on.</p>
-<ul class="simple">
-<li><p><span class="xref myst">HW1-Systems_of_linear_equations-STUDENT</span></p></li>
-</ul>
 </div>
 </div>
 
