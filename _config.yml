@@ -17,7 +17,11 @@ repository:
   url: https://github.com/colbrydi/MatrixAlgebra
   path_to_book: docs/_sources/  # An optional path to your book, defaults to repo root
   branch      : main 
-
+html:
+  use_issues_button: true
+  use_repository_button: true
+  #use_edit_page_button: true
+  
 launch_buttons:
   notebook_interface: "classic"  # or "jupyterlab"
   colab_url: "https://colab.research.google.com"
