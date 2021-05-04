@@ -5,13 +5,24 @@ title: Matrix Algebra with Computational Applications
 author: Dirk Colbry
 logo: Cover.jpg
 copyright: '2021'
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: auto
   timeout : 30  
   stderr_output : remove
-# repository:
-#   url                       : ""  # The URL to your book's repository
-#   path_to_book              : docs  # A path to your book's folder, relative to the repository root.
-#   branch                    : master  # Which branch of the repository should be used when creating links
+  
+repository:
+  url: https://github.com/colbrydi/MatrixAlgebra
+  path_to_book: docs/_sources/  # An optional path to your book, defaults to repo root
+  branch      : main 
+
+launch_buttons:
+  notebook_interface: "classic"  # or "jupyterlab"
+  colab_url: "https://colab.research.google.com"
+  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
+  #Add to docker file RUN pip install jupytext nbgitpuller
+  #jupyterhub_url: "http://jupyterhub.egr.msu.edu/"
+  
+  
