@@ -1,0 +1,9 @@
+channels:
+  - defaults
+dependencies:
+  - pip
+  - jupyter
+  - pandas
+  - pip:
+    - jupyter-book
+    - git+https://github.com/colbrydi/jupyterinstruct 

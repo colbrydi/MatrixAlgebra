@@ -5,3 +5,14 @@
 
 [Link to gihub page](https://colbrydi.github.io/MatrixAlgebra)
 
+
+# Create a conda environment
+
+```
+conda env create -f=./environment --prefix=./envs
+
+conda activate ./envs
+
+jupyter notebook
+```
+
