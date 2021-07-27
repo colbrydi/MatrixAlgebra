@@ -1,9 +1,15 @@
 channels:
   - defaults
 dependencies:
-  - pip
   - jupyter
+  - numpy
+  - scipy
+  - sympy
+  - matplotlib
+  - scikit-image
+  - ipywidgets
   - pandas
+  - pathlib
   - pip:
     - jupyter-book
-    - git+https://github.com/colbrydi/jupyterinstruct 
+    - git+https://github.com/colbrydi/jupyterinstruct   
