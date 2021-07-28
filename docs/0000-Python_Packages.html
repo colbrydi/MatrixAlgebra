@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Python Linear Algebra Packages &#8212; Matrix Algebra with Computational Applications</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,9 +41,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,14 +54,14 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Jupyter Getting Started Guide" href="0000-Jupyter_Getting_Started_Guide.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,27 +70,27 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/Cover.jpg" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/Cover.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Matrix Algebra with Computational Applications</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="0-Introduction.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="00-Class_Prep_Checklist.html">
    Matrix Algebra class preparation checklist
@@ -318,6 +313,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -383,12 +379,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -419,12 +415,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#assignment-overview">
    Assignment Overview
@@ -457,8 +452,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -511,8 +505,20 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Testing Check Answer
-Answer seems to be correct
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="n">dd601693b2c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">checkanswer</span><span class="p">(</span><span class="s2">&quot;Check Answer&quot;</span><span class="p">,</span><span class="s1">&#39;bd8337cd5327e54b2b4b15c6ec3703ed&#39;</span><span class="p">);</span>
+
+<span class="o">~/</span><span class="n">REPOS</span><span class="o">/</span><span class="n">MTH314_Textbook</span><span class="o">/</span><span class="n">MakeTextbook</span><span class="o">/</span><span class="n">bookfiles</span><span class="o">/</span><span class="n">answercheck</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">textwrap</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
 </pre></div>
 </div>
 </div>
@@ -526,16 +532,6 @@ Answer seems to be correct
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="640"
-    height="320"
-    src="https://www.youtube.com/embed/d4a9Xag-yc8?cc_load_policy=True"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 <p><strong><em>NOTE</em></strong> make sure you do not change the <code class="docutils literal notranslate"><span class="pre">checkanswer</span></code> commands.  The long string with numbers and letters is the secret code that encodes the true answer.  This code is also called the HASH.  Feel free to look at the <code class="docutils literal notranslate"><span class="pre">answercheck.py</span></code> code and see if you can figure out how it works?</p>
 <hr class="docutils" />
@@ -552,16 +548,6 @@ Answer seems to be correct
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="640"
-    height="320"
-    src="https://www.youtube.com/embed/PBlKeuzUf5g?cc_load_policy=True"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 <p>✅ <strong><font color=red>DO THIS:</font></strong>    In the following cell, load the math package and run the <code class="docutils literal notranslate"><span class="pre">hypot</span></code> function with inputs (3,4).</p>
 <div class="cell docutils container">
@@ -587,16 +573,6 @@ Answer seems to be correct
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="640"
-    height="320"
-    src="https://www.youtube.com/embed/_hbWtNgstlI?cc_load_policy=True"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 <p>The Python Numpy library has a <code class="docutils literal notranslate"><span class="pre">matrix</span></code> object which can be initialized as follows:</p>
 <div class="cell docutils container">
@@ -606,14 +582,6 @@ Answer seems to be correct
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">30</span><span class="p">],[</span><span class="mi">690</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[ 1  1]
- [20 25]]
-b=[[ 30]
- [690]]
 </pre></div>
 </div>
 </div>
@@ -628,12 +596,6 @@ b=[[ 30]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x=[[12.]
- [18.]]
-</pre></div>
-</div>
-</div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> library is just a subset of the <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> library.</p>
 <div class="cell docutils container">
@@ -642,12 +604,6 @@ b=[[ 30]
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X=[[12.]
- [18.]]
 </pre></div>
 </div>
 </div>
@@ -667,43 +623,6 @@ $<span class="math notranslate nohighlight">\( 18x+21y = 226\)</span><span class
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
 
 <span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;756ca9fa3951fad0e623b2a8315d5fd7&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CheckWarning: passed variable is &lt;class &#39;numpy.ndarray&#39;&gt; and not a numpy.matrix.
-    Trying to convert to a array matrix using ```A = np.matrix(A)```.
-
-
-CheckWarning: numpy.matrix is row vector...
-    Trying to convert to a column vector using ```A = A.T```.
-
-Testing [[12. 18.]]
-Answer seems to be incorrect
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">9698</span><span class="n">db3c0fd0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">answercheck</span> <span class="kn">import</span> <span class="n">checkanswer</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;756ca9fa3951fad0e623b2a8315d5fd7&#39;</span><span class="p">);</span>
-
-<span class="nn">~/REPOS/MTH314_Textbook/MakeTextbook/bookfiles/answercheck.py</span> in <span class="ni">vector</span><span class="nt">(A, hashtag, decimal_accuracy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="k">def</span> <span class="nf">vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">hashtag</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimal_accuracy</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>         <span class="n">A</span> <span class="o">=</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">make_vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">decimal_accuracy</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">106</span>         <span class="k">return</span> <span class="n">checkanswer</span><span class="o">.</span><span class="n">basic</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">hashtag</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span> 
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="k">def</span> <span class="nf">eq_vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">hashtag</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimal_accuracy</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
-
-<span class="nn">~/REPOS/MTH314_Textbook/MakeTextbook/bookfiles/answercheck.py</span> in <span class="ni">basic</span><span class="nt">(var, hashtag)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>             <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Answer seems to be incorrect</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">50</span>                 <span class="k">assert</span> <span class="n">checktag</span> <span class="o">==</span> <span class="n">hashtag</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Answer is incorrect </span><span class="si">{</span><span class="n">checktag</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No answer hastag provided: </span><span class="si">{</span><span class="n">checktag</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="ne">AssertionError</span>: Answer is incorrect db03b41005ab488f64e4028c15f96340
 </pre></div>
 </div>
 </div>
@@ -929,11 +848,9 @@ Answer seems to be incorrect
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
