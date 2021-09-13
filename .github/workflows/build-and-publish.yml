@@ -24,11 +24,9 @@ jobs:
     - name: Build Book
       run: |
         jupyter book build book/
-    - name: Publish Book
-      run: |
     - name: Publish
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: book/_build/html/index.html
+        publish_dir: book/_build/html/
         #exclude_assets: '*.md'
