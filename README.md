@@ -9,9 +9,9 @@
 # Create a conda environment
 
 ```
-conda env create -f=./environment --prefix=./envs
+conda env create --file environment.yml --name MTH314
 
-conda activate ./envs
+conda activate MTH314
 
 jupyter notebook
 ```
