@@ -1,4 +1,4 @@
 init:
-	conda env create --prefix ./envs --file environment.yml
+	conda env create --file environment.yml --name MTH314
     
 .PHONY: init docs lint test 
