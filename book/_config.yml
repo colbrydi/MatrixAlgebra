@@ -15,7 +15,7 @@ execute:
   
 repository:
   url: https://github.com/seanybaggins/MatrixAlgebra
-    #path_to_book: docs/_sources/  # An optional path to your book, defaults to repo root
+  path_to_book: book/# An optional path to your book, defaults to repo root
   branch      : main 
 html:
   use_issues_button: true
