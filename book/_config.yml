@@ -14,7 +14,7 @@ execute:
   stderr_output : remove
   
 repository:
-  url: https://github.com/colbrydi/MatrixAlgebra
+  url: https://github.com/seanybaggins/MatrixAlgebra
     #path_to_book: docs/_sources/  # An optional path to your book, defaults to repo root
   branch      : main 
 html:
