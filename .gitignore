@@ -4,6 +4,7 @@
 .spyderproject
 .idea/*
 /**/.DS_Store
+**/_build
 /**/__pycache__
 /**/.ipynb_checkpoints
 /.doit.db.bak
