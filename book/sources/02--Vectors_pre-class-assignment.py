@@ -7,7 +7,7 @@
 #       format_version: '1.5'
 #       jupytext_version: 1.10.3
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -388,7 +388,7 @@ z = 3
 a = [3,-7,10]
 sv_multiply(z,a)
 
-# Let us use the following code to test your functon further.  Note that this uses the ```answercheck``` function provided by your instructors. Please review [01--Python_Packages](01-Python_Packages.ipynb) for instructions on installing and using ```answercheck```.
+# Let us use the following code to test your functon further.  Note that this uses the ```answercheck``` function provided by your instructors. Please review [01--Python_Packages](0000-Python_Packages.py) for instructions on installing and using ```answercheck```.
 
 from answercheck import checkanswer
 checkanswer.vector(sv_multiply(10,[1,2,3,4]),'414a6fea724cafda66ab5971f542adf2')
