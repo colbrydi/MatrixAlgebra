@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-linux:
+  build-and-publish:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5

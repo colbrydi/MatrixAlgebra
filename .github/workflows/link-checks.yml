@@ -11,7 +11,7 @@ on:
     - cron: '50 15 * * TUE' 
 
 jobs:
-  build-linux:
+  check-links:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5
