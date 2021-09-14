@@ -3,7 +3,7 @@
 
 title: Matrix Algebra with Computational Applications
 author: Dirk Colbry
-logo: Cover.jpg
+logo: book/sources/Cover.jpg
 copyright: '2021'
 
 # Force re-execution of notebooks on each build.
@@ -15,7 +15,7 @@ execute:
   
 repository:
   url: https://github.com/colbrydi/MatrixAlgebra
-  path_to_book: docs/_sources/  # An optional path to your book, defaults to repo root
+    #path_to_book: book/# An optional path to your book, defaults to repo root
   branch      : main 
 html:
   use_issues_button: true
@@ -33,7 +33,19 @@ launch_buttons:
   binder_repo_base                 : "https://github.com/"  # The site on which the textbook repository is hosted
   binder_repo_org                  : "colbrydi"  # The username or organization that owns this repository
   binder_repo_name                 : "MatrixAlgebra"  # The name of the repository on the web
-  binder_repo_branch               : "master"  # The branch on which your textbook is hosted.
+  binder_repo_branch               : "gh-pages"  # The branch on which your textbook is hosted.
 use_colab_button : true
 use_binder_button : true
 use_jupyterhub_button: true
+
+# Convert the python sources to ipynb for jupyter-book
+sphinx:
+  config:
+    nb_custom_formats:
+        .py:
+            - jupytext.reads
+            - fmt: py
+    linkcheck_ignore:
+      - "https://brainly.com/question/2202719" # Manually checked. Not sure why this is an error
+      - "https://pixabay.com/images/search/toy%20robot/" # Linkcheck doesn't like %20 in this link. Still works.
+      - "https://cmse.msu.edu/mth314/" # msu checks for robots. In this case we are one.

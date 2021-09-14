@@ -1,5 +1,6 @@
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - python=3.7
   - pip
@@ -12,6 +13,7 @@ dependencies:
   - ipywidgets
   - pandas
   - pathlib
+  - jupytext
   - pip:
     - jupyter-book
     - git+https://github.com/colbrydi/jupyterinstruct   

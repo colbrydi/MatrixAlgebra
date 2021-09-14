@@ -1,0 +1,47 @@
+format: jb-article
+root: book/sources/0-Introduction.py
+sections:
+- file: book/sources/00-Class_Prep_Checklist.py
+- file: book/sources/0000--Python_Linear_Algebra_Packages_pre-class-assignment.py
+- file: book/sources/0000-Jupyter_Getting_Started_Guide.py
+- file: book/sources/0000-Python_Packages.py
+- file: book/sources/01-CMSE314_introduction_in-class-assignment.py
+- file: book/sources/02--Vectors_pre-class-assignment.py
+- file: book/sources/02-Vectors_in-class-assignment.py
+- file: book/sources/03--Linear_Equations_pre-class-assignment.py
+- file: book/sources/03-Linear_Equations_in-class-assignment.py
+- file: book/sources/04--Gauss_Jordan_pre-class-assignment.py
+- file: book/sources/04-Gauss_Jordan_in-class-assignment.py
+- file: book/sources/05--Gauss_Jordan2_pre-class-assignment.py
+- file: book/sources/05-Gauss_Jordan2_in-class-assignment.py
+- file: book/sources/06--Mechanics_pre-class-assignment.py
+- file: book/sources/06-Mechanics_in-class-assignment.py
+- file: book/sources/07--Transformations_pre-class-assignment.py
+- file: book/sources/07-Transformations_in-class-assignment.py
+- file: book/sources/08--Robotics_pre-class-assignment.py
+- file: book/sources/08-Robotics_in-class-assignment.py
+- file: book/sources/09--Determinants_pre-class-assignment.py
+- file: book/sources/09-Determinats_in-class-assignment.py
+- file: book/sources/10--Eigenproblems_pre-class-assignment.py
+- file: book/sources/10-Eigenproblems_in-class-assignment.py
+- file: book/sources/11--Vector_Spaces_pre-class-assignment.py
+- file: book/sources/11-Vector_Spaces_in-class-assignment.py
+- file: book/sources/12--Change_Basis_pre-class-assignment.py
+- file: book/sources/12-Changing_vector_space_in-class-assignment.py
+- file: book/sources/13--Projections_pre-class-assignment.py
+- file: book/sources/13-Projections_in-class-assignment.py
+- file: book/sources/14--Fundamental_Spaces_pre-class-assignment.py
+- file: book/sources/14-Fundamental_Spaces_in-class-assignment.py
+- file: book/sources/15--Diagonalization_pre-class-assignment.py
+- file: book/sources/15-Diagonalization_in-class-assignment.py
+- file: book/sources/16--Linear_Dynamical_Systems_pre-class-assignment.py
+- file: book/sources/16-Linear_Dynamical_Systems_in-class-assignment.py
+- file: book/sources/17--Decompositions_pre-class-assignment.py
+- file: book/sources/17-Decompositions_in-class-assignment.py
+- file: book/sources/18--Inner_Product_pre-class-assignment.py
+- file: book/sources/18-Inner_Product_in-class-assignment.py
+- file: book/sources/19--LSF_pre-class-assignment.py
+- file: book/sources/19-LSF_in-class-assignment.py
+- file: book/sources/20-LSF_Practice_in-class-assignment.py
+- file: book/sources/21--Review_pre-class-assignment.py
+- file: book/sources/21-Review_in-class-assignment.py
