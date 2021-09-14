@@ -1,9 +1,14 @@
-name: Build and Publish
+name: link-checks
 
 on:
   push:
-    branches:
-      - main
+    branches-ignore: [main]
+  pull_request:
+    branches: ['*']
+  schedule:
+    # Run every monday at 7am
+    # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
+    - cron: '0 7 * * MON' 
 
 jobs:
   build-linux:
@@ -30,9 +35,4 @@ jobs:
     - name: Check Links
       run: |
         jupyter book build . --builder linkcheck
-    - name: Publish
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: _build/html/
-        #exclude_assets: '*.md'
+
