@@ -8,7 +8,7 @@ on:
   schedule:
     # Run every Monday at 7am
     # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
-    - cron: '25 16 * * TUE' 
+    - cron: '40 16 * * TUE' 
 
 jobs:
   check-links:
