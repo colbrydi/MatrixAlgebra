@@ -6,9 +6,9 @@ on:
   pull_request:
     branches: ['*']
   schedule:
-    # Run every monday at 7am
+    # Run every Monday at 7am
     # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
-    - cron: '0 7 * * MON' 
+    - cron: '50 15 * * TUE' 
 
 jobs:
   build-linux:
