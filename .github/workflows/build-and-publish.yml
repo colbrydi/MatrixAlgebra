@@ -24,6 +24,9 @@ jobs:
     - name: Build Book
       run: |
         jupyter book build .
+    - name: Check Links
+      run: |
+        jupyter book build . --builder linkcheck
     - name: Publish
       uses: peaceiris/actions-gh-pages@v3
       with:

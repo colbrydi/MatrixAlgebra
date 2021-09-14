@@ -8,7 +8,7 @@
 #       format_version: '1.5'
 #       jupytext_version: 1.10.3
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -36,7 +36,7 @@
 #
 # (These instructions are also available via YouTube video: https://youtu.be/3BiLPXAGINA)
 #
-# 1. Go to the Anaconda Download web page:  https://www.continuum.io/downloads
+# 1. Go to the Anaconda Download web page:  https://www.anaconda.com/products/individual
 # 2. Use the “Jump to: Windows | OS X | Linux” to pick your operating system.
 # 3. Download the Python 3.x version (64 bit recommended).
 # 4. Follow the directions at the bottom of the page to install Python on your specific operating system.

@@ -7,7 +7,7 @@
 #       format_version: '1.5'
 #       jupytext_version: 1.10.3
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -20,7 +20,7 @@
 #
 # <img src="https://cdn.pixabay.com/photo/2013/07/13/12/04/android-159109__340.png" alt="Cartoon Robot" width=20%>
 #
-# Image from: https://pixabay.com/images/search/toy%20robot/
+# Image from: [https://pixabay.com/images/search/toy%20robot/](https://pixabay.com/images/search/toy%20robot/)
 #
 # Today, we will calculate the forward kinematics of some 3D robots. This means we would like to come up with a set of transformations such that we can know the $x,~y,~z$ coordinates of the end effector with respect to the world coordinate system which is at the base of the robot.  
 
