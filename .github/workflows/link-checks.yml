@@ -6,9 +6,9 @@ on:
   pull_request:
     branches: ['*']
   schedule:
-    # Run every Monday at 7am
+    # Run every Monday at 7am Eastern Daylight Time
     # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
-    - cron: '0 10 * * MON' 
+    - cron: '0 11 * * MON' # UTC timzone cofig only
 
 jobs:
   check-links:
