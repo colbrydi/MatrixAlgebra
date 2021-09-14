@@ -48,3 +48,4 @@ sphinx:
     linkcheck_ignore:
       - "https://brainly.com/question/2202719" # Manually checked. Not sure why this is an error
       - "https://pixabay.com/images/search/toy%20robot/" # Linkcheck doesn't like %20 in this link. Still works.
+      - "https://cmse.msu.edu/mth314/" # msu checks for robots. In this case we are one.
