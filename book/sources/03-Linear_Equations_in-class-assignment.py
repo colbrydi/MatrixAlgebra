@@ -7,7 +7,7 @@
 #       format_version: '1.5'
 #       jupytext_version: 1.10.3
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -51,7 +51,9 @@
 #
 # 1. Initialize each of the variables as zero ($x_0 = 0, y_0 = 0, z_0 = 0$) 
 # 2. Calculate the next iteration using the above equations and the values from the previous iterations. For example here is the formula for calculating $x_i$ from $y_{(i-1)}$ and $z_{(i-1)}$ based on the first equation:
-#     $$x_i = \frac{4 - 2y_{(i-1)} + z_{(i-1)}}{6} $$
+#     
+#     $$ \\
+#     x_i = \frac{4 - 2y_{(i-1)} + z_{(i-1)}}{6} $$
 #     Similarly, we can obtain the update for $y_i$ and $z_i$ from the second and third equations, respectively.
 # 3. Increment the iteration counter $(i = i + 1)$ and repeat Step 2.
 # 4. Stop when the answer "converges" or a maximum number of iterations has been reached. (ex. $i$ = 100)

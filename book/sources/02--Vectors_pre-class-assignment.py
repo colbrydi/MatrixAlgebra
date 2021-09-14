@@ -94,6 +94,7 @@ a
 # A **_vector_**, on the other hand, is an *ordered* list of values which we typically represent with lower case letters. Vectors are ordered arrays of single numbers and are an example of 1st-order tensor. The following are all vectors:
 #
 # **_Row Vector:_** 
+#
 # $$v = [ v_1, v_2, \dots, v_n ]$$
 # here $v_1, v_2, \dots, v_n$ are single numbers.
 #
@@ -104,6 +105,7 @@ a
 # Note, it is often more common to write vecors vertically. These are often called column vectors:
 #
 # **_Column Vector:_**
+#
 # $$
 # v=
 # \left[
