@@ -1,4 +1,4 @@
-name: link-checks
+name: 'Check Links'
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   schedule:
     # Run every Monday at 7am
     # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule
-    - cron: '20 16 * * TUE' 
+    - cron: '25 16 * * TUE' 
 
 jobs:
   check-links:
